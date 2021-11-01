@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireSwitch : MonoBehaviour
+public class Victory : MonoBehaviour
 {
-    public Rigidbody Bullet;
-    public Transform Fire;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +17,7 @@ public class FireSwitch : MonoBehaviour
     }
      void OnTriggerEnter(Collider other)
     {
-            Rigidbody clone;
-            clone = (Rigidbody)Instantiate(Bullet,Fire.position,Fire.rotation);
-            clone.velocity = transform.TransformDirection(Vector3.forward);
+      Application.LoadLevel("Victory");
+      
     }
 }
