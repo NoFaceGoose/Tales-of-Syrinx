@@ -21,6 +21,7 @@ public class Stone : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && transform.position.y > 1.8)
         {
             Destroy(other.gameObject);
+            Application.LoadLevel("Lose");
         }
         if (other.gameObject.CompareTag("Bullet"))
         {

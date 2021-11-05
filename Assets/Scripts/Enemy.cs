@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(other.gameObject);
+            Application.LoadLevel("Lose");
         }
     }
 }

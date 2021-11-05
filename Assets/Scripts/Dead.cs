@@ -18,6 +18,10 @@ public class Dead : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Player"))
+        {
         Destroy(other.gameObject);
+        Application.LoadLevel("Lose");
+        }
     }
 }
