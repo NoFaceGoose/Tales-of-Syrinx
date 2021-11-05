@@ -20,5 +20,4 @@ public class Dead : MonoBehaviour
     {
         Destroy(other.gameObject);
     }
-
 }

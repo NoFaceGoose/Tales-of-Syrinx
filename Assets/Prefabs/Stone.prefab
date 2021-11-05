@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: 8324386456878894857}
   - component: {fileID: 5652577212507712253}
   - component: {fileID: 3727627262855466785}
-  - component: {fileID: -4364009717476145371}
-  - component: {fileID: -1122693943886726100}
+  - component: {fileID: -1769840595462467950}
   m_Layer: 0
-  m_Name: SwitchBullet
-  m_TagString: Untagged
+  m_Name: Stone
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 9052722400216426390}
   m_LocalRotation: {x: 0.30618626, y: 0.1767767, z: 0.1767767, w: 0.91855866}
   m_LocalPosition: {x: -5, y: 2.21, z: 2.74}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -94,7 +93,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9052722400216426390}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -113,9 +112,9 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 90
   m_CollisionDetection: 0
---- !u!114 &-4364009717476145371
+--- !u!114 &-1769840595462467950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,19 +123,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9052722400216426390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91afca3ab0e9e1b4f8c637a48e8171c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
---- !u!114 &-1122693943886726100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9052722400216426390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07538f2e82664c6685dc2c185c38d81, type: 3}
+  m_Script: {fileID: 11500000, guid: 3218306c51102334fbce8a0ba288f021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

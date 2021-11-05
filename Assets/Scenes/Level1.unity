@@ -389,7 +389,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.1552, y: 3.65, z: 0}
   m_LocalScale: {x: 4.100372, y: 0.25, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1937820134}
   m_Father: {fileID: 592144524}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -401,7 +402,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449593915}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -852,7 +853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 730898777}
   m_Layer: 0
-  m_Name: Fire-Switch
+  m_Name: Fall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -866,7 +867,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730898776}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.35, y: 0, z: 0}
+  m_LocalPosition: {x: -0.416, y: -2.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1577802924}
@@ -1403,7 +1404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350538954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6010642, y: -2.84, z: 0}
+  m_LocalPosition: {x: -1.6010642, y: -2.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1106439294}
@@ -1413,7 +1414,7 @@ Transform:
   - {fileID: 1666531618}
   - {fileID: 595180342}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1439991888
 GameObject:
@@ -1525,7 +1526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577802923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8141, y: 6, z: 0}
+  m_LocalPosition: {x: 2.11, y: 7.42, z: 0}
   m_LocalScale: {x: 5.2442007, y: 0.25, z: 1}
   m_Children:
   - {fileID: 730898777}
@@ -2071,7 +2072,7 @@ GameObject:
   - component: {fileID: 1937820130}
   m_Layer: 0
   m_Name: Switch
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2088,8 +2089,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec52e96146fb4a809c719a06f506fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 3727627262855466785, guid: 907285ddea0704563819903e30683665, type: 3}
-  Fire: {fileID: 730898777}
+  Stone: {fileID: 3727627262855466785, guid: 907285ddea0704563819903e30683665, type: 3}
+  Fall: {fileID: 730898777}
 --- !u!54 &1937820130
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2176,12 +2177,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937820128}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.03, y: 1.21, z: 0}
-  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.2744141, y: 0.74800014, z: 0}
+  m_LocalScale: {x: 0.1803, y: 0.4, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 449593916}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1965118994
 GameObject:
@@ -2273,7 +2274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965118994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26, y: -9, z: 0}
+  m_LocalPosition: {x: 0.26, y: -9, z: 1}
   m_LocalScale: {x: 100, y: 11.707037, z: 3.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2297,7 +2298,7 @@ GameObject:
   - component: {fileID: 2043876515}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
