@@ -17,7 +17,9 @@ public class Victory : MonoBehaviour
     }
      void OnTriggerEnter(Collider other)
     {
-      Application.LoadLevel("Victory");
-      
+      if (other.CompareTag("Key"))
+      {
+        Application.LoadLevel("Victory");
+      }
     }
 }
