@@ -4,23 +4,29 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
-    public float jumpForce;
+
+    // jump function
+    public Vector3 jump;
+    public float jumpForce = 5.0f;
+
     public float gravity;
     public Rigidbody rg;
     private float inputX;
     private bool isGrounded = false;
-    public float disToGround = 1f;
+    public float disToGround = 1.0f;
     public GameObject Bullet;
 
-    public int jumpCount = 0; //Make the player able to double jump
+    // public int jumpCount = 0; //Make the player able to double jump
+    public bool canDoubleJump = false; //Make the player able to double jump
 
     void Start()
     {
         rg = GetComponent<Rigidbody>();
+        jump = new Vector3(0.0f, 2.0f, 0.0f);
     }
     void Update()
     {
-        rg.velocity = new Vector2(inputX * moveSpeed, rg.velocity.y);
+        rg.velocity = new Vector3(inputX * moveSpeed, rg.velocity.y, 0);
         Physics.gravity = new Vector3(0, gravity, 0);
         isGrounded = Physics.Raycast(transform.position, Vector3.down, disToGround);
     }
@@ -32,18 +38,29 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext value)
     {
-        if (isGrounded)
+        if(isGrounded)
         {
-            jumpCount = 0;
+            rg.velocity = new Vector3(rg.velocity.x, 0, 0);
+            // rg.velocity = new Vector2(rg.velocity.x, jumpForce);
+            rg.AddForce(jump * jumpForce, ForceMode.Impulse);
+            canDoubleJump = true;
+        } else if (canDoubleJump)
+        {
+            Debug.Log("double jump!");
+            rg.velocity = new Vector3(rg.velocity.x, 0, 0);
+            // rg.velocity = new Vector2(rg.velocity.x, jumpForce);
+            rg.AddForce(jump * jumpForce, ForceMode.Impulse);
+            canDoubleJump = false;
         }
-        // if (isGrounded && value.performed)
+        // if (isGrounded)
+        // {
+        //     jumpCount = 0;
+        // }
+        // if (jumpCount < 3)
         // {
         //     rg.velocity = new Vector2(rg.velocity.x, jumpForce);
+        //     jumpCount += 1;
         // }
-        if (jumpCount < 3)
-        {
-            rg.velocity = new Vector2(rg.velocity.x, jumpForce);
-        }
     }
 
     public void OnFire(InputAction.CallbackContext value)
