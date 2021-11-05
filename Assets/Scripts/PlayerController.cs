@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public float disToGround = 1f;
     public GameObject Bullet;
 
+    public int jumpCount = 0; //Make the player able to double jump
+
     void Start()
     {
         rg = GetComponent<Rigidbody>();
@@ -30,7 +32,15 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext value)
     {
-        if (isGrounded && value.performed)
+        if (isGrounded)
+        {
+            jumpCount = 0;
+        }
+        // if (isGrounded && value.performed)
+        // {
+        //     rg.velocity = new Vector2(rg.velocity.x, jumpForce);
+        // }
+        if (jumpCount < 3)
         {
             rg.velocity = new Vector2(rg.velocity.x, jumpForce);
         }
