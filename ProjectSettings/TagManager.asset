@@ -8,6 +8,8 @@ TagManager:
   - Switch
   - Stone
   - Key
+  - Key
+  - EnemyFire
   layers:
   - Default
   - TransparentFX

@@ -153,7 +153,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.3095374, y: 3.6532001, z: 0}
   m_LocalScale: {x: 0.09601038, y: 3.2, z: 0.8}
-  m_Children: []
+  m_Children:
+  - {fileID: 1190472014}
   m_Father: {fileID: 614385580}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -233,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa524a30c5768ba428a72bf4ec90b481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyBullet: {fileID: 1878002049136458367, guid: 3c7646f2edcdd4c0a8590a567d75c5ce, type: 3}
 --- !u!1 &268583784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,6 +1395,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07538f2e82664c6685dc2c185c38d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1190472013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1190472014}
+  m_Layer: 3
+  m_Name: Fire
+  m_TagString: EnemyFire
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1190472014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190472013}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.9, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 28204398}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1274789219
 GameObject:
   m_ObjectHideFlags: 0
