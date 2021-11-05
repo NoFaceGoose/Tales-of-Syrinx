@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
     // jump function
     public Vector3 jump;
-    public float jumpForce = 2.0f;
+    public float jumpForce = 5.0f;
 
     public float gravity;
     public Rigidbody rg;
