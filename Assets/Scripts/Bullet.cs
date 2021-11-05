@@ -15,4 +15,6 @@ public class Bullet : MonoBehaviour
         // GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * 50);
         transform.position = transform.position + new Vector3(speed * Time.deltaTime, 0f, 0f);
     }
+
+
 }
