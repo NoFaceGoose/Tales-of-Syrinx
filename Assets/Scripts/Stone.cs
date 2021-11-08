@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Stone : MonoBehaviour
 {
@@ -21,7 +20,7 @@ public class Stone : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && transform.position.y > 1.8)
         {
             Destroy(other.gameObject);
-            Application.LoadLevel("Lose");
+            SceneManager.LoadScene("Lose");
         }
         if (other.gameObject.CompareTag("Bullet"))
         {
