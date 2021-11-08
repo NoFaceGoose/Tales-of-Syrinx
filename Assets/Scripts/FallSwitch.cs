@@ -22,6 +22,7 @@ public class FallSwitch : MonoBehaviour
             Rigidbody clone;
             clone = (Rigidbody)Instantiate(Stone, Fall.position, Fall.rotation);
             clone.velocity = transform.TransformDirection(0, 0, 0);
+            Destroy(gameObject);
         }
     }
 }

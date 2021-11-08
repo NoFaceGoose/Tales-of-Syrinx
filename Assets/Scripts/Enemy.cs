@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Fire", 2.0f, 2.0f);
+        InvokeRepeating("EnemyFire", 0.05f, 1.0f);
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Fire()
+    public void EnemyFire()
     {
         GameObject shootingPoint = GameObject.Find("EnemyFire");
         Instantiate(EnemyBullet, shootingPoint.GetComponent<Transform>().position, shootingPoint.GetComponent<Transform>().rotation);

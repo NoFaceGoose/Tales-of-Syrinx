@@ -28,7 +28,8 @@ public class Key : MonoBehaviour
         }
         else
         {
-            transform.position = playerTrans.position + offset;
+            if (playerTrans != null)
+                transform.position = playerTrans.position + offset;
         }
     }
 

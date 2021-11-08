@@ -16,9 +16,14 @@ public class Victory : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Key"))
+        Debug.Log((other.transform.position - GameObject.FindWithTag("Key").transform.position).sqrMagnitude);
+        if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Victory");
+            
+            if ((other.transform.position - GameObject.FindWithTag("Key").transform.position).sqrMagnitude <= 2)
+            {
+                SceneManager.LoadScene("Victory");
+            }
         }
     }
 }

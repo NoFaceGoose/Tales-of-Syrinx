@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Stone : MonoBehaviour
 {
+    private int zeroVelocityCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +18,19 @@ public class Stone : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player") && transform.position.y > 1.8)
+
+        if (GetComponent<Rigidbody>() != null)
         {
-            Destroy(other.gameObject);
-            SceneManager.LoadScene("Lose");
+            if (other.gameObject.CompareTag("Player") && GetComponent<Rigidbody>().velocity.y < 0)
+            {
+                Destroy(other.gameObject);
+                SceneManager.LoadScene("Lose");
+            }
+            if (other.gameObject.CompareTag("Platform"))
+            {
+                Destroy(GetComponent<Rigidbody>());
+            }
         }
-        if (other.gameObject.CompareTag("Bullet"))
-        {
-            Destroy(other.gameObject);
-            Destroy(gameObject);
-        }
+
     }
 }
