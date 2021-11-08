@@ -19,7 +19,6 @@ public class Dead : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
             SceneManager.LoadScene("Lose");
         }
     }

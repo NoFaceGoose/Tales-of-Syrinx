@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class Stone : MonoBehaviour
 {
-    private int zeroVelocityCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,14 +22,16 @@ public class Stone : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                Destroy(other.gameObject);
                 SceneManager.LoadScene("Lose");
             }
-            if (other.gameObject.CompareTag("Platform"))
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                Destroy(other.gameObject);
+            }
+            if (other.gameObject.CompareTag("Platform") || other.gameObject.CompareTag("Ground"))
             {
                 Destroy(GetComponent<Rigidbody>());
             }
         }
-
     }
 }

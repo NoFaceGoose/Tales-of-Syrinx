@@ -4,10 +4,11 @@ using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour
 {
     public GameObject EnemyBullet;
+    public Transform EnemyFire;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("EnemyFire", 0.05f, 1.0f);
+        InvokeRepeating("Fire", 0.05f, 1.0f);
     }
 
     // Update is called once per frame
@@ -16,24 +17,16 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
-            Destroy(this.gameObject);
-        }
-
-        if (other.CompareTag("Player"))
-        {
-            Destroy(other.gameObject);
             SceneManager.LoadScene("Lose");
         }
     }
 
-    public void EnemyFire()
+    public void Fire()
     {
-        GameObject shootingPoint = GameObject.Find("EnemyFire");
-        Instantiate(EnemyBullet, shootingPoint.GetComponent<Transform>().position, shootingPoint.GetComponent<Transform>().rotation);
+        Instantiate(EnemyBullet, EnemyFire.position, EnemyFire.rotation);
     }
 }

@@ -5,6 +5,7 @@ public class Key : MonoBehaviour
     Rigidbody rb;
     public float tumbleSpeed;
     public bool keyB = false;
+    private int keyIndex = 0;
     private Vector3 offset;
     private Transform playerTrans;
     // Start is called before the first frame update
@@ -13,7 +14,7 @@ public class Key : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.angularVelocity = Random.insideUnitSphere * tumbleSpeed;
         playerTrans = GameObject.FindWithTag("Player").transform;
-        offset = new Vector3(-1, 0, 0);
+        offset = new Vector3(-0.6f, 0, 0);
     }
 
     // Update is called once per frame
@@ -29,7 +30,19 @@ public class Key : MonoBehaviour
         else
         {
             if (playerTrans != null)
-                transform.position = playerTrans.position + offset;
+            {
+                switch (keyIndex)
+                {
+                    case 1:
+                        transform.position = playerTrans.position + offset; break;
+                    case 2:
+                        transform.position = playerTrans.position + offset * 2; break;
+                    case 3:
+                        transform.position = playerTrans.position + offset * 3; break;
+                    default: break;
+                }
+
+            }
         }
     }
 
@@ -38,6 +51,16 @@ public class Key : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             keyB = true;
+            switch (PlayerController.player.keys)
+            {
+                case 0:
+                    keyIndex = 1; PlayerController.player.keys++; break;
+                case 1:
+                    keyIndex = 2; PlayerController.player.keys++; break;
+                case 2:
+                    keyIndex = 3; PlayerController.player.keys++; break;
+                default: break;
+            }
         }
     }
 }

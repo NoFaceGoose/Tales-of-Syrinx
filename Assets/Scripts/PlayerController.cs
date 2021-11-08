@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    public static PlayerController player;
 
     // jump function
     public Vector3 jump;
@@ -15,9 +16,16 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = false;
     public float disToGround = 1.0f;
     public GameObject Bullet;
+    public int keys = 0;
+
 
     // public int jumpCount = 0; //Make the player able to double jump
     public bool canDoubleJump = false; //Make the player able to double jump
+
+    void Awake()
+    {
+        player = this;
+    }
 
     void Start()
     {

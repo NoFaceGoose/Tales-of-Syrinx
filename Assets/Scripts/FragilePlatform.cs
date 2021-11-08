@@ -16,7 +16,7 @@ public class FragilePlatform : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && other.gameObject.transform.position.y > gameObject.transform.position.y)
         {
             Invoke("Destroy", 0.5f);
         }
@@ -24,6 +24,6 @@ public class FragilePlatform : MonoBehaviour
 
     void Destroy()
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

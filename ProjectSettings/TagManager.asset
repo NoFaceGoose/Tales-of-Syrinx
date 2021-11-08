@@ -11,6 +11,9 @@ TagManager:
   - Key
   - EnemyFire
   - Platform
+  - Ground
+  - Enemy
+  - PlayerFloor
   layers:
   - Default
   - TransparentFX
