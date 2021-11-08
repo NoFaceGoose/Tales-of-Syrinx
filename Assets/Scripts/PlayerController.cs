@@ -38,13 +38,14 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext value)
     {
-        if(isGrounded)
+        if (isGrounded)
         {
             rg.velocity = new Vector3(rg.velocity.x, 0, 0);
             // rg.velocity = new Vector2(rg.velocity.x, jumpForce);
             rg.AddForce(jump * jumpForce, ForceMode.Impulse);
             canDoubleJump = true;
-        } else if (canDoubleJump)
+        }
+        else if (canDoubleJump)
         {
             Debug.Log("double jump!");
             rg.velocity = new Vector3(rg.velocity.x, 0, 0);

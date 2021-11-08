@@ -6,7 +6,7 @@ public class Key : MonoBehaviour
 {
     Rigidbody rb;
     public float tumbleSpeed;
-    public bool keyB=false;
+    public bool keyB = false;
     private Vector3 offset;
     private Transform playerTrans;
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class Key : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(keyB==false)
+        if (keyB == false)
         {
             if (rb.angularVelocity.z < 0.5)
             {
@@ -36,9 +36,9 @@ public class Key : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-      if (other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-      keyB=true;
-      }
+            keyB = true;
+        }
     }
 }

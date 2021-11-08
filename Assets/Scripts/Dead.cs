@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dead : MonoBehaviour
 {
@@ -20,8 +19,8 @@ public class Dead : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-        Destroy(other.gameObject);
-        Application.LoadLevel("Lose");
+            Destroy(other.gameObject);
+            SceneManager.LoadScene("Lose");
         }
     }
 }

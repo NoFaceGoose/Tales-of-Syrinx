@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -28,10 +27,10 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(other.gameObject);
-            Application.LoadLevel("Lose");
+            SceneManager.LoadScene("Lose");
         }
     }
-    
+
     public void Fire()
     {
         GameObject shootingPoint = GameObject.Find("EnemyFire");
