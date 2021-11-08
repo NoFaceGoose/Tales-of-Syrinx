@@ -21,7 +21,7 @@ public class Stone : MonoBehaviour
 
         if (GetComponent<Rigidbody>() != null)
         {
-            if (other.gameObject.CompareTag("Player") && GetComponent<Rigidbody>().velocity.y < 0)
+            if (other.gameObject.CompareTag("Player"))
             {
                 Destroy(other.gameObject);
                 SceneManager.LoadScene("Lose");
