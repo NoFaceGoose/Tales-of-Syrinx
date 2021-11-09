@@ -3,24 +3,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
     public static PlayerController player;
 
-    // jump function
-    public Vector3 jump;
+    public float moveSpeed;
     public float jumpForce = 5.0f;
-
     public float gravity;
-    public Rigidbody rg;
-    private float inputX;
-    private bool isGrounded = false;
-    public float disToGround = 1.0f;
     public GameObject Bullet;
     public int keys = 0;
 
+    // jump function
+    private Vector3 jump;
+    // private int jumpCount = 0; //Make the player able to double jump
+    private bool canDoubleJump = false; //Make the player able to double jump
+    private Rigidbody rg;
+    private float disToGround = 1.0f;
+    private float inputX;
+    private bool isGrounded = false;
 
-    // public int jumpCount = 0; //Make the player able to double jump
-    public bool canDoubleJump = false; //Make the player able to double jump
+
 
     void Awake()
     {

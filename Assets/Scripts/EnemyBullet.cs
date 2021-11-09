@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public float speed;
+    public float Speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,7 +12,7 @@ public class EnemyBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + new Vector3(speed * Time.deltaTime, 0f, 0f);
+        transform.position = transform.position + new Vector3(Speed * Time.deltaTime, 0f, 0f);
     }
 
     void OnTriggerEnter(Collider other)

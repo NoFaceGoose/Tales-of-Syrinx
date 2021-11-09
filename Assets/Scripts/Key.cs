@@ -2,17 +2,18 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    Rigidbody rb;
-    public float tumbleSpeed;
-    public bool keyB = false;
+    public float TumbleSpeed;
+
+    private bool keyB = false;
     private int keyIndex = 0;
     private Vector3 offset;
     private Transform playerTrans;
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.angularVelocity = Random.insideUnitSphere * tumbleSpeed;
+        rb.angularVelocity = Random.insideUnitSphere * TumbleSpeed;
         playerTrans = GameObject.FindWithTag("Player").transform;
         offset = new Vector3(-0.6f, 0, 0);
     }
@@ -24,7 +25,7 @@ public class Key : MonoBehaviour
         {
             if (rb.angularVelocity.z < 0.5)
             {
-                rb.angularVelocity = Random.insideUnitSphere * tumbleSpeed;
+                rb.angularVelocity = Random.insideUnitSphere * TumbleSpeed;
             }
         }
         else

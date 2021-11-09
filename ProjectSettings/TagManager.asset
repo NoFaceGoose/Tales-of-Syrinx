@@ -14,6 +14,7 @@ TagManager:
   - Ground
   - Enemy
   - PlayerFloor
+  - Boss
   layers:
   - Default
   - TransparentFX
