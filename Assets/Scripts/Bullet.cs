@@ -25,7 +25,6 @@ public class Bullet : MonoBehaviour
         }
         if (other.CompareTag("Boss"))
         {
-            Debug.Log(other.gameObject);
             Boss.BossInstance.improve();
         }
         if (!other.CompareTag("Player"))

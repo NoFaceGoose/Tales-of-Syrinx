@@ -57,7 +57,6 @@ public class Boss : MonoBehaviour
     {
         Health--;
         CancelInvoke();
-        Debug.Log(Health);
         switch (Health)
         {
             case 2:
