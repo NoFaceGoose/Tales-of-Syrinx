@@ -53,7 +53,7 @@ public class Boss : MonoBehaviour
         rb.AddForce(jumpForce, ForceMode.Impulse);
     }
 
-    public void improve()
+    public void Improve()
     {
         Health--;
         CancelInvoke();
