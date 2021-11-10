@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce = 5.0f;
     public float gravity;
-    public GameObject Bullet;
+    
     public int keys = 0;
 
     // jump function
@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
 
     // Flip
     private bool isFacingRight = true;
+
+    // Fire
+    public Transform firePoint;
+    public GameObject bulletPrefab;
 
 
 
@@ -87,11 +91,22 @@ public class PlayerController : MonoBehaviour
 
     public void OnFire(InputAction.CallbackContext value)
     {
+        // if (value.performed)
+        // {
+        //     GameObject shootingPoint = GameObject.Find("Fire");
+        //     Instantiate(Bullet, shootingPoint.GetComponent<Transform>().position, shootingPoint.GetComponent<Transform>().rotation);
+        // }
         if (value.performed)
         {
-            GameObject shootingPoint = GameObject.Find("Fire");
-            Instantiate(Bullet, shootingPoint.GetComponent<Transform>().position, shootingPoint.GetComponent<Transform>().rotation);
+            Shoot();
         }
+    }
+
+    private void Shoot()
+    {
+        // shooting logic
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
     }
 
     private void Flip()

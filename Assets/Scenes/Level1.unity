@@ -16919,8 +16919,9 @@ MonoBehaviour:
   moveSpeed: 10
   jumpForce: 20
   gravity: -20
-  Bullet: {fileID: 4972832404253416858, guid: d77c679b1c7c5a94480d85e784d857c9, type: 3}
   keys: 0
+  firePoint: {fileID: 1577330938}
+  bulletPrefab: {fileID: 62511968879554192, guid: 3d07d5e2f954c2f47870590d7c79a785, type: 3}
 --- !u!136 &2043876511
 CapsuleCollider:
   m_ObjectHideFlags: 0
