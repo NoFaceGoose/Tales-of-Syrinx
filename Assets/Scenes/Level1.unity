@@ -2464,7 +2464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07538f2e82664c6685dc2c185c38d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
 --- !u!54 &419995782
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2482,16 +2481,6 @@ Rigidbody:
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &419995783
-=======
-  moveSpeed: 10
-  jumpForce: 20
-  gravity: -10
-  rg: {fileID: 0}
-  disToGround: 1
-  Bullet: {fileID: 4972832404253416858, guid: d77c679b1c7c5a94480d85e784d857c9, type: 3}
-  canDoubleJump: 0
---- !u!136 &2043876511
->>>>>>> Stashed changes
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
