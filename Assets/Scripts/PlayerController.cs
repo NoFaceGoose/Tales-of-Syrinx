@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     private float inputX;
     private bool isGrounded = false;
 
+    // Flip
+    private bool isFacingRight = true;
+
 
 
     void Awake()
@@ -42,6 +45,16 @@ public class PlayerController : MonoBehaviour
     public void OnMovement(InputAction.CallbackContext value)
     {
         inputX = value.ReadValue<Vector2>().x;
+
+        // Flip the character
+        if(inputX > 0 && !isFacingRight)
+        {
+            Flip();
+        } 
+        else if(inputX < 0 && isFacingRight)
+        {
+            Flip();
+        }
     }
 
     public void OnJump(InputAction.CallbackContext value)
@@ -79,5 +92,12 @@ public class PlayerController : MonoBehaviour
             GameObject shootingPoint = GameObject.Find("Fire");
             Instantiate(Bullet, shootingPoint.GetComponent<Transform>().position, shootingPoint.GetComponent<Transform>().rotation);
         }
+    }
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+
+        transform.Rotate(0f, 180f, 0f);
     }
 }
