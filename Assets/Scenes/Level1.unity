@@ -4385,7 +4385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec52e96146fb4a809c719a06f506fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stone: {fileID: 3727627262855466785, guid: 907285ddea0704563819903e30683665, type: 3}
+  Rock: {fileID: 3727627262855466785, guid: 907285ddea0704563819903e30683665, type: 3}
   Fall: {fileID: 1861846407}
 --- !u!65 &627134765
 BoxCollider:
@@ -9297,7 +9297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec52e96146fb4a809c719a06f506fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stone: {fileID: 3727627262855466785, guid: 907285ddea0704563819903e30683665, type: 3}
+  Rock: {fileID: 3727627262855466785, guid: 907285ddea0704563819903e30683665, type: 3}
   Fall: {fileID: 1871617737}
 --- !u!65 &1190392067
 BoxCollider:
@@ -16043,7 +16043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec52e96146fb4a809c719a06f506fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stone: {fileID: 3727627262855466785, guid: 907285ddea0704563819903e30683665, type: 3}
+  Rock: {fileID: 3727627262855466785, guid: 907285ddea0704563819903e30683665, type: 3}
   Fall: {fileID: 730898777}
 --- !u!54 &1937820130
 Rigidbody:

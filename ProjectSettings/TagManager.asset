@@ -7,14 +7,16 @@ TagManager:
   - Bullet
   - Switch
   - Stone
-  - Key
-  - Key
   - EnemyFire
   - Platform
   - Ground
   - Enemy
   - PlayerFloor
   - Boss
+  - Key
+  - Key
+  - Undefined
+  - Rock
   layers:
   - Default
   - TransparentFX
