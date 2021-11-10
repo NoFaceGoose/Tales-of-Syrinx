@@ -15,7 +15,7 @@ public class ExitButton : MonoBehaviour
     }
     public void Click()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        // UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 }
