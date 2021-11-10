@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FallSwitch : MonoBehaviour
 {
-    public Rigidbody Stone;
+    public Rigidbody Rock;
     public Transform Fall;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class FallSwitch : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Rigidbody clone;
-            clone = Instantiate(Stone, Fall.position, Fall.rotation);
+            clone = Instantiate(Rock, Fall.position, Fall.rotation);
             clone.velocity = transform.TransformDirection(0, 0, 0);
             Destroy(gameObject);
         }

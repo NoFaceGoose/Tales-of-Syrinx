@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 8324386456878894857}
   - component: {fileID: 5652577212507712253}
   - component: {fileID: 3727627262855466785}
-  - component: {fileID: -1769840595462467950}
+  - component: {fileID: 3627158433343162563}
   m_Layer: 0
-  m_Name: Stone
-  m_TagString: Stone
+  m_Name: Rock
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &-1769840595462467950
+--- !u!114 &3627158433343162563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
