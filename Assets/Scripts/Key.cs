@@ -9,6 +9,7 @@ public class Key : MonoBehaviour
     private Vector3 offset;
     private Transform playerTrans;
     private Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {

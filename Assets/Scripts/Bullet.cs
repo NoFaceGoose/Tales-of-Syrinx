@@ -24,10 +24,12 @@ public class Bullet : MonoBehaviour
         {
             Destroy(hitInfo.gameObject);
             Destroy(gameObject);
+            return;
         }
         if (hitInfo.CompareTag("Boss"))
         {
             Boss.BossInstance.Improve();
+            return;
         }
         if (!hitInfo.CompareTag("Player"))
         {

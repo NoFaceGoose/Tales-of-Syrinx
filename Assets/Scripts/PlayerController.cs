@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce = 5.0f;
     public float gravity;
-    
+
     public int keys = 0;
 
     // jump function
@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
     // Fire
     public Transform firePoint;
     public GameObject bulletPrefab;
-
-
 
     void Awake()
     {
@@ -51,11 +49,11 @@ public class PlayerController : MonoBehaviour
         inputX = value.ReadValue<Vector2>().x;
 
         // Flip the character
-        if(inputX > 0 && !isFacingRight)
+        if (inputX > 0 && !isFacingRight)
         {
             Flip();
-        } 
-        else if(inputX < 0 && isFacingRight)
+        }
+        else if (inputX < 0 && isFacingRight)
         {
             Flip();
         }
