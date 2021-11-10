@@ -1034,7 +1034,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214745913}
-  m_Text: "Move [\u2190] [\u2192] \nJump [\u2191] \nShoot [Space] "
+  m_Text: "Move [Left] [Right] \nJump [Up] \nShoot [Space] "
   m_OffsetZ: 0
   m_CharacterSize: 0.7
   m_LineSpacing: 1.5
