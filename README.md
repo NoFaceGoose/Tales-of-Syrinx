@@ -1,5 +1,5 @@
 # PrototypeG
-This is the prototype game of group G
+This is the prototype game of group G/n
 <img width="702" alt="image" src="https://user-images.githubusercontent.com/91682486/141364433-2bc4ae2e-d71f-499e-ac86-ff28ed50474b.png">
 ①	Player: Player is this green capsule. It is controlled by the keyboard. Player can use the LEFT and RIGHT keys to move left and right, the UP key to jump, press the UP key twice for two jumps, and press the SPACE key to attack (fire bullets).
 ②	Ground.
