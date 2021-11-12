@@ -11,12 +11,6 @@ public class Enemy : MonoBehaviour
         InvokeRepeating("Fire", 0.5f, 1.0f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
