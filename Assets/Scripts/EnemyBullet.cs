@@ -10,7 +10,7 @@ public class EnemyBullet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.position = transform.position + new Vector3(Speed * Time.deltaTime, 0f, 0f);
     }
