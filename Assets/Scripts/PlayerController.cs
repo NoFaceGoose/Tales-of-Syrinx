@@ -39,6 +39,11 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+
+    }
+
+    private void FixedUpdate()
+    {
         _rigidBody.velocity = new Vector3(_inputX * MoveSpeed, _rigidBody.velocity.y, 0);
         Physics.gravity = new Vector3(0, Gravity, 0);
         _isGrounded = Physics.Raycast(transform.position, Vector3.down, _disToGround);
