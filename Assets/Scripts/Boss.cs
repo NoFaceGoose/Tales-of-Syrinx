@@ -12,8 +12,8 @@ public class Boss : MonoBehaviour
     public Material MatTwo;
     public Material MatThree;
 
-    private Rigidbody rb;
-    private Vector3 jumpForce;
+    private Rigidbody _rigidBody;
+    private Vector3 _jumpForce;
 
     void Awake()
     {
@@ -23,8 +23,8 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        jumpForce = new Vector3(0, JumpSpeed, 0);
+        _rigidBody = GetComponent<Rigidbody>();
+        _jumpForce = new Vector3(0, JumpSpeed, 0);
         InvokeRepeating("Fire", 0f, 0.8f);
         InvokeRepeating("Jump", 0f, 1.4f);
     }
@@ -50,7 +50,7 @@ public class Boss : MonoBehaviour
 
     public void Jump()
     {
-        rb.AddForce(jumpForce, ForceMode.Impulse);
+        _rigidBody.AddForce(_jumpForce, ForceMode.Impulse);
     }
 
     public void Improve()

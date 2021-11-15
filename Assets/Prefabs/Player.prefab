@@ -148,12 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79242371384417f49804cf64482000fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpForce: 20
-  gravity: -20
-  keys: 0
-  firePoint: {fileID: 4903181721667118472}
-  bulletPrefab: {fileID: 62511968879554192, guid: 3d07d5e2f954c2f47870590d7c79a785, type: 3}
+  MoveSpeed: 0
+  JumpForce: 5
+  Gravity: 0
+  FirePoint: {fileID: 4903181721667118472}
+  BulletPrefab: {fileID: 62511968879554192, guid: 3d07d5e2f954c2f47870590d7c79a785, type: 3}
 --- !u!114 &4903181721094003153
 MonoBehaviour:
   m_ObjectHideFlags: 0

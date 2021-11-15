@@ -2078,7 +2078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6452741775048456907, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6452741775048456907, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
       propertyPath: m_LocalScale.x
@@ -2471,7 +2471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105428275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.166876, y: -2.3473806, z: -12.206321}
+  m_LocalPosition: {x: -10.166876, y: -2.3283808, z: -12.206321}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 974340847}
@@ -3425,7 +3425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439991888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.166876, y: -2.3473806, z: -12.206321}
+  m_LocalPosition: {x: -10.166876, y: -2.3283808, z: -12.206321}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1729759472}
@@ -3582,7 +3582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6452741775048456907, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6452741775048456907, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
       propertyPath: m_LocalScale.x
@@ -5257,12 +5257,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79242371384417f49804cf64482000fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpForce: 20
-  gravity: -20
-  keys: 0
-  firePoint: {fileID: 1577330938}
-  bulletPrefab: {fileID: 62511968879554192, guid: 3d07d5e2f954c2f47870590d7c79a785, type: 3}
+  MoveSpeed: 10
+  JumpForce: 10
+  Gravity: -10
+  FirePoint: {fileID: 1577330938}
+  BulletPrefab: {fileID: 62511968879554192, guid: 3d07d5e2f954c2f47870590d7c79a785, type: 3}
 --- !u!136 &2043876511
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5335,7 +5334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043876508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.97, y: -2.35, z: 0}
+  m_LocalPosition: {x: -9.97, y: -2.331, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 499793866}

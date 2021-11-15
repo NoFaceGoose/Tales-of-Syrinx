@@ -22,7 +22,7 @@ public class Victory : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
-            if (PlayerController.player.keys >= 3)
+            if (PlayerController.PlayerInstance.GetKeys() >= 3)
             {
                 SceneManager.LoadScene("Victory");
             }

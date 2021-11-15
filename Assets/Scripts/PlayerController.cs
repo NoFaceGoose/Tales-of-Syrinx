@@ -3,57 +3,57 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController player;
+    public static PlayerController PlayerInstance;
 
-    public float moveSpeed;
-    public float jumpForce = 5.0f;
-    public float gravity;
+    public float MoveSpeed;
+    public float JumpForce = 5.0f;
+    public float Gravity;
 
-    public int keys = 0;
+    private int _keys = 0;
 
     // jump function
-    private Vector3 jump;
+    private Vector3 _jump;
     // private int jumpCount = 0; //Make the player able to double jump
-    private bool canDoubleJump = false; //Make the player able to double jump
-    private Rigidbody rg;
-    private float disToGround = 1.0f;
-    private float inputX;
-    private bool isGrounded = false;
+    private bool _canDoubleJump = false; //Make the player able to double jump
+    private Rigidbody _rigidBody;
+    private float _disToGround = 1.0f;
+    private float _inputX;
+    private bool _isGrounded = false;
 
     // Flip
-    private bool isFacingRight = true;
+    private bool _isFacingRight = true;
 
     // Fire
-    public Transform firePoint;
-    public GameObject bulletPrefab;
+    public Transform FirePoint;
+    public GameObject BulletPrefab;
 
     void Awake()
     {
-        player = this;
+        PlayerInstance = this;
     }
 
     void Start()
     {
-        rg = GetComponent<Rigidbody>();
-        jump = new Vector3(0.0f, 2.0f, 0.0f);
+        _rigidBody = GetComponent<Rigidbody>();
+        _jump = new Vector3(0.0f, 2.0f, 0.0f);
     }
     void Update()
     {
-        rg.velocity = new Vector3(inputX * moveSpeed, rg.velocity.y, 0);
-        Physics.gravity = new Vector3(0, gravity, 0);
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, disToGround);
+        _rigidBody.velocity = new Vector3(_inputX * MoveSpeed, _rigidBody.velocity.y, 0);
+        Physics.gravity = new Vector3(0, Gravity, 0);
+        _isGrounded = Physics.Raycast(transform.position, Vector3.down, _disToGround);
     }
 
     public void OnMovement(InputAction.CallbackContext value)
     {
-        inputX = value.ReadValue<Vector2>().x;
+        _inputX = value.ReadValue<Vector2>().x;
 
         // Flip the character
-        if (inputX > 0 && !isFacingRight)
+        if (_inputX > 0 && !_isFacingRight)
         {
             Flip();
         }
-        else if (inputX < 0 && isFacingRight)
+        else if (_inputX < 0 && _isFacingRight)
         {
             Flip();
         }
@@ -61,20 +61,20 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext value)
     {
-        if (isGrounded)
+        if (_isGrounded)
         {
-            rg.velocity = new Vector3(rg.velocity.x, 0, 0);
+            _rigidBody.velocity = new Vector3(_rigidBody.velocity.x, 0, 0);
             // rg.velocity = new Vector2(rg.velocity.x, jumpForce);
-            rg.AddForce(jump * jumpForce, ForceMode.Impulse);
-            canDoubleJump = true;
+            _rigidBody.AddForce(_jump * JumpForce, ForceMode.Impulse);
+            _canDoubleJump = true;
         }
-        else if (canDoubleJump)
+        else if (_canDoubleJump)
         {
             Debug.Log("double jump!");
-            rg.velocity = new Vector3(rg.velocity.x, 0, 0);
+            _rigidBody.velocity = new Vector3(_rigidBody.velocity.x, 0, 0);
             // rg.velocity = new Vector2(rg.velocity.x, jumpForce);
-            rg.AddForce(jump * jumpForce, ForceMode.Impulse);
-            canDoubleJump = false;
+            _rigidBody.AddForce(_jump * JumpForce, ForceMode.Impulse);
+            _canDoubleJump = false;
         }
         // if (isGrounded)
         // {
@@ -103,14 +103,35 @@ public class PlayerController : MonoBehaviour
     private void Shoot()
     {
         // shooting logic
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
 
     }
 
     private void Flip()
     {
-        isFacingRight = !isFacingRight;
-
+        _isFacingRight = !_isFacingRight;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    public int SetKeys()
+    {
+        int keyIndex = 0;
+        switch (_keys)
+        {
+            case 0:
+                keyIndex = 1; break;
+            case 1:
+                keyIndex = 2; break;
+            case 2:
+                keyIndex = 3; break;
+            default: break;
+        }
+        _keys++;
+        return keyIndex;
+    }
+
+    public int GetKeys()
+    {
+        return _keys;
     }
 }
