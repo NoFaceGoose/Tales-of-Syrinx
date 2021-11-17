@@ -18,7 +18,6 @@ public class Victory : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log((other.transform.position - GameObject.FindWithTag("Key").transform.position).sqrMagnitude);
         if (other.CompareTag("Player"))
         {
 

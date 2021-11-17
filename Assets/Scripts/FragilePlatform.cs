@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class FragilePlatform : MonoBehaviour
 {
+    public Rigidbody FragileClone;
+    private Transform _cloneTransform;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,12 @@ public class FragilePlatform : MonoBehaviour
 
     void Destroy()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        Invoke("Return", 3f);
+    }
+
+    void Return()
+    {
+        gameObject.SetActive(true);
     }
 }

@@ -126,3 +126,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339b203b3a4b249948dfe8c6b8ce0b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FragileClone: {fileID: 8521833183094490164}

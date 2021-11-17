@@ -4,6 +4,7 @@ public class FallSwitch : MonoBehaviour
 {
     public Rigidbody Rock;
     public Transform Fall;
+
     // Start is called before the first frame update
     void Start()
     {
