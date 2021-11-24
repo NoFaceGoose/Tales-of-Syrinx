@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragile Platform3
       objectReference: {fileID: 0}
+    - target: {fileID: 8521833183094490161, guid: 49cdfaf21ad702743b7cc5cbb3124f4f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49cdfaf21ad702743b7cc5cbb3124f4f, type: 3}
 --- !u!4 &201800884 stripped
@@ -306,9 +310,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1965118998}
     m_Modifications:
+    - target: {fileID: 6468490626785259279, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6468490628081790728, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6468490628081790728, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -354,6 +362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy4
       objectReference: {fileID: 0}
+    - target: {fileID: 6468490628081790731, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
 --- !u!4 &239378756 stripped
@@ -373,7 +385,7 @@ GameObject:
   - component: {fileID: 268583787}
   - component: {fileID: 268583786}
   - component: {fileID: 268583785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,9 +476,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2023557742}
     m_Modifications:
+    - target: {fileID: 3852203595829864965, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3852203596916497957, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852203596916497957, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3852203596916497958, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
       propertyPath: m_RootOrder
@@ -535,7 +555,7 @@ GameObject:
   - component: {fileID: 449593919}
   - component: {fileID: 449593918}
   - component: {fileID: 449593917}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Normal Platform5
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -716,7 +736,7 @@ Transform:
   - {fileID: 2136185953}
   - {fileID: 2063236349}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &499793865
 GameObject:
@@ -755,9 +775,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 867528598}
     m_Modifications:
+    - target: {fileID: 3852203595829864965, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3852203596916497957, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852203596916497957, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3852203596916497958, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
       propertyPath: m_RootOrder
@@ -822,7 +850,7 @@ GameObject:
   - component: {fileID: 521785378}
   - component: {fileID: 521785377}
   - component: {fileID: 521785376}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Normal Platform4
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -907,6 +935,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521785374}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &522009755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522009756}
+  m_Layer: 6
+  m_Name: PlatformCollections
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &522009756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522009755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.242388, y: 2.0021222, z: -1.275034}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1965118998}
+  - {fileID: 592144524}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &564873371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -982,7 +1042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 592144524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,8 +1056,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592144523}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: -2.67, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.242388, y: -4.672122, z: 1.275034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1306123851}
@@ -1020,8 +1080,8 @@ Transform:
   - {fileID: 867528598}
   - {fileID: 2023557742}
   - {fileID: 1811637653}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 522009756}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &611156780
 PrefabInstance:
@@ -1030,9 +1090,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2107257178}
     m_Modifications:
+    - target: {fileID: 8468849424550530659, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849424714029275, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425350837494, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425540548264, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425675873642, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425794194886, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_Name
       value: Spine Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610351, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_RootOrder
@@ -1097,7 +1185,7 @@ GameObject:
   - component: {fileID: 614385583}
   - component: {fileID: 614385582}
   - component: {fileID: 614385581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Platform1
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -1189,13 +1277,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1965118998}
     m_Modifications:
+    - target: {fileID: 8468849424550530659, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849424714029275, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425350837494, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425540548264, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425675873642, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425794194886, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_Name
       value: Spine Box1
       objectReference: {fileID: 0}
+    - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610351, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610351, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_LocalScale.x
@@ -1270,7 +1386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 730898777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1298,13 +1414,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1965118998}
     m_Modifications:
+    - target: {fileID: 8468849424550530659, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849424714029275, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425350837494, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425540548264, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425675873642, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425794194886, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_Name
       value: Spine Box2
       objectReference: {fileID: 0}
+    - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610351, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610351, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_LocalScale.x
@@ -1377,7 +1521,7 @@ GameObject:
   - component: {fileID: 745521343}
   - component: {fileID: 745521342}
   - component: {fileID: 745521341}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Drop Platform2
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -1499,9 +1643,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1965118998}
     m_Modifications:
+    - target: {fileID: 6468490626785259279, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6468490628081790728, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6468490628081790728, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1547,6 +1695,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy5
       objectReference: {fileID: 0}
+    - target: {fileID: 6468490628081790731, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
 --- !u!4 &828448390 stripped
@@ -1566,7 +1718,7 @@ GameObject:
   - component: {fileID: 846081035}
   - component: {fileID: 846081034}
   - component: {fileID: 846081033}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Platform2
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -1683,7 +1835,7 @@ Transform:
   - {fileID: 1994161246}
   - {fileID: 1582184359}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &867528597
 GameObject:
@@ -1697,7 +1849,7 @@ GameObject:
   - component: {fileID: 867528601}
   - component: {fileID: 867528600}
   - component: {fileID: 867528599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Platform4
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -1795,7 +1947,7 @@ GameObject:
   - component: {fileID: 911532146}
   - component: {fileID: 911532145}
   - component: {fileID: 911532144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Drop Platform3
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -2125,7 +2277,7 @@ GameObject:
   - component: {fileID: 1069215139}
   - component: {fileID: 1069215138}
   - component: {fileID: 1069215137}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Exit Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2282,6 +2434,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragile Platform4
       objectReference: {fileID: 0}
+    - target: {fileID: 8521833183094490161, guid: 49cdfaf21ad702743b7cc5cbb3124f4f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49cdfaf21ad702743b7cc5cbb3124f4f, type: 3}
 --- !u!4 &1087473096 stripped
@@ -2371,7 +2527,7 @@ GameObject:
   - component: {fileID: 1122479874}
   - component: {fileID: 1122479873}
   - component: {fileID: 1122479872}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Normal Platform3
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -2463,9 +2619,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1965118998}
     m_Modifications:
+    - target: {fileID: 6468490626785259279, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6468490628081790728, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6468490628081790728, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2511,6 +2671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy2
       objectReference: {fileID: 0}
+    - target: {fileID: 6468490628081790731, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
 --- !u!4 &1126972738 stripped
@@ -2525,9 +2689,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1965118998}
     m_Modifications:
+    - target: {fileID: 6468490626785259279, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6468490628081790728, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6468490628081790728, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2573,6 +2741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy6
       objectReference: {fileID: 0}
+    - target: {fileID: 6468490628081790731, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
 --- !u!4 &1146288703 stripped
@@ -2592,7 +2764,7 @@ GameObject:
   - component: {fileID: 1149076188}
   - component: {fileID: 1149076187}
   - component: {fileID: 1149076186}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Platform3
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -2695,7 +2867,7 @@ GameObject:
   - component: {fileID: 1306123854}
   - component: {fileID: 1306123853}
   - component: {fileID: 1306123852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Normal Platform1
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -2787,9 +2959,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 449593916}
     m_Modifications:
+    - target: {fileID: 8468849424550530659, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849424714029275, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425350837494, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425540548264, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425675873642, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425794194886, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_Name
       value: Spine Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610351, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_RootOrder
@@ -2970,6 +3170,10 @@ PrefabInstance:
     - target: {fileID: 8521833183094490161, guid: 49cdfaf21ad702743b7cc5cbb3124f4f, type: 3}
       propertyPath: m_Name
       value: Fragile Platform2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521833183094490161, guid: 49cdfaf21ad702743b7cc5cbb3124f4f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49cdfaf21ad702743b7cc5cbb3124f4f, type: 3}
@@ -3281,9 +3485,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149076185}
     m_Modifications:
+    - target: {fileID: 8468849424550530659, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849424714029275, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425350837494, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425540548264, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425675873642, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425794194886, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_Name
       value: Spine Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610351, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_RootOrder
@@ -3382,7 +3614,7 @@ GameObject:
   - component: {fileID: 1577802927}
   - component: {fileID: 1577802926}
   - component: {fileID: 1577802925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Drop Platform1
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -3639,9 +3871,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 846081032}
     m_Modifications:
+    - target: {fileID: 8468849424550530659, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849424714029275, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425350837494, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425540548264, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425675873642, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425794194886, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_Name
       value: Spine Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610351, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_RootOrder
@@ -3710,7 +3970,7 @@ GameObject:
   - component: {fileID: 1712344568}
   - component: {fileID: 1712344567}
   - component: {fileID: 1712344566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Normal Platform6
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -3936,6 +4196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fragile Platform5
       objectReference: {fileID: 0}
+    - target: {fileID: 8521833183094490161, guid: 49cdfaf21ad702743b7cc5cbb3124f4f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49cdfaf21ad702743b7cc5cbb3124f4f, type: 3}
 --- !u!4 &1732018024 stripped
@@ -3950,9 +4214,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 521785375}
     m_Modifications:
+    - target: {fileID: 8468849424550530659, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849424714029275, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425350837494, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425540548264, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425675873642, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425794194886, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_Name
       value: Spine Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610351, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_RootOrder
@@ -4017,7 +4309,7 @@ GameObject:
   - component: {fileID: 1811637656}
   - component: {fileID: 1811637655}
   - component: {fileID: 1811637654}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Exit Platform
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -4135,7 +4427,7 @@ Transform:
   - {fileID: 564873372}
   - {fileID: 958723983}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1837210693
 PrefabInstance:
@@ -4144,9 +4436,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1122479871}
     m_Modifications:
+    - target: {fileID: 8468849424550530659, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849424714029275, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425350837494, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425540548264, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425675873642, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425794194886, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_Name
       value: Spine Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610351, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_RootOrder
@@ -4217,7 +4537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1861846407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4247,7 +4567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1871617737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4275,9 +4595,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 614385580}
     m_Modifications:
+    - target: {fileID: 3852203595829864965, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3852203596916497957, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852203596916497957, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3852203596916497958, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
       propertyPath: m_RootOrder
@@ -4419,9 +4747,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1149076185}
     m_Modifications:
+    - target: {fileID: 3852203595829864965, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3852203596916497957, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852203596916497957, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3852203596916497958, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
       propertyPath: m_RootOrder
@@ -4486,7 +4822,7 @@ GameObject:
   - component: {fileID: 1965118997}
   - component: {fileID: 1965118996}
   - component: {fileID: 1965118995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4563,8 +4899,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965118994}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29, y: -9, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 47.242386, y: -11.002122, z: 2.275034}
   m_LocalScale: {x: 120, y: 11.707037, z: 3.5}
   m_Children:
   - {fileID: 617012177}
@@ -4575,8 +4911,8 @@ Transform:
   - {fileID: 239378756}
   - {fileID: 828448390}
   - {fileID: 1146288703}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 522009756}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1994161245
 PrefabInstance:
@@ -4652,7 +4988,7 @@ GameObject:
   - component: {fileID: 2023557745}
   - component: {fileID: 2023557744}
   - component: {fileID: 2023557743}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Platform5
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -4789,8 +5125,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 10
-  JumpForce: 10
+  jumpForce: 8
   Gravity: -10
+  GroundLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
   FirePoint: {fileID: 1577330938}
   BulletPrefab: {fileID: 62511968879554192, guid: 3d07d5e2f954c2f47870590d7c79a785, type: 3}
 --- !u!136 &2043876511
@@ -5219,7 +5558,7 @@ RectTransform:
   - {fileID: 919256478}
   - {fileID: 1475785230}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5233,9 +5572,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1965118998}
     m_Modifications:
+    - target: {fileID: 6468490626785259279, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6468490628081790728, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6468490628081790728, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5281,6 +5624,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy3
       objectReference: {fileID: 0}
+    - target: {fileID: 6468490628081790731, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
 --- !u!4 &2076487912 stripped
@@ -5295,9 +5642,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 867528598}
     m_Modifications:
+    - target: {fileID: 8468849424550530659, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849424714029275, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425350837494, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425540548264, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425675873642, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425794194886, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_Name
       value: Spine Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610351, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_RootOrder
@@ -5366,7 +5741,7 @@ GameObject:
   - component: {fileID: 2107257181}
   - component: {fileID: 2107257180}
   - component: {fileID: 2107257179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Normal Platform2
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -5580,9 +5955,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3852203595829864965, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3852203596916497957, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852203596916497957, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3852203596916497958, guid: 41b684159b1daf54584aeaacf18cd305, type: 3}
       propertyPath: m_RootOrder
@@ -5609,6 +5992,10 @@ PrefabInstance:
     - target: {fileID: 2002642343063111252, guid: 0ad6846d2911af444ad99e0d57d8a0a2, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002642343063111252, guid: 0ad6846d2911af444ad99e0d57d8a0a2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2002642343063111255, guid: 0ad6846d2911af444ad99e0d57d8a0a2, type: 3}
       propertyPath: m_RootOrder
@@ -5653,6 +6040,10 @@ PrefabInstance:
     - target: {fileID: 2002642343063111255, guid: 0ad6846d2911af444ad99e0d57d8a0a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002642343625688338, guid: 0ad6846d2911af444ad99e0d57d8a0a2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ad6846d2911af444ad99e0d57d8a0a2, type: 3}
@@ -5720,9 +6111,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1811637653}
     m_Modifications:
+    - target: {fileID: 6452741773869216441, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452741774410481789, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452741774445858570, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452741774786384275, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6452741775048456906, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
       propertyPath: m_Name
       value: Spine Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452741775048456906, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6452741775048456907, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
       propertyPath: m_RootOrder
@@ -5768,6 +6179,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6452741775071859902, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452741775262837515, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b2224636bfbf245a8e1d0b7d195c95, type: 3}
 --- !u!1001 &6468490628030939386
@@ -5777,9 +6196,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1965118998}
     m_Modifications:
+    - target: {fileID: 6468490626785259279, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6468490628081790728, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6468490628081790728, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5824,6 +6247,10 @@ PrefabInstance:
     - target: {fileID: 6468490628081790731, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
       propertyPath: m_Name
       value: Enemy1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6468490628081790731, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de4bab80df70321448592045fdfe8bfc, type: 3}
@@ -5895,9 +6322,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306123851}
     m_Modifications:
+    - target: {fileID: 8468849424550530659, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849424714029275, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425350837494, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425540548264, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425675873642, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849425794194886, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_Name
       value: Spine Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468849426115610320, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8468849426115610351, guid: a1a536d6fe097e04fa1ce933bbe7d08b, type: 3}
       propertyPath: m_RootOrder
@@ -5999,6 +6454,10 @@ PrefabInstance:
     - target: {fileID: 8521833183094490161, guid: 49cdfaf21ad702743b7cc5cbb3124f4f, type: 3}
       propertyPath: m_Name
       value: Fragile Platform1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521833183094490161, guid: 49cdfaf21ad702743b7cc5cbb3124f4f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49cdfaf21ad702743b7cc5cbb3124f4f, type: 3}

@@ -6,19 +6,17 @@ public class PlayerController : MonoBehaviour
     public static PlayerController PlayerInstance;
 
     public float MoveSpeed;
-    public float JumpForce = 5.0f;
+    public float jumpForce = 5.0f;
     public float Gravity;
 
     private int _keys = 0;
 
     // jump function
+    public LayerMask GroundLayerMask; // only check ground level
     private Vector3 _jump;
-    // private int jumpCount = 0; //Make the player able to double jump
-    private bool _canDoubleJump = false; //Make the player able to double jump
+    private int jumpCount = 2; //Make the player able to double jump
     private Rigidbody _rigidBody;
-    private float _disToGround = 1.0f;
     private float _inputX;
-    private bool _isGrounded = false;
 
     // Flip
     private bool _isFacingRight = true;
@@ -46,7 +44,22 @@ public class PlayerController : MonoBehaviour
     {
         _rigidBody.velocity = new Vector3(_inputX * MoveSpeed, _rigidBody.velocity.y, 0);
         Physics.gravity = new Vector3(0, Gravity, 0);
-        _isGrounded = Physics.Raycast(transform.position, Vector3.down, _disToGround);
+
+
+        // if is on ground, can double jump
+        if(GroundCheck())
+        {
+            jumpCount = 2;
+        }
+        // _isGrounded = Physics.Raycast(transform.position, Vector3.down, _disToGround);
+    }
+
+    private bool GroundCheck()
+    {
+        float extraHeightText = 2;
+        bool raycastHit = Physics.Raycast(_rigidBody.position, Vector3.down, extraHeightText, GroundLayerMask);
+        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x, _rigidBody.position.y-2, _rigidBody.position.z), Color.red);
+        return raycastHit;
     }
 
     public void OnMovement(InputAction.CallbackContext value)
@@ -66,30 +79,16 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext value)
     {
-        if (_isGrounded)
+        if(jumpCount > 0)
         {
-            _rigidBody.velocity = new Vector3(_rigidBody.velocity.x, 0, 0);
-            // rg.velocity = new Vector2(rg.velocity.x, jumpForce);
-            _rigidBody.AddForce(_jump * JumpForce, ForceMode.Impulse);
-            _canDoubleJump = true;
+            Jump();
+            jumpCount -= 1;
         }
-        else if (_canDoubleJump)
-        {
-            Debug.Log("double jump!");
-            _rigidBody.velocity = new Vector3(_rigidBody.velocity.x, 0, 0);
-            // rg.velocity = new Vector2(rg.velocity.x, jumpForce);
-            _rigidBody.AddForce(_jump * JumpForce, ForceMode.Impulse);
-            _canDoubleJump = false;
-        }
-        // if (isGrounded)
-        // {
-        //     jumpCount = 0;
-        // }
-        // if (jumpCount < 3)
-        // {
-        //     rg.velocity = new Vector2(rg.velocity.x, jumpForce);
-        //     jumpCount += 1;
-        // }
+    }
+
+    private void Jump()
+    {
+        _rigidBody.velocity = new Vector3(_rigidBody.velocity.x, jumpForce, 0);
     }
 
     public void OnFire(InputAction.CallbackContext value)
