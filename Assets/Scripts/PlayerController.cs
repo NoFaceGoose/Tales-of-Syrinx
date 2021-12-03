@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
     public Transform FirePoint;
     public GameObject BulletPrefab;
 
+    // Launch the reed
+    public GameObject ReedPrefab;
+
     void Awake()
     {
         PlayerInstance = this;
@@ -79,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext value)
     {
-        if(jumpCount > 0)
+        if(value.performed && jumpCount > 0)
         {
             Jump();
             jumpCount -= 1;
@@ -93,11 +96,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnFire(InputAction.CallbackContext value)
     {
-        // if (value.performed)
-        // {
-        //     GameObject shootingPoint = GameObject.Find("Fire");
-        //     Instantiate(Bullet, shootingPoint.GetComponent<Transform>().position, shootingPoint.GetComponent<Transform>().rotation);
-        // }
         if (value.performed)
         {
             Shoot();
@@ -109,6 +107,15 @@ public class PlayerController : MonoBehaviour
         // shooting logic
         Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
 
+    }
+
+    // Launch the reed platform
+    public void LaunchReed(InputAction.CallbackContext value)
+    {
+        if(value.performed)
+        {
+            Instantiate(ReedPrefab, FirePoint.position, FirePoint.rotation);
+        }
     }
 
     private void Flip()

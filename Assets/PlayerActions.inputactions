@@ -28,6 +28,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Reed",
+                    "type": "Button",
+                    "id": "8879a34b-59f3-4d6f-93ff-3cb0c2bb1609",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -45,7 +53,7 @@
                 {
                     "name": "",
                     "id": "0b08b7c0-94a4-4e2a-863f-edcc5c50a9df",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -67,7 +75,7 @@
                 {
                     "name": "up",
                     "id": "cea09d85-36b8-4b23-a793-5772f46d8fbd",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -78,7 +86,7 @@
                 {
                     "name": "down",
                     "id": "ebcacdc5-fbba-454a-a9be-e4eed20104d4",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -89,7 +97,7 @@
                 {
                     "name": "left",
                     "id": "6214725e-0640-406a-b20e-f81c033c4107",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -100,13 +108,24 @@
                 {
                     "name": "right",
                     "id": "c0b62b91-02e5-4f82-9cb7-e4575e53ce8d",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "14b284b1-1b6b-4291-9c70-6a0775ec526b",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
