@@ -10,13 +10,17 @@ public class Key : MonoBehaviour
     private Transform _playerTrans;
     private Rigidbody _rigidbody;
 
+    void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+        _playerTrans = GameObject.FindWithTag("Player").transform;
+        _offset = new Vector3(-0.6f, 0, 0);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody>();
         _rigidbody.angularVelocity = Random.insideUnitSphere * TumbleSpeed;
-        _playerTrans = GameObject.FindWithTag("Player").transform;
-        _offset = new Vector3(-0.6f, 0, 0);
     }
 
     // Update is called once per frame

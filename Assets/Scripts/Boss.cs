@@ -18,13 +18,13 @@ public class Boss : MonoBehaviour
     void Awake()
     {
         BossInstance = this;
+        _rigidBody = GetComponent<Rigidbody>();
+        _jumpForce = new Vector3(0, JumpSpeed, 0);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        _rigidBody = GetComponent<Rigidbody>();
-        _jumpForce = new Vector3(0, JumpSpeed, 0);
         InvokeRepeating("Fire", 0f, 0.8f);
         InvokeRepeating("Jump", 0f, 1.4f);
     }
