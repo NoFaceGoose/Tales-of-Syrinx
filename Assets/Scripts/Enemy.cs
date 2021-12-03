@@ -7,9 +7,13 @@ public class Enemy : MonoBehaviour
     public Transform EnemyFire;
     public Transform Left;
     public Transform Right;
+    public bool shoot;
     public float WalkSpeed;
+    public float StayTime;
     public bool OnPatrol;
     public bool TowardsLeft;
+    private bool _onMove = true;
+    private bool _stay = false;
 
     void Awake()
     {
@@ -19,13 +23,17 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // InvokeRepeating("Fire", 0.5f, 1.0f);
+        if (shoot)
+        {
+            InvokeRepeating("Fire", 0.5f, 1.0f);
+        }
     }
 
     void FixedUpdate()
     {
-        if (OnPatrol)
+        if (OnPatrol && _onMove)
         {
+            _stay = false;
             if (TowardsLeft == true)
             {
                 transform.Translate(Vector3.left * Time.deltaTime * WalkSpeed);
@@ -39,15 +47,21 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (OnPatrol)
+        if (OnPatrol && !_stay)
         {
             if (transform.position.x <= Left.position.x)
             {
+                _onMove = false;
                 TowardsLeft = false;
+                Invoke("Move", StayTime);
+                _stay = true;
             }
             if (transform.position.x >= Right.position.x)
             {
+                _onMove = false;
                 TowardsLeft = true;
+                Invoke("Move", StayTime);
+                _stay = true;
             }
         }
     }
@@ -63,5 +77,11 @@ public class Enemy : MonoBehaviour
     void Fire()
     {
         Instantiate(EnemyBullet, EnemyFire.position, EnemyFire.rotation);
+    }
+
+    void Move()
+    {
+        _onMove = true;
+        Debug.Log(_onMove);
     }
 }

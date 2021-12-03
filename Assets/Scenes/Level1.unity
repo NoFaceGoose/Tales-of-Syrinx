@@ -348,6 +348,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1172020891}
     m_Modifications:
+    - target: {fileID: 4788064612178725923, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
+      propertyPath: shoot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725948, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_Name
       value: Enemy5
@@ -667,6 +671,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1172020891}
     m_Modifications:
+    - target: {fileID: 4788064612178725923, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
+      propertyPath: shoot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725948, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_Name
       value: Enemy2
@@ -749,6 +757,10 @@ PrefabInstance:
       propertyPath: Right
       value: 
       objectReference: {fileID: 23962322}
+    - target: {fileID: 4788064612178725923, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
+      propertyPath: shoot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725923, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: OnPatrol
       value: 1
@@ -1675,6 +1687,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1172020891}
     m_Modifications:
+    - target: {fileID: 4788064612178725923, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
+      propertyPath: shoot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725948, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_Name
       value: Enemy4
@@ -1989,6 +2005,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1841708664}
     - target: {fileID: 4788064612178725923, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
+      propertyPath: shoot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788064612178725923, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: OnPatrol
       value: 1
       objectReference: {fileID: 0}
@@ -2281,6 +2301,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1172020891}
     m_Modifications:
+    - target: {fileID: 4788064612178725923, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
+      propertyPath: shoot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725948, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_Name
       value: Enemy3
@@ -2703,6 +2727,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1172020891}
     m_Modifications:
+    - target: {fileID: 4788064612178725923, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
+      propertyPath: shoot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725948, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_Name
       value: Enemy6
