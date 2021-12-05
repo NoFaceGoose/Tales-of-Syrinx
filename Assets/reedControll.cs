@@ -19,14 +19,27 @@ public class reedControll : MonoBehaviour
         rb.velocity = new Vector3(speed, 0.0f, 0.0f);
         moveFlag = true;
     }
+
+    // Stop the reed platform
+    void reedStop()
+    {
+        Debug.Log("Stop!");
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        moveFlag = false;
+    }
     
     void FixedUpdate()
     {
+        // check if the reed has traveled the distance
         if(moveFlag && rb.position.x - rawPos.x >= allowedDifference)
         {
-            Debug.Log("on dis!");
-            rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
-            moveFlag = false;
+            reedStop();
+        }
+
+        // check if the reed has collided and stopped
+        if(moveFlag && rb.velocity.x < 0.1f)
+        {
+            reedStop();
         }
     }
 }
