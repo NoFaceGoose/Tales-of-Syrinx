@@ -251,7 +251,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 90938006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c17c8e6b1287a4932b44854f35025aef, type: 3}
+  m_Script: {fileID: 11500000, guid: 6704f4c5d76ff2a408a99201671b1939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &90938009
@@ -299,8 +299,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 90938008}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
-        m_MethodName: Click
+        m_TargetAssemblyTypeName: Restart, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

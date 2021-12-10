@@ -22,10 +22,15 @@ public class Rock : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                SceneManager.LoadScene("Lose");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 return;
             }
             if (other.gameObject.CompareTag("Enemy"))
+            {
+                Destroy(other.gameObject);
+                return;
+            }
+            if (other.gameObject.CompareTag("ReedPlatform"))
             {
                 Destroy(other.gameObject);
                 return;

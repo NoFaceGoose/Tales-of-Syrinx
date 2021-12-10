@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3664233111553373569}
   - component: {fileID: 112087394196133067}
   - component: {fileID: 6898456045932723122}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: reed
-  m_TagString: Untagged
+  m_TagString: ReedPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

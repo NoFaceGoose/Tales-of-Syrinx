@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Dead : MonoBehaviour
+public class Restart : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,11 +15,8 @@ public class Dead : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other)
+    public void OnClick()
     {
-        if (other.CompareTag("Player"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
