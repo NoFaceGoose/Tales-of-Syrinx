@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ReedController : MonoBehaviour
+public class reedControll : MonoBehaviour
 {
     // how long will the reed platform exist
     public float lifetime = 5.0f;
@@ -14,7 +16,7 @@ public class ReedController : MonoBehaviour
     {
         Destroy(gameObject, lifetime);
         rawPos = rb.position;
-        rb.velocity = new Vector3(speed, 0.0f, 0.0f);
+        rb.velocity = transform.right * speed;
         moveFlag = true;
     }
 
@@ -26,16 +28,16 @@ public class ReedController : MonoBehaviour
         moveFlag = false;
     }
     
-    void FixedUpdate()
+    void Update()
     {
         // check if the reed has traveled the distance
-        if(moveFlag && rb.position.x - rawPos.x >= allowedDifference)
+        if(moveFlag && Mathf.Abs(rb.position.x - rawPos.x) >= allowedDifference)
         {
             reedStop();
         }
 
         // check if the reed has collided and stopped
-        if(moveFlag && rb.velocity.x < System.Math.Abs(0.1f))
+        if(moveFlag && Mathf.Abs(rb.velocity.x) < 0.1f)
         {
             reedStop();
         }

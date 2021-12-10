@@ -4,6 +4,8 @@ public class Bullet : MonoBehaviour
 {
     public float Speed = 20f;
     public Rigidbody _rigidbody;
+
+    public int BulletDamage = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,8 @@ public class Bullet : MonoBehaviour
     {
         if (hitInfo.CompareTag("Enemy"))
         {
-            Destroy(hitInfo.gameObject);
-            Destroy(gameObject);
+            Enemy enemy = hitInfo.GetComponent<Enemy>();
+            enemy.TakeDamage(BulletDamage);
             return;
         }
         if (hitInfo.CompareTag("Boss"))
@@ -31,9 +33,10 @@ public class Bullet : MonoBehaviour
             Boss.BossInstance.Improve();
             return;
         }
-        if (!hitInfo.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
+        // if (!hitInfo.CompareTag("Player"))
+        // {
+        //     Destroy(gameObject);
+        // }
+        Destroy(gameObject);
     }
 }

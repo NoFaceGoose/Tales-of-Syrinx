@@ -15,6 +15,25 @@ public class Enemy : MonoBehaviour
     private bool _onMove = true;
     private bool _stay = false;
 
+    // Add health
+    public int health = 1;
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+
+
     void Awake()
     {
 
@@ -66,13 +85,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-    }
+    // void OnCollisionEnter(Collision other)
+    // {
+    //     if (other.gameObject.CompareTag("Player"))
+    //     {
+    //         SceneManager.LoadScene("Lose");
+    //     }
+    // }
 
     void Fire()
     {
@@ -82,6 +101,6 @@ public class Enemy : MonoBehaviour
     void Move()
     {
         _onMove = true;
-        Debug.Log(_onMove);
+        // Debug.Log(_onMove);
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     public float Speed;
+    public int EnemyBulletDamage = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +16,18 @@ public class EnemyBullet : MonoBehaviour
         transform.position = transform.position + new Vector3(Speed * Time.deltaTime, 0f, 0f);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider hitInfo)
     {
-        if (!other.CompareTag("Player") && !other.CompareTag("Enemy"))
+        // if (!other.CompareTag("Player") && !other.CompareTag("Enemy"))
+        // {
+        //     Destroy(gameObject);
+        // }
+        Debug.Log(hitInfo.name);
+        PlayerController player = hitInfo.GetComponent<PlayerController>();
+        if (player != null)
         {
-            Destroy(gameObject);
+            player.TakeDamage(EnemyBulletDamage);
         }
+        Destroy(gameObject);
     }
 }

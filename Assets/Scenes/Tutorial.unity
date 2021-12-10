@@ -383,6 +383,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 604953163}
+    - target: {fileID: 3554852890956006903, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
+      propertyPath: extraHeightText
+      value: 0.88
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
 --- !u!1 &165384585
@@ -849,11 +853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725951, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.75
+      value: -2.33
       objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725951, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.22
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725951, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_LocalPosition.z

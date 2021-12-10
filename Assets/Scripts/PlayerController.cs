@@ -1,5 +1,6 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public int jumpCount = 1; //Make the player able to double jump
     private Rigidbody _rigidBody;
     private float _inputX;
+    // test the height
+    // public float extraHeightText = 1;
 
     // Flip
     private bool _isFacingRight = true;
@@ -48,10 +51,10 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(1);
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     TakeDamage(1);
+        // }
     }
 
     private void FixedUpdate()
@@ -59,17 +62,26 @@ public class PlayerController : MonoBehaviour
         _rigidBody.velocity = new Vector3(_inputX * MoveSpeed, _rigidBody.velocity.y, 0);
         Physics.gravity = new Vector3(0, Gravity, 0);
 
-
         // if is on ground, can double jump
         if(GroundCheck())
         {
             jumpCount = 1;
         }
         // _isGrounded = Physics.Raycast(transform.position, Vector3.down, _disToGround);
+        if (CurrentHealth < 1)
+        {
+            Die();
+        }
     }
 
+    void Die()
+    {
+        Destroy(gameObject);
+        SceneManager.LoadScene("Lose");
 
-    void TakeDamage(int damage)
+    }
+
+    public void TakeDamage(int damage)
     {
         CurrentHealth -= damage;
         healthBar.SetHealth(CurrentHealth);
@@ -77,9 +89,9 @@ public class PlayerController : MonoBehaviour
 
     private bool GroundCheck()
     {
-        float extraHeightText = 2;
+        float extraHeightText = 0.85f;
         bool raycastHit = Physics.Raycast(_rigidBody.position, Vector3.down, extraHeightText, GroundLayerMask);
-        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x, _rigidBody.position.y-2, _rigidBody.position.z), Color.red);
+        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x, _rigidBody.position.y-extraHeightText, _rigidBody.position.z), Color.red);
         return raycastHit;
     }
 
