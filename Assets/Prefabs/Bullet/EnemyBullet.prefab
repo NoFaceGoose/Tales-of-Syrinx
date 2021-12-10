@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: -20
+  EnemyBulletDamage: 1
+  _rigidbody: {fileID: -2774593471382201484}
 --- !u!54 &-2774593471382201484
 Rigidbody:
   m_ObjectHideFlags: 0

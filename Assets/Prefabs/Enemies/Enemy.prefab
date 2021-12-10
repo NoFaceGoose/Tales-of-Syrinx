@@ -118,9 +118,14 @@ MonoBehaviour:
   Right: {fileID: 0}
   shoot: 0
   WalkSpeed: 3
-  StayTime: 1
+  StayTime: 2
   OnPatrol: 0
-  TowardsLeft: 0
+  TowardsLeft: 1
+  PlayerLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  DetectDistance: 10
+  CollisionDamage: 1
   health: 1
 --- !u!54 &8052946757489618648
 Rigidbody:

@@ -4,16 +4,19 @@ public class EnemyBullet : MonoBehaviour
 {
     public float Speed;
     public int EnemyBulletDamage = 1;
+    public Rigidbody _rigidbody;
+
     // Start is called before the first frame update
     void Start()
     {
+        _rigidbody.velocity = transform.right * Speed;
         Destroy(gameObject, 0.5f);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = transform.position + new Vector3(Speed * Time.deltaTime, 0f, 0f);
+
     }
 
     void OnTriggerEnter(Collider hitInfo)
