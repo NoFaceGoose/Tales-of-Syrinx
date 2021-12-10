@@ -101,6 +101,6 @@ public class Enemy : MonoBehaviour
     void Move()
     {
         _onMove = true;
-        Debug.Log(_onMove);
+        // Debug.Log(_onMove);
     }
 }
