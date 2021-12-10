@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour
+public class NewStart : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +15,9 @@ public class StartButton : MonoBehaviour
     {
 
     }
-    public void Click()
+    public void OnClick()
     {
-        SceneManager.LoadScene("Level1");
+        Debug.Log(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(1);
     }
 }

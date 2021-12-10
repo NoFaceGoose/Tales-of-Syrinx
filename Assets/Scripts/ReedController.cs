@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ReedController : MonoBehaviour
@@ -37,7 +35,7 @@ public class ReedController : MonoBehaviour
         }
 
         // check if the reed has collided and stopped
-        if(moveFlag && rb.velocity.x < 0.1f)
+        if(moveFlag && rb.velocity.x < System.Math.Abs(0.1f))
         {
             reedStop();
         }

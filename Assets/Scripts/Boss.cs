@@ -39,7 +39,7 @@ public class Boss : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Lose");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
