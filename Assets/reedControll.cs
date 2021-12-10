@@ -16,7 +16,7 @@ public class reedControll : MonoBehaviour
     {
         Destroy(gameObject, lifetime);
         rawPos = rb.position;
-        rb.velocity = new Vector3(speed, 0.0f, 0.0f);
+        rb.velocity = transform.right * speed;
         moveFlag = true;
     }
 
@@ -31,13 +31,13 @@ public class reedControll : MonoBehaviour
     void FixedUpdate()
     {
         // check if the reed has traveled the distance
-        if(moveFlag && rb.position.x - rawPos.x >= allowedDifference)
+        if(moveFlag && Mathf.Abs(rb.position.x - rawPos.x) >= allowedDifference)
         {
             reedStop();
         }
 
         // check if the reed has collided and stopped
-        if(moveFlag && rb.velocity.x < 0.1f)
+        if(moveFlag && Mathf.Abs(rb.velocity.x) < 0.1f)
         {
             reedStop();
         }
