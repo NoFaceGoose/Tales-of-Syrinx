@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public int jumpCount = 1; //Make the player able to double jump
     private Rigidbody _rigidBody;
     private float _inputX;
+    // test the height
+    // public float extraHeightText = 1;
 
     // Flip
     private bool _isFacingRight = true;
@@ -77,9 +79,9 @@ public class PlayerController : MonoBehaviour
 
     private bool GroundCheck()
     {
-        float extraHeightText = 2;
+        float extraHeightText = 0.85f;
         bool raycastHit = Physics.Raycast(_rigidBody.position, Vector3.down, extraHeightText, GroundLayerMask);
-        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x, _rigidBody.position.y-2, _rigidBody.position.z), Color.red);
+        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x, _rigidBody.position.y-extraHeightText, _rigidBody.position.z), Color.red);
         return raycastHit;
     }
 

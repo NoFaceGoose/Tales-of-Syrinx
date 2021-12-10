@@ -383,6 +383,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 604953163}
+    - target: {fileID: 3554852890956006903, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
+      propertyPath: extraHeightText
+      value: 0.88
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
 --- !u!1 &165384585
