@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class Enemy : MonoBehaviour
     public bool TowardsLeft;
     private bool _onMove = true;
     private bool _stay = false;
+    public int CollisionDamage = 1;
 
     // Add health
     public int health = 1;
@@ -85,13 +85,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    // void OnCollisionEnter(Collision other)
-    // {
-    //     if (other.gameObject.CompareTag("Player"))
-    //     {
-    //         SceneManager.LoadScene("Lose");
-    //     }
-    // }
+    void OnCollisionEnter(Collision other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            player.TakeDamage(CollisionDamage);
+        }
+    }
 
     void Fire()
     {

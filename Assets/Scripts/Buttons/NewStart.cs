@@ -17,7 +17,6 @@ public class NewStart : MonoBehaviour
     }
     public void OnClick()
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(1);
     }
 }
