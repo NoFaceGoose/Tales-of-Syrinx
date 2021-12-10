@@ -18,12 +18,14 @@ public class EnemyBullet : MonoBehaviour
 
     void OnTriggerEnter(Collider hitInfo)
     {
-        // Debug.Log(hitInfo.name);
         PlayerController player = hitInfo.GetComponent<PlayerController>();
         if (player != null && !player.GetPlayerStatus())
         {
             player.TakeDamage(EnemyBulletDamage);
         }
-        Destroy(gameObject);
+        if (!hitInfo.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class Enemy : MonoBehaviour
     public bool TowardsLeft;
     private bool _onMove = true;
     private bool _stay = false;
+    public int CollisionDamage = 1;
 
     // Add health
     public int health = 1;
@@ -82,6 +82,15 @@ public class Enemy : MonoBehaviour
                 Invoke("Move", StayTime);
                 _stay = true;
             }
+        }
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if (player != null && !player.GetPlayerStatus())
+        {
+            player.TakeDamage(CollisionDamage);
         }
     }
 

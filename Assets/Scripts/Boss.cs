@@ -11,9 +11,11 @@ public class Boss : MonoBehaviour
     public int Health;
     public Material MatTwo;
     public Material MatThree;
+    public int CollisionDamage = 1;
 
     private Rigidbody _rigidBody;
     private Vector3 _jumpForce;
+
 
     void Awake()
     {
@@ -35,13 +37,14 @@ public class Boss : MonoBehaviour
 
     }
 
-    // void OnCollisionEnter(Collision other)
-    // {
-    //     if (other.gameObject.CompareTag("Player"))
-    //     {
-    //         SceneManager.LoadScene("Lose");
-    //     }
-    // }
+    void OnCollisionEnter(Collision other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            player.TakeDamage(CollisionDamage);
+        }
+    }
 
     public void Fire()
     {
