@@ -127,6 +127,8 @@ MonoBehaviour:
   DetectDistance: 10
   CollisionDamage: 1
   health: 1
+  detectionDistance: 5
+  _rigidBody: {fileID: 8052946757489618648}
 --- !u!54 &8052946757489618648
 Rigidbody:
   m_ObjectHideFlags: 0

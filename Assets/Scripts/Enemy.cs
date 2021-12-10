@@ -11,14 +11,28 @@ public class Enemy : MonoBehaviour
     public float StayTime;
     public bool OnPatrol;
     public bool TowardsLeft;
-    public LayerMask PlayerLayerMask;
     public float DetectDistance = 1f;
     private bool _onMove = true;
     private bool _stay = false;
     public int CollisionDamage = 1;
 
-    // Add health
+    // Enemy health
     public int health = 1;
+
+
+    // Enemy player detection
+    public float detectionDistance = 5.0f;
+    public Rigidbody _rigidBody;
+    public LayerMask PlayerLayerMask;
+    public float FireInterval = 0.51f;
+    // public LayerMask PlayerLayerMask;
+
+    private bool PlayerCheck()
+    {
+        bool raycastHit = Physics.Raycast(_rigidBody.position, Vector3.left, detectionDistance, PlayerLayerMask);
+        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x-detectionDistance, _rigidBody.position.y, _rigidBody.position.z), Color.red);
+        return raycastHit;
+    }
 
     public void TakeDamage(int damage)
     {
@@ -38,7 +52,7 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
-        InvokeRepeating("Fire", 0.5f, 1.0f);
+        // InvokeRepeating("Fire", 0.5f, 1.0f);
     }
 
     // Start is called before the first frame update
@@ -78,6 +92,18 @@ public class Enemy : MonoBehaviour
                 Invoke("Move", StayTime);
                 _stay = true;
             }
+        }
+
+        if (PlayerCheck() && FireInterval > 0.01f)
+        {
+            if(FireInterval > 0.5f)
+            {
+                Fire();
+            }
+            FireInterval -= Time.deltaTime;
+            
+        } else {
+            FireInterval = 0.51f;
         }
     }
 
