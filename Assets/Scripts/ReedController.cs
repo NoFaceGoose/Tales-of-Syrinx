@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class reedControll : MonoBehaviour
+public class ReedController : MonoBehaviour
 {
     // how long will the reed platform exist
     public float lifetime = 5.0f;
@@ -33,6 +33,7 @@ public class reedControll : MonoBehaviour
         // check if the reed has traveled the distance
         if(moveFlag && Mathf.Abs(rb.position.x - rawPos.x) >= allowedDifference)
         {
+            Debug.Log("Stop!");
             reedStop();
         }
 

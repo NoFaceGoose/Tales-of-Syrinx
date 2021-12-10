@@ -36,6 +36,10 @@ public class PlayerController : MonoBehaviour
     public int CurrentHealth;
     public HealthBar healthBar;
 
+    // set the player Invincible
+    private bool playerInvincible = false;
+    public float InvincibleTime = 2.0f;
+
     void Awake()
     {
         PlayerInstance = this;
@@ -55,6 +59,14 @@ public class PlayerController : MonoBehaviour
         // {
         //     TakeDamage(1);
         // }
+        if(InvincibleTime > 0 && playerInvincible)
+        {
+            InvincibleTime -= Time.deltaTime;
+            Debug.Log(InvincibleTime);
+        } else {
+            playerInvincible = false;
+            InvincibleTime = 2.0f;
+        }
     }
 
     private void FixedUpdate()
@@ -81,10 +93,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    // return the value that if the player is invincible
+    public bool GetPlayerStatus()
+    {
+        return playerInvincible;
+    }
+
     public void TakeDamage(int damage)
     {
         CurrentHealth -= damage;
         healthBar.SetHealth(CurrentHealth);
+        playerInvincible = true;
     }
 
     private bool GroundCheck()

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7068661120683934062}
   - component: {fileID: 5159819586647299245}
   - component: {fileID: 6513384566524459667}
-  - component: {fileID: 6976390706839747753}
+  - component: {fileID: 8714892606475936519}
   m_Layer: 6
   m_Name: Spine6
   m_TagString: Untagged
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6976390706839747753
+--- !u!114 &8714892606475936519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 18526006178643863}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07538f2e82664c6685dc2c185c38d81, type: 3}
+  m_Script: {fileID: 11500000, guid: 006b2f64ec449184d87970d0099e6ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3159821730377117693
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 3552373878100565787}
   - component: {fileID: 9208332769307411592}
   - component: {fileID: 9059208233637046799}
-  - component: {fileID: 2582205996817697370}
+  - component: {fileID: 3584146594782293188}
   m_Layer: 6
   m_Name: Spine3
   m_TagString: Untagged
@@ -242,7 +242,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2582205996817697370
+--- !u!114 &3584146594782293188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3159821730377117693}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07538f2e82664c6685dc2c185c38d81, type: 3}
+  m_Script: {fileID: 11500000, guid: 006b2f64ec449184d87970d0099e6ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4480279986382499221
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 1672664532865492819}
   - component: {fileID: 3157672708804728607}
   - component: {fileID: 1814631206968564798}
-  - component: {fileID: 5813057603565747378}
+  - component: {fileID: 4685865846947746881}
   m_Layer: 6
   m_Name: Spine5
   m_TagString: Untagged
@@ -369,7 +369,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5813057603565747378
+--- !u!114 &4685865846947746881
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4480279986382499221}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07538f2e82664c6685dc2c185c38d81, type: 3}
+  m_Script: {fileID: 11500000, guid: 006b2f64ec449184d87970d0099e6ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5019676826658439438
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 6904914202209027791}
   - component: {fileID: 4030139182724674423}
   - component: {fileID: 3156306590216225238}
-  - component: {fileID: 2329685754360549359}
+  - component: {fileID: 7737733591040797825}
   m_Layer: 6
   m_Name: Spine1
   m_TagString: Untagged
@@ -496,7 +496,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2329685754360549359
+--- !u!114 &7737733591040797825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5019676826658439438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07538f2e82664c6685dc2c185c38d81, type: 3}
+  m_Script: {fileID: 11500000, guid: 006b2f64ec449184d87970d0099e6ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7425264251963870697
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 1979891581937422087}
   - component: {fileID: 5668331694415943177}
   - component: {fileID: 1011717216547087107}
-  - component: {fileID: 4101201873166421013}
+  - component: {fileID: 6959198573182477507}
   m_Layer: 6
   m_Name: Spine4
   m_TagString: Untagged
@@ -659,7 +659,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4101201873166421013
+--- !u!114 &6959198573182477507
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -668,7 +668,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8259515394955036595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07538f2e82664c6685dc2c185c38d81, type: 3}
+  m_Script: {fileID: 11500000, guid: 006b2f64ec449184d87970d0099e6ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8277387603699400983
@@ -684,7 +684,7 @@ GameObject:
   - component: {fileID: 1838481607613010489}
   - component: {fileID: 4318138850480266971}
   - component: {fileID: 8429630727718197696}
-  - component: {fileID: 5368696100875299173}
+  - component: {fileID: 3263466869782595333}
   m_Layer: 6
   m_Name: Spine2
   m_TagString: Untagged
@@ -786,7 +786,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5368696100875299173
+--- !u!114 &3263466869782595333
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -795,6 +795,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8277387603699400983}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07538f2e82664c6685dc2c185c38d81, type: 3}
+  m_Script: {fileID: 11500000, guid: 006b2f64ec449184d87970d0099e6ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
