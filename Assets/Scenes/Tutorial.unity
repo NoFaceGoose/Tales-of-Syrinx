@@ -839,6 +839,10 @@ PrefabInstance:
       propertyPath: TowardsLeft
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4788064612178725923, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
+      propertyPath: PlayerLayerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725948, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -2065,6 +2069,10 @@ PrefabInstance:
     - target: {fileID: 4788064612178725923, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: TowardsLeft
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788064612178725923, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
+      propertyPath: PlayerLayerMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725948, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_Name

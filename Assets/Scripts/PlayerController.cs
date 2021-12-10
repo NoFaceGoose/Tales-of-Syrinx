@@ -155,7 +155,6 @@ public class PlayerController : MonoBehaviour
     {
         // shooting logic
         Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
-
     }
 
     // Launch the reed platform

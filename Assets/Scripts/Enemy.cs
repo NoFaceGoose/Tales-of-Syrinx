@@ -21,16 +21,25 @@ public class Enemy : MonoBehaviour
 
 
     // Enemy player detection
-    public float detectionDistance = 5.0f;
+    public float detectionDistance = 5.0f; // detect distance
     public Rigidbody _rigidBody;
-    public LayerMask PlayerLayerMask;
-    public float FireInterval = 0.51f;
-    // public LayerMask PlayerLayerMask;
+    public LayerMask PlayerLayerMask; // detect player
+    public float FireInterval = 0.8f; // the interval between 2 fire
+    private float LastFire;
 
     private bool PlayerCheck()
     {
-        bool raycastHit = Physics.Raycast(_rigidBody.position, Vector3.left, detectionDistance, PlayerLayerMask);
-        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x-detectionDistance, _rigidBody.position.y, _rigidBody.position.z), Color.red);
+        bool raycastHit = Physics.Raycast(_rigidBody.position, Vector3.left, 0, PlayerLayerMask);
+        if(TowardsLeft)
+        {
+            raycastHit = Physics.Raycast(_rigidBody.position, Vector3.left, detectionDistance, PlayerLayerMask);
+            Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x-detectionDistance, _rigidBody.position.y, _rigidBody.position.z), Color.red);
+        }
+        else
+        {
+            raycastHit = Physics.Raycast(_rigidBody.position, Vector3.right, detectionDistance, PlayerLayerMask);
+            Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x+detectionDistance, _rigidBody.position.y, _rigidBody.position.z), Color.red);
+        }
         return raycastHit;
     }
 
@@ -94,16 +103,17 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        if (PlayerCheck() && FireInterval > 0.01f)
+        // Check if the player in the distance and can fire
+        if (PlayerCheck() && LastFire > 0.01f)
         {
-            if(FireInterval > 0.5f)
+            if(LastFire > FireInterval)
             {
                 Fire();
             }
-            FireInterval -= Time.deltaTime;
+            LastFire -= Time.deltaTime;
             
         } else {
-            FireInterval = 0.51f;
+            LastFire = FireInterval + 0.01f;
         }
     }
 
