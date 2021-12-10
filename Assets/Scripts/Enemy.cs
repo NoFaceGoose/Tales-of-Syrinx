@@ -30,15 +30,15 @@ public class Enemy : MonoBehaviour
     private bool PlayerCheck()
     {
         bool raycastHit = Physics.Raycast(_rigidBody.position, Vector3.left, 0, PlayerLayerMask);
-        if(TowardsLeft)
+        if (TowardsLeft)
         {
             raycastHit = Physics.Raycast(_rigidBody.position, Vector3.left, detectionDistance, PlayerLayerMask);
-            Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x-detectionDistance, _rigidBody.position.y, _rigidBody.position.z), Color.red);
+            Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x - detectionDistance, _rigidBody.position.y, _rigidBody.position.z), Color.red);
         }
         else
         {
             raycastHit = Physics.Raycast(_rigidBody.position, Vector3.right, detectionDistance, PlayerLayerMask);
-            Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x+detectionDistance, _rigidBody.position.y, _rigidBody.position.z), Color.red);
+            Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x + detectionDistance, _rigidBody.position.y, _rigidBody.position.z), Color.red);
         }
         return raycastHit;
     }
@@ -90,14 +90,12 @@ public class Enemy : MonoBehaviour
             if (transform.position.x <= Left.position.x && TowardsLeft)
             {
                 _onMove = false;
-                TowardsLeft = false;
                 Invoke("Move", StayTime);
                 _stay = true;
             }
             if (transform.position.x >= Right.position.x && !TowardsLeft)
             {
                 _onMove = false;
-                TowardsLeft = true;
                 Invoke("Move", StayTime);
                 _stay = true;
             }
@@ -106,13 +104,15 @@ public class Enemy : MonoBehaviour
         // Check if the player in the distance and can fire
         if (PlayerCheck() && LastFire > 0.01f)
         {
-            if(LastFire > FireInterval)
+            if (LastFire > FireInterval)
             {
                 Fire();
             }
             LastFire -= Time.deltaTime;
-            
-        } else {
+
+        }
+        else
+        {
             LastFire = FireInterval + 0.01f;
         }
     }
@@ -138,6 +138,7 @@ public class Enemy : MonoBehaviour
 
     void Move()
     {
+        TowardsLeft = !TowardsLeft;
         transform.Rotate(0f, 180f, 0f);
         _onMove = true;
     }

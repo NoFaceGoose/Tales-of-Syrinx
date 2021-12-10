@@ -121,14 +121,15 @@ MonoBehaviour:
   StayTime: 2
   OnPatrol: 0
   TowardsLeft: 1
-  PlayerLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   DetectDistance: 10
   CollisionDamage: 1
   health: 1
   detectionDistance: 5
   _rigidBody: {fileID: 8052946757489618648}
+  PlayerLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  FireInterval: 0.51
 --- !u!54 &8052946757489618648
 Rigidbody:
   m_ObjectHideFlags: 0
