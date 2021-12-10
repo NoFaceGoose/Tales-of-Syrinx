@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     // jump function
     public LayerMask GroundLayerMask; // only check ground level
     private Vector3 _jump;
-    private int jumpCount = 2; //Make the player able to double jump
+    public int jumpCount = 1; //Make the player able to double jump
     private Rigidbody _rigidBody;
     private float _inputX;
 
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         // if is on ground, can double jump
         if(GroundCheck())
         {
-            jumpCount = 2;
+            jumpCount = 1;
         }
         // _isGrounded = Physics.Raycast(transform.position, Vector3.down, _disToGround);
     }
