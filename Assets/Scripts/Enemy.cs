@@ -66,13 +66,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            SceneManager.LoadScene("Lose");
-        }
-    }
+    // void OnCollisionEnter(Collision other)
+    // {
+    //     if (other.gameObject.CompareTag("Player"))
+    //     {
+    //         SceneManager.LoadScene("Lose");
+    //     }
+    // }
 
     void Fire()
     {

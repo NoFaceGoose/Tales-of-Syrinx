@@ -15,11 +15,11 @@ public class EnemyBullet : MonoBehaviour
         transform.position = transform.position + new Vector3(Speed * Time.deltaTime, 0f, 0f);
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (!other.CompareTag("Player") && !other.CompareTag("Enemy"))
-        {
-            Destroy(gameObject);
-        }
-    }
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if (!other.CompareTag("Player") && !other.CompareTag("Enemy"))
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
 }

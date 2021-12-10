@@ -35,13 +35,13 @@ public class Boss : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            SceneManager.LoadScene("Lose");
-        }
-    }
+    // void OnCollisionEnter(Collision other)
+    // {
+    //     if (other.gameObject.CompareTag("Player"))
+    //     {
+    //         SceneManager.LoadScene("Lose");
+    //     }
+    // }
 
     public void Fire()
     {
@@ -55,7 +55,7 @@ public class Boss : MonoBehaviour
 
     public void Improve()
     {
-        Health--;
+        Health -= 1;
         CancelInvoke();
         switch (Health)
         {
