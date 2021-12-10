@@ -30,6 +30,11 @@ public class Rock : MonoBehaviour
                 Destroy(other.gameObject);
                 return;
             }
+            if (other.gameObject.CompareTag("ReedPlatform"))
+            {
+                Destroy(other.gameObject);
+                return;
+            }
             if (other.gameObject.CompareTag("Platform") || other.gameObject.CompareTag("Ground"))
             {
                 Destroy(GetComponent<Rigidbody>());
