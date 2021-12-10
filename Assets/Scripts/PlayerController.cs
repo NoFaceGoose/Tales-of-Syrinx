@@ -28,9 +28,17 @@ public class PlayerController : MonoBehaviour
     // Launch the reed
     public GameObject ReedPrefab;
 
+    // Health
+    public int MaxHealth = 4;
+    public int CurrentHealth;
+    public HealthBar healthBar;
+
     void Awake()
     {
         PlayerInstance = this;
+        CurrentHealth = MaxHealth;
+        healthBar.SetMaxHealth(MaxHealth);
+
     }
 
     void Start()
@@ -40,7 +48,10 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(1);
+        }
     }
 
     private void FixedUpdate()
@@ -55,6 +66,13 @@ public class PlayerController : MonoBehaviour
             jumpCount = 1;
         }
         // _isGrounded = Physics.Raycast(transform.position, Vector3.down, _disToGround);
+    }
+
+
+    void TakeDamage(int damage)
+    {
+        CurrentHealth -= damage;
+        healthBar.SetHealth(CurrentHealth);
     }
 
     private bool GroundCheck()
