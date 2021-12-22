@@ -25,6 +25,7 @@ public class ReedController : MonoBehaviour
     {
         Debug.Log("Stop!");
         rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.isKinematic = true;
         moveFlag = false;
     }
     
