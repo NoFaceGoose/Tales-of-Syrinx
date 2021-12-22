@@ -373,42 +373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3554852890956006902, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554852890956006902, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3554852890956006903, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 725197233}
-    - target: {fileID: 3554852890956006903, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
-      propertyPath: jumpForce
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7586399712867501629, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
-      propertyPath: m_Height
-      value: 1.8873073
-      objectReference: {fileID: 0}
-    - target: {fileID: 7586399712867501629, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
-      propertyPath: m_Radius
-      value: 0.6054044
-      objectReference: {fileID: 0}
-    - target: {fileID: 7586399712867501629, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7586399712867501629, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
-      propertyPath: m_Center.x
-      value: -0.024926662
-      objectReference: {fileID: 0}
-    - target: {fileID: 7586399712867501629, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
-      propertyPath: m_Center.y
-      value: 0.081346706
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
 --- !u!1 &622395067
