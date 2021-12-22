@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 3554852890956006900}
   - component: {fileID: 3554852890956006861}
   - component: {fileID: 3554852890956006903}
+  - component: {fileID: 1231362007776999284}
   - component: {fileID: 3554852890956006858}
   m_Layer: 3
   m_Name: Player
@@ -180,13 +181,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 10
   jumpForce: 8
-  Gravity: -10
   GroundLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  jumpCount: 1
   FirePoint: {fileID: 3554852890480949651}
   BulletPrefab: {fileID: 62511968879554192, guid: 3d07d5e2f954c2f47870590d7c79a785, type: 3}
   ReedPrefab: {fileID: 3029590369249995689, guid: c7b8a4ec6cda77447b7d650d3b16f1d3, type: 3}
+  MaxHealth: 4
+  CurrentHealth: 0
+  healthBar: {fileID: 0}
+  InvincibleTime: 2
+--- !u!114 &1231362007776999284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3554852890956006901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd40bdddb31caa4489c2e247886b0f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityScale: 1
 --- !u!114 &3554852890956006858
 MonoBehaviour:
   m_ObjectHideFlags: 0

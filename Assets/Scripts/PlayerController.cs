@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     public float MoveSpeed;
     public float jumpForce = 5.0f;
-    public float Gravity;
+    // public float Gravity;
 
     private int _keys = 0;
 
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         _rigidBody.velocity = new Vector3(_inputX * MoveSpeed, _rigidBody.velocity.y, 0);
-        Physics.gravity = new Vector3(0, Gravity, 0);
+        // Physics.gravity = new Vector3(0, Gravity, 0);
 
         // if is on ground, can double jump
         if(GroundCheck())
