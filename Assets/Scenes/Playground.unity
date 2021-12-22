@@ -317,6 +317,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1231362007776999284, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
+      propertyPath: gravityScale
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3554852890480949651, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.88
@@ -377,7 +381,12 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 725197233}
-    m_RemovedComponents: []
+    - target: {fileID: 5418783531250051092, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
+      propertyPath: gravityScale
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1231362007776999284, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
 --- !u!1 &622395067
 GameObject:
