@@ -28,7 +28,7 @@ public class ReedController : MonoBehaviour
         moveFlag = false;
     }
     
-    void Update()
+    void FixedUpdate()
     {
         // check if the reed has traveled the distance
         if(moveFlag && Mathf.Abs(rb.position.x - rawPos.x) >= allowedDifference)
