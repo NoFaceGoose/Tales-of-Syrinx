@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         PlayerInstance = this;
+        DontDestroyOnLoad(this);
         CurrentHealth = MaxHealth;
         healthBar.SetMaxHealth(MaxHealth);
         SavedPosition = transform.position;
