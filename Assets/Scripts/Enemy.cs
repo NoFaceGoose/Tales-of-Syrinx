@@ -4,7 +4,7 @@ public class Enemy : MonoBehaviour
 {
     public GameObject EnemyBullet;
     public Transform EnemyFire;
-    
+
     public bool shoot;
 
     // Enemy patrol
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
 
         if (Health <= 0)
         {
-            Die();
+            PlayerController.PlayerInstance.CurrentHealth++;
         }
     }
 
@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
-        
+
     }
 
     // Start is called before the first frame update
@@ -130,10 +130,18 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        PlayerController player = other.gameObject.GetComponent<PlayerController>();
-        if (player != null && !player.GetPlayerStatus())
+        if (other.gameObject.CompareTag("Player"))
         {
-            player.TakeDamage(CollisionDamage);
+            PlayerController player = other.gameObject.GetComponent<PlayerController>();
+            if (player != null && !player.GetPlayerStatus())
+            {
+                player.TakeDamage(CollisionDamage);
+            }
+        }
+        else
+        {
+            TowardsLeft = !TowardsLeft;
+            transform.Rotate(0f, 180f, 0f);
         }
     }
 

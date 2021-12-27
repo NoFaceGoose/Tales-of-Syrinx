@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         // Destroy(gameObject);
         SceneManager.LoadScene("Lose");

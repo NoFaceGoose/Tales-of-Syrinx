@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Rock : MonoBehaviour
 {
@@ -17,12 +16,11 @@ public class Rock : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-
         if (GetComponent<Rigidbody>() != null)
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                PlayerController.PlayerInstance.Die();
                 return;
             }
             if (other.gameObject.CompareTag("Enemy"))
