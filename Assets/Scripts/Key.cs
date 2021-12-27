@@ -37,17 +37,7 @@ public class Key : MonoBehaviour
         {
             if (_playerTrans != null)
             {
-                switch (_keyIndex)
-                {
-                    case 1:
-                        transform.position = _playerTrans.position + _offset; break;
-                    case 2:
-                        transform.position = _playerTrans.position + _offset * 2; break;
-                    case 3:
-                        transform.position = _playerTrans.position + _offset * 3; break;
-                    default: break;
-                }
-
+                transform.position = _playerTrans.position + _offset * _keyIndex;
             }
         }
     }
