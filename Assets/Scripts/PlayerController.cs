@@ -93,9 +93,8 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
+        // Destroy(gameObject);
+        SceneManager.LoadScene("Lose");
     }
 
     // return the value that if the player is invincible
@@ -185,5 +184,11 @@ public class PlayerController : MonoBehaviour
     public int GetKeys()
     {
         return _keys;
+    }
+
+    public void Reborn()
+    {
+        transform.position = SavedPosition;
+        CurrentHealth = MaxHealth;
     }
 }
