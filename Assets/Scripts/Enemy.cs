@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
 
     public bool shoot;
 
+    // reward of killing the enemy
+    public int reward = 1;
+
     // Enemy patrol
     public float WalkSpeed;
     public float StayTime;
@@ -53,12 +56,13 @@ public class Enemy : MonoBehaviour
 
         if (Health <= 0)
         {
-            PlayerController.PlayerInstance.CurrentHealth++;
+            Die();
         }
     }
 
     void Die()
     {
+        PlayerController.PlayerInstance.Recover(reward);
         Destroy(gameObject);
     }
 
