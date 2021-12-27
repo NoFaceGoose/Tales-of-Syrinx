@@ -2,6 +2,7 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController PlayerInstance;
@@ -42,6 +43,9 @@ public class PlayerController : MonoBehaviour
     private bool playerInvincible = false;
     public float InvincibleTime = 2.0f;
 
+    // Animation
+    public Animator animator;
+
     void Awake()
     {
         PlayerInstance = this;
@@ -78,6 +82,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         _rigidBody.velocity = new Vector3(_inputX * MoveSpeed, _rigidBody.velocity.y, 0);
+        animator.SetFloat("Speed", _rigidBody.velocity.x);
         // Physics.gravity = new Vector3(0, Gravity, 0);
 
         // if is on ground, can double jump
