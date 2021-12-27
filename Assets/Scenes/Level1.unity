@@ -3984,6 +3984,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1694543714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1281144473055406846, guid: 0ad6846d2911af444ad99e0d57d8a0a2, type: 3}
+  m_PrefabInstance: {fileID: 7216548790977902079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1694543715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694543714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd40bdddb31caa4489c2e247886b0f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityScale: 2.5
 --- !u!1001 &1696169303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5733,6 +5751,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1172020891}
     m_Modifications:
+    - target: {fileID: 681459778875464651, guid: 0ad6846d2911af444ad99e0d57d8a0a2, type: 3}
+      propertyPath: Health
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1281144473055406846, guid: 0ad6846d2911af444ad99e0d57d8a0a2, type: 3}
       propertyPath: m_Name
       value: Boss
