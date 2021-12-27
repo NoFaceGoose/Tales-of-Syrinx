@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class iconController : MonoBehaviour
 {
-    Color color1 = new Color(0,102,204, 1f);
-    Color color2 = new Color(255,255,0, 1f);
+    public Color color1 = new Color(0,102,204, 1f);
+    public Color color2 = new Color(255,255,0, 1f);
     float timeCounter = 0.0f;
     bool colorFlag = true;
     public GameObject cube;
