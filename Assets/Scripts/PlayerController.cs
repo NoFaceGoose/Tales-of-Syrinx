@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         PlayerInstance = this;
+        DontDestroyOnLoad(this);
         CurrentHealth = MaxHealth;
         healthBar.SetMaxHealth(MaxHealth);
         SavedPosition = transform.position;
@@ -91,7 +92,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         // Destroy(gameObject);
         SceneManager.LoadScene("Lose");
