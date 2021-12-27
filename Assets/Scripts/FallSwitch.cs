@@ -23,7 +23,7 @@ public class FallSwitch : MonoBehaviour
             Rigidbody clone;
             clone = Instantiate(Rock, Fall.position, Fall.rotation);
             clone.velocity = transform.TransformDirection(0, 0, 0);
-            gameObject.GetComponent<Transform>().position -= new Vector3(0, 0.05f, 0);
+            gameObject.GetComponent<Transform>().position -= new Vector3(0, 0.1f, 0);
             Destroy(gameObject.GetComponent<Rigidbody>());
         }
     }

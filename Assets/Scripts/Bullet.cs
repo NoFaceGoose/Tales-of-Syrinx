@@ -26,17 +26,11 @@ public class Bullet : MonoBehaviour
         {
             Enemy enemy = hitInfo.GetComponent<Enemy>();
             enemy.TakeDamage(BulletDamage);
-            return;
         }
         if (hitInfo.CompareTag("Boss"))
         {
             Boss.BossInstance.Improve();
-            return;
         }
-        // if (!hitInfo.CompareTag("Player"))
-        // {
-        //     Destroy(gameObject);
-        // }
         Destroy(gameObject);
     }
 }
