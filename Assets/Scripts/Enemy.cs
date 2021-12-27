@@ -4,21 +4,25 @@ public class Enemy : MonoBehaviour
 {
     public GameObject EnemyBullet;
     public Transform EnemyFire;
-    public Transform Left;
-    public Transform Right;
+    
     public bool shoot;
+
+    // Enemy patrol
     public float WalkSpeed;
     public float StayTime;
     public bool OnPatrol;
     public bool TowardsLeft;
-    public float DetectDistance = 1f;
+    private bool _startShoot = false;
     private bool _onMove = true;
     private bool _stay = false;
-    public int CollisionDamage = 1;
+    public Transform Left;
+    public Transform Right;
 
     // Enemy health
-    public int health = 1;
+    public int Health = 3;
 
+    // Enemy damage
+    public int CollisionDamage = 1;
 
     // Enemy player detection
     public float detectionDistance = 5.0f; // detect distance
@@ -45,9 +49,9 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        Health -= damage;
 
-        if (health <= 0)
+        if (Health <= 0)
         {
             Die();
         }
@@ -61,7 +65,7 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
-        // InvokeRepeating("Fire", 0.5f, 1.0f);
+        
     }
 
     // Start is called before the first frame update
@@ -72,7 +76,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (OnPatrol && _onMove)
+        if (OnPatrol && !_startShoot && _onMove)
         {
             _stay = false;
             if (TowardsLeft == true)
@@ -85,7 +89,7 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        if (OnPatrol && !_stay)
+        if (OnPatrol && !_startShoot && !_stay)
         {
             if (transform.position.x <= Left.position.x && TowardsLeft)
             {
@@ -104,21 +108,23 @@ public class Enemy : MonoBehaviour
         // Check if the player in the distance and can fire
         if (PlayerCheck() && LastFire > 0.01f)
         {
+            _startShoot = true;
             if (LastFire > FireInterval)
             {
                 Fire();
             }
             LastFire -= Time.deltaTime;
-
         }
         else
         {
+            _startShoot = false;
             LastFire = FireInterval + 0.01f;
         }
     }
 
     void Update()
     {
+
     }
 
 
