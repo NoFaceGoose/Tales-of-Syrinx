@@ -62,10 +62,10 @@ public class Boss : MonoBehaviour
         CancelInvoke();
         switch (Health)
         {
-            case 2:
+            case 7:
                 transform.GetComponent<Renderer>().material = MatTwo; InvokeRepeating("Fire", 0f, 0.6f);
                 InvokeRepeating("Jump", 0f, 1.2f); break;
-            case 1:
+            case 3:
                 transform.GetComponent<Renderer>().material = MatThree; InvokeRepeating("Fire", 0f, 0.4f);
                 InvokeRepeating("Jump", 0f, 1f); break;
             case 0: Destroy(gameObject); break;

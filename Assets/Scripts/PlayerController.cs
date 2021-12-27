@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController PlayerInstance;
 
+    public Vector3 SavedPosition;
+
     public float MoveSpeed;
     public float jumpForce = 5.0f;
     // public float Gravity;
@@ -45,7 +47,7 @@ public class PlayerController : MonoBehaviour
         PlayerInstance = this;
         CurrentHealth = MaxHealth;
         healthBar.SetMaxHealth(MaxHealth);
-
+        SavedPosition = transform.position;
     }
 
     void Start()
@@ -53,17 +55,20 @@ public class PlayerController : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody>();
         _jump = new Vector3(0.0f, 2.0f, 0.0f);
     }
+
     void Update()
     {
         // if (Input.GetKeyDown(KeyCode.Space))
         // {
         //     TakeDamage(1);
         // }
-        if(InvincibleTime > 0 && playerInvincible)
+        if (InvincibleTime > 0 && playerInvincible)
         {
             InvincibleTime -= Time.deltaTime;
             Debug.Log(InvincibleTime);
-        } else {
+        }
+        else
+        {
             playerInvincible = false;
             InvincibleTime = 2.0f;
         }
@@ -75,7 +80,7 @@ public class PlayerController : MonoBehaviour
         // Physics.gravity = new Vector3(0, Gravity, 0);
 
         // if is on ground, can double jump
-        if(GroundCheck())
+        if (GroundCheck())
         {
             jumpCount = 1;
         }
@@ -110,7 +115,7 @@ public class PlayerController : MonoBehaviour
     {
         float extraHeightText = 0.85f;
         bool raycastHit = Physics.Raycast(_rigidBody.position, Vector3.down, extraHeightText, GroundLayerMask);
-        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x, _rigidBody.position.y-extraHeightText, _rigidBody.position.z), Color.red);
+        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x, _rigidBody.position.y - extraHeightText, _rigidBody.position.z), Color.red);
         return raycastHit;
     }
 
@@ -131,7 +136,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext value)
     {
-        if(value.performed && jumpCount > 0)
+        if (value.performed && jumpCount > 0)
         {
             Jump();
             jumpCount -= 1;
@@ -160,7 +165,7 @@ public class PlayerController : MonoBehaviour
     // Launch the reed platform
     public void LaunchReed(InputAction.CallbackContext value)
     {
-        if(value.performed)
+        if (value.performed)
         {
             Instantiate(ReedPrefab, FirePoint.position, FirePoint.rotation);
         }
@@ -174,19 +179,7 @@ public class PlayerController : MonoBehaviour
 
     public int SetKeys()
     {
-        int keyIndex = 0;
-        switch (_keys)
-        {
-            case 0:
-                keyIndex = 1; break;
-            case 1:
-                keyIndex = 2; break;
-            case 2:
-                keyIndex = 3; break;
-            default: break;
-        }
-        _keys++;
-        return keyIndex;
+        return _keys++;
     }
 
     public int GetKeys()
