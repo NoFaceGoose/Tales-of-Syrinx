@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
     private bool GroundCheck()
     {
-        float extraHeightText = 0.85f;
+        float extraHeightText = 0.88f;
         bool raycastHit = Physics.Raycast(_rigidBody.position, Vector3.down, extraHeightText, GroundLayerMask);
         Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x, _rigidBody.position.y - extraHeightText, _rigidBody.position.z), Color.red);
         return raycastHit;
