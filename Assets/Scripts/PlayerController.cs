@@ -111,6 +111,16 @@ public class PlayerController : MonoBehaviour
         playerInvincible = true;
     }
 
+    public void Recover(int reward)
+    {
+        CurrentHealth += reward;
+        if (CurrentHealth >= MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
+        healthBar.SetHealth(CurrentHealth);
+    }
+
     private bool GroundCheck()
     {
         float extraHeightText = 0.88f;
