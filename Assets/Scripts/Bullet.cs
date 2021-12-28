@@ -31,6 +31,9 @@ public class Bullet : MonoBehaviour
         {
             Boss.BossInstance.Improve();
         }
-        Destroy(gameObject);
+        if (!hitInfo.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
