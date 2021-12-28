@@ -100,7 +100,8 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         // Destroy(gameObject);
-        SceneManager.LoadScene("Lose");
+        // SceneManager.LoadScene("Lose");
+        Reborn();
     }
 
     // return the value that if the player is invincible
@@ -206,5 +207,6 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = SavedPosition;
         CurrentHealth = MaxHealth;
+        healthBar.SetHealth(CurrentHealth);
     }
 }
