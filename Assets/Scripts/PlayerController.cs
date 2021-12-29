@@ -89,6 +89,9 @@ public class PlayerController : MonoBehaviour
         if (GroundCheck())
         {
             jumpCount = 1;
+            animator.SetBool("inAir", false);
+        } else {
+            animator.SetBool("inAir", true);
         }
         // _isGrounded = Physics.Raycast(transform.position, Vector3.down, _disToGround);
         if (CurrentHealth < 1)
@@ -168,6 +171,7 @@ public class PlayerController : MonoBehaviour
     {
         if (value.performed)
         {
+            animator.SetTrigger("Attack");
             Shoot();
         }
     }
@@ -183,6 +187,7 @@ public class PlayerController : MonoBehaviour
     {
         if (value.performed)
         {
+            animator.SetTrigger("Reed");
             Instantiate(ReedPrefab, FirePoint.position, FirePoint.rotation);
         }
     }
