@@ -96,6 +96,7 @@ public class PlayerController : MonoBehaviour
         // _isGrounded = Physics.Raycast(transform.position, Vector3.down, _disToGround);
         if (CurrentHealth < 1)
         {
+            animator.SetTrigger("Death");
             Die();
         }
     }
@@ -104,7 +105,9 @@ public class PlayerController : MonoBehaviour
     {
         // Destroy(gameObject);
         // SceneManager.LoadScene("Lose");
-        Reborn();
+        // TODO:
+        // The death function should pop up a menu for player to choose
+        Reborn(); // in reborn, the state of the animation should be reset\\
     }
 
     // return the value that if the player is invincible
@@ -115,6 +118,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        animator.SetTrigger("Attacked");
         CurrentHealth -= damage;
         healthBar.SetHealth(CurrentHealth);
         playerInvincible = true;
