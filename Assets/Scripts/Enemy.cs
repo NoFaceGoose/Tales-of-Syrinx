@@ -4,6 +4,7 @@ public class Enemy : MonoBehaviour
 {
     public GameObject EnemyBullet;
     public Transform EnemyFire;
+    public Animator Anim;
 
     public bool shoot;
 
@@ -31,8 +32,19 @@ public class Enemy : MonoBehaviour
     public float detectionDistance = 5.0f; // detect distance
     public Rigidbody _rigidBody;
     public LayerMask PlayerLayerMask; // detect player
-    public float FireInterval = 0.8f; // the interval between 2 fire
+    public float FireInterval = 5f; // the interval between 2 fire
     private float LastFire;
+
+    private enum EnemyAnimState
+    {
+        stay,
+        walk,
+        attack,
+        attacked,
+        die
+    }
+
+    private EnemyAnimState _state = EnemyAnimState.walk;
 
     private bool PlayerCheck()
     {
@@ -52,8 +64,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        _state = EnemyAnimState.attacked;
         Health -= damage;
-
         if (Health <= 0)
         {
             Die();
@@ -62,6 +74,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        _state = EnemyAnimState.die;
         PlayerController.PlayerInstance.Recover(reward);
         Destroy(gameObject);
     }
@@ -83,6 +96,7 @@ public class Enemy : MonoBehaviour
         if (OnPatrol && !_startShoot && _onMove)
         {
             _stay = false;
+            _state = EnemyAnimState.walk;
             if (TowardsLeft == true)
             {
                 transform.Translate(Vector3.left * Time.deltaTime * WalkSpeed);
@@ -100,12 +114,14 @@ public class Enemy : MonoBehaviour
                 _onMove = false;
                 Invoke("Move", StayTime);
                 _stay = true;
+                _state = EnemyAnimState.stay;
             }
             if (transform.position.x >= Right.position.x && !TowardsLeft)
             {
                 _onMove = false;
                 Invoke("Move", StayTime);
                 _stay = true;
+                _state = EnemyAnimState.stay;
             }
         }
 
@@ -113,6 +129,7 @@ public class Enemy : MonoBehaviour
         if (PlayerCheck() && LastFire > 0.01f)
         {
             _startShoot = true;
+            _state = EnemyAnimState.stay;
             if (LastFire > FireInterval)
             {
                 Fire();
@@ -128,7 +145,31 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        switch (_state)
+        {
+            case EnemyAnimState.stay:
+                Anim.SetBool("IsWalking", false);
+                Anim.SetBool("IsAttacking", false);
+                break;
 
+            case EnemyAnimState.walk:
+                Anim.SetBool("IsWalking", true);
+                break;
+
+            case EnemyAnimState.attack:
+                Anim.SetBool("IsAttacking", true);
+                break;
+
+            case EnemyAnimState.attacked:
+                Anim.SetBool("IsAttacked", true);
+                break;
+
+            case EnemyAnimState.die:
+                Anim.SetBool("IsDead", true);
+                break;
+
+            default: break;
+        }
     }
 
 
@@ -151,6 +192,7 @@ public class Enemy : MonoBehaviour
 
     void Fire()
     {
+        _state = EnemyAnimState.attack;
         Instantiate(EnemyBullet, EnemyFire.position, EnemyFire.rotation);
     }
 
