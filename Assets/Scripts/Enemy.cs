@@ -204,10 +204,15 @@ public class Enemy : MonoBehaviour
         _onMove = true;
     }
 
-    void Cancel()
+    void KeepMoving()
     {
         _onMove = true;
+    }
+
+    void Cancel()
+    {
         CancelInvoke("Fire");
         _state = EnemyAnimState.stay;
+        Invoke("KeepMoving", StayTime);
     }
 }
