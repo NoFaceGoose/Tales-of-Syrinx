@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public bool TowardsLeft;
     private bool _startShoot = false;
     private bool _onMove = true;
-    private bool _stay = false;
+    private bool _readyToStay = true;
     public Transform Left;
     public Transform Right;
 
@@ -32,8 +32,8 @@ public class Enemy : MonoBehaviour
     public float detectionDistance = 5.0f; // detect distance
     public Rigidbody _rigidBody;
     public LayerMask PlayerLayerMask; // detect player
-    public float FireInterval = 5f; // the interval between 2 fire
-    private float LastFire;
+    public float FireInterval = 1.5f; // the interval between 2 fire
+    private float LastFire = 0f;
 
     private enum EnemyAnimState
     {
@@ -66,6 +66,11 @@ public class Enemy : MonoBehaviour
     {
         _state = EnemyAnimState.attacked;
         Health -= damage;
+        if (!PlayerCheck())
+        {
+            TowardsLeft = !TowardsLeft;
+            transform.Rotate(0f, 180f, 0f);
+        }
         if (Health <= 0)
         {
             Die();
@@ -75,11 +80,17 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         _state = EnemyAnimState.die;
+        _onMove = false;
+        _readyToStay = false;
+        _startShoot = false;
         PlayerController.PlayerInstance.Recover(reward);
-        Destroy(gameObject);
+        Invoke("Destroy", 1f);
     }
 
-
+    void Destroy()
+    {
+        Destroy(gameObject);
+    }
     void Awake()
     {
 
@@ -93,53 +104,41 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (OnPatrol && !_startShoot && _onMove)
+        if (OnPatrol && !_startShoot)
         {
-            _stay = false;
-            _state = EnemyAnimState.walk;
-            if (TowardsLeft == true)
+
+            if (_onMove)
             {
+                _readyToStay = true;
+                _state = EnemyAnimState.walk;
                 transform.Translate(Vector3.left * Time.deltaTime * WalkSpeed);
             }
-            else
+
+            if (_readyToStay)
             {
-                transform.Translate(Vector3.left * Time.deltaTime * WalkSpeed);
+                if ((transform.position.x <= Left.position.x && TowardsLeft) || (transform.position.x >= Right.position.x && !TowardsLeft))
+                {
+                    _onMove = false;
+                    Invoke("Move", StayTime);
+                    _readyToStay = false;
+                    _state = EnemyAnimState.stay;
+                }
             }
         }
 
-        if (OnPatrol && !_startShoot && !_stay)
+        if (PlayerCheck())
         {
-            if (transform.position.x <= Left.position.x && TowardsLeft)
-            {
-                _onMove = false;
-                Invoke("Move", StayTime);
-                _stay = true;
-                _state = EnemyAnimState.stay;
-            }
-            if (transform.position.x >= Right.position.x && !TowardsLeft)
-            {
-                _onMove = false;
-                Invoke("Move", StayTime);
-                _stay = true;
-                _state = EnemyAnimState.stay;
-            }
-        }
-
-        // Check if the player in the distance and can fire
-        if (PlayerCheck() && LastFire > 0.01f)
-        {
+            _onMove = false;
             _startShoot = true;
-            _state = EnemyAnimState.stay;
-            if (LastFire > FireInterval)
-            {
-                Fire();
-            }
-            LastFire -= Time.deltaTime;
+            InvokeRepeating("Fire", FireInterval, FireInterval);
         }
         else
         {
-            _startShoot = false;
-            LastFire = FireInterval + 0.01f;
+            if (_startShoot)
+            {
+                _startShoot = false;
+                Invoke("Cancel", FireInterval);
+            }
         }
     }
 
@@ -150,6 +149,7 @@ public class Enemy : MonoBehaviour
             case EnemyAnimState.stay:
                 Anim.SetBool("IsWalking", false);
                 Anim.SetBool("IsAttacking", false);
+                Anim.SetBool("IsAttacked", false);
                 break;
 
             case EnemyAnimState.walk:
@@ -158,6 +158,7 @@ public class Enemy : MonoBehaviour
 
             case EnemyAnimState.attack:
                 Anim.SetBool("IsAttacking", true);
+                Anim.SetBool("IsAttacked", false);
                 break;
 
             case EnemyAnimState.attacked:
@@ -201,5 +202,12 @@ public class Enemy : MonoBehaviour
         TowardsLeft = !TowardsLeft;
         transform.Rotate(0f, 180f, 0f);
         _onMove = true;
+    }
+
+    void Cancel()
+    {
+        _onMove = true;
+        CancelInvoke("Fire");
+        _state = EnemyAnimState.stay;
     }
 }

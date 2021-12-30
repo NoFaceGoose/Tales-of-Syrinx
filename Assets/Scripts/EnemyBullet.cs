@@ -10,7 +10,7 @@ public class EnemyBullet : MonoBehaviour
     void Start()
     {
         _rigidbody.velocity = transform.right * Speed;
-        Destroy(gameObject, 0.5f);
+        // Destroy(gameObject, 3f);
     }
 
     // Update is called once per frame
@@ -25,6 +25,7 @@ public class EnemyBullet : MonoBehaviour
         if (player != null && !player.GetPlayerStatus())
         {
             player.TakeDamage(EnemyBulletDamage);
+            Destroy(gameObject);
         }
         if (!hitInfo.CompareTag("Enemy"))
         {
