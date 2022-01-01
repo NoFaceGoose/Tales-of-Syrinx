@@ -331,9 +331,9 @@ MonoBehaviour:
   TowardsLeft: 1
   Left: {fileID: 0}
   Right: {fileID: 0}
-  Health: 3
+  Health: 10
   CollisionDamage: 1
-  detectionDistance: 5
+  detectionDistance: 15
   _rigidBody: {fileID: 8052946757489618648}
   PlayerLayerMask:
     serializedVersion: 2

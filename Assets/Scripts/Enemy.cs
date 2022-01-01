@@ -33,7 +33,6 @@ public class Enemy : MonoBehaviour
     public Rigidbody _rigidBody;
     public LayerMask PlayerLayerMask; // detect player
     public float FireInterval = 1.5f; // the interval between 2 fire
-    private float LastFire = 0f;
 
     private enum EnemyAnimState
     {
@@ -48,18 +47,41 @@ public class Enemy : MonoBehaviour
 
     private bool PlayerCheck()
     {
-        bool raycastHit = Physics.Raycast(_rigidBody.position, Vector3.left, 0, PlayerLayerMask);
-        if (TowardsLeft)
+        bool hitPlayer = false;
+
+        RaycastHit hitCenter;
+        RaycastHit hitTop;
+        RaycastHit hitBottom;
+
+        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x + (TowardsLeft ? -detectionDistance : detectionDistance), _rigidBody.position.y, _rigidBody.position.z), Color.red);
+        Debug.DrawLine(new Vector3(_rigidBody.position.x, _rigidBody.position.y + transform.localScale.y / 4, _rigidBody.position.z), new Vector3(_rigidBody.position.x + (TowardsLeft ? -detectionDistance : detectionDistance), _rigidBody.position.y + transform.localScale.y / 4, _rigidBody.position.z), Color.red);
+        Debug.DrawLine(new Vector3(_rigidBody.position.x, _rigidBody.position.y - transform.localScale.y / 4, _rigidBody.position.z), new Vector3(_rigidBody.position.x + (TowardsLeft ? -detectionDistance : detectionDistance), _rigidBody.position.y - transform.localScale.y / 4, _rigidBody.position.z), Color.red);
+
+        if (Physics.Raycast(_rigidBody.position, TowardsLeft ? Vector3.left : Vector3.right, out hitCenter, detectionDistance))
         {
-            raycastHit = Physics.Raycast(_rigidBody.position, Vector3.left, detectionDistance, PlayerLayerMask);
-            Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x - detectionDistance, _rigidBody.position.y, _rigidBody.position.z), Color.red);
+            if (hitCenter.collider.CompareTag("Player"))
+            {
+                hitPlayer = true;
+            }
         }
-        else
+
+        if (Physics.Raycast(new Vector3(_rigidBody.position.x, _rigidBody.position.y + transform.localScale.y / 4, _rigidBody.position.z), TowardsLeft ? Vector3.left : Vector3.right, out hitTop, detectionDistance))
         {
-            raycastHit = Physics.Raycast(_rigidBody.position, Vector3.right, detectionDistance, PlayerLayerMask);
-            Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x + detectionDistance, _rigidBody.position.y, _rigidBody.position.z), Color.red);
+            if (hitTop.collider.CompareTag("Player"))
+            {
+                hitPlayer = true;
+            }
         }
-        return raycastHit;
+
+        if (Physics.Raycast(new Vector3(_rigidBody.position.x, _rigidBody.position.y - transform.localScale.y / 4, _rigidBody.position.z), TowardsLeft ? Vector3.left : Vector3.right, out hitBottom, detectionDistance))
+        {
+            if (hitBottom.collider.CompareTag("Player"))
+            {
+                hitPlayer = true;
+            }
+        }
+
+        return hitPlayer;
     }
 
     public void TakeDamage(int damage)
@@ -130,6 +152,8 @@ public class Enemy : MonoBehaviour
         {
             _onMove = false;
             _startShoot = true;
+            CancelInvoke("Cancel");
+            _state = EnemyAnimState.attack;
             InvokeRepeating("Fire", FireInterval, FireInterval);
         }
         else
@@ -137,7 +161,7 @@ public class Enemy : MonoBehaviour
             if (_startShoot)
             {
                 _startShoot = false;
-                Invoke("Cancel", FireInterval);
+                Invoke("Cancel", FireInterval * 3);
             }
         }
     }
@@ -157,8 +181,9 @@ public class Enemy : MonoBehaviour
                 break;
 
             case EnemyAnimState.attack:
-                Anim.SetBool("IsAttacking", true);
+                Anim.SetBool("IsWalking", false);
                 Anim.SetBool("IsAttacked", false);
+                Anim.SetBool("IsAttacking", true);
                 break;
 
             case EnemyAnimState.attacked:
