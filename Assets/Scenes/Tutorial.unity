@@ -267,7 +267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725948, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Stone Man3
       objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725948, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_IsActive
@@ -1032,7 +1032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725948, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Stone Man2
       objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725948, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_IsActive
@@ -1048,7 +1048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725951, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.178
+      value: 1.678
       objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725951, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1135,7 +1135,7 @@ Animator:
   m_GameObject: {fileID: 682824003}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 421f21ecce1a1ee459a33e8fd691a5c2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 68ddf810f7ddd2f45813a65312b3e323, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1313,12 +1313,12 @@ GameObject:
   m_Component:
   - component: {fileID: 988839364}
   m_Layer: 0
-  m_Name: Enemy3
+  m_Name: Stone Man3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &988839364
 Transform:
   m_ObjectHideFlags: 0
@@ -1327,7 +1327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988839363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.525, z: 0}
+  m_LocalPosition: {x: 0, y: 1.095, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 135695294}
@@ -1694,7 +1694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1178186379}
   m_Layer: 6
-  m_Name: Enemy1
+  m_Name: Stone Man1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2367,7 +2367,7 @@ PrefabInstance:
       objectReference: {fileID: 1549895750}
     - target: {fileID: 4788064612178725948, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Stone Man1
       objectReference: {fileID: 0}
     - target: {fileID: 4788064612178725951, guid: 8891fb709a755f643b4ed783c17f8fce, type: 3}
       propertyPath: m_RootOrder
@@ -2694,12 +2694,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1834068034}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: Stone Man2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1834068034
 Transform:
   m_ObjectHideFlags: 0

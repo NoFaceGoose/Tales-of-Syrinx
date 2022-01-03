@@ -24,14 +24,14 @@ public class Bullet : MonoBehaviour
     {
         if (hitInfo.CompareTag("Enemy"))
         {
-            Enemy enemy = hitInfo.GetComponent<Enemy>();
-            enemy.TakeDamage(BulletDamage);
+            StoneMan stoneMan = hitInfo.GetComponent<StoneMan>();
+            stoneMan.TakeDamage(BulletDamage);
         }
         if (hitInfo.CompareTag("Boss"))
         {
             Boss.BossInstance.Improve();
         }
-        if (!hitInfo.CompareTag("Player"))
+        if (!hitInfo.CompareTag("Player") && !hitInfo.CompareTag("EnemyMissile"))
         {
             Destroy(gameObject);
         }

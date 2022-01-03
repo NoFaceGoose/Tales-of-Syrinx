@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ReedController : MonoBehaviour
@@ -28,18 +26,18 @@ public class ReedController : MonoBehaviour
         rb.isKinematic = true;
         moveFlag = false;
     }
-    
+
     void FixedUpdate()
     {
         // check if the reed has traveled the distance
-        if(moveFlag && Mathf.Abs(rb.position.x - rawPos.x) >= allowedDifference)
+        if (moveFlag && Mathf.Abs(rb.position.x - rawPos.x) >= allowedDifference)
         {
             Debug.Log("Stop!");
             reedStop();
         }
 
         // check if the reed has collided and stopped
-        if(moveFlag && Mathf.Abs(rb.velocity.x) < 0.1f)
+        if (moveFlag && Mathf.Abs(rb.velocity.x) < 0.1f)
         {
             reedStop();
         }

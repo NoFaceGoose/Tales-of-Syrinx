@@ -1,39 +1,34 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class StoneMan : MonoBehaviour
 {
-    public GameObject EnemyBullet;
-    public Transform EnemyFire;
+    public GameObject Stone;
+    public Transform ThrowPoint;
     public Animator Anim;
+    public Rigidbody _rigidBody;
 
-    public bool shoot;
-
-    // reward of killing the enemy
-    public int reward = 1;
+    public int reward = 1; // Reward of killing the enemy
 
     // Enemy patrol
     public float WalkSpeed;
     public float StayTime;
     public bool OnPatrol;
     public bool TowardsLeft;
-    private bool _startShoot = false;
-    private bool _onMove = true;
-    private bool _readyToStay = true;
     public Transform Left;
     public Transform Right;
+    private bool _startToAttack = false;
+    private bool _onMove = true;
+    private bool _readyToStay = true;
 
     // Enemy health
     public int Health = 3;
+    private bool _alive = true;
 
-    // Enemy damage
-    public int CollisionDamage = 1;
+    public int CollisionDamage = 1; // Enemy collision damage
 
-    // Enemy player detection
-    public float detectionDistance = 5.0f; // detect distance
-    public Rigidbody _rigidBody;
-    public LayerMask PlayerLayerMask; // detect player
-    public float FireInterval = 1.5f; // the interval between 2 fire
+    public float detectionDistance = 5.0f; // Enemy player detection distance
 
+    // Enemy state
     private enum EnemyAnimState
     {
         stay,
@@ -43,10 +38,16 @@ public class Enemy : MonoBehaviour
         die
     }
 
-    private EnemyAnimState _state = EnemyAnimState.walk;
+    private EnemyAnimState _state = EnemyAnimState.walk; // Default state
 
+    // Three lines to detect player
     private bool PlayerCheck()
     {
+        if (!OnPatrol)
+        {
+            return true;
+        }
+
         bool hitPlayer = false;
 
         RaycastHit hitCenter;
@@ -59,7 +60,7 @@ public class Enemy : MonoBehaviour
 
         if (Physics.Raycast(_rigidBody.position, TowardsLeft ? Vector3.left : Vector3.right, out hitCenter, detectionDistance))
         {
-            if (hitCenter.collider.CompareTag("Player"))
+            if (hitCenter.collider.CompareTag("Player") || hitCenter.collider.CompareTag("Bullet") || hitCenter.collider.CompareTag("ReedPlatform"))
             {
                 hitPlayer = true;
             }
@@ -67,7 +68,7 @@ public class Enemy : MonoBehaviour
 
         if (Physics.Raycast(new Vector3(_rigidBody.position.x, _rigidBody.position.y + transform.localScale.y / 4, _rigidBody.position.z), TowardsLeft ? Vector3.left : Vector3.right, out hitTop, detectionDistance))
         {
-            if (hitTop.collider.CompareTag("Player"))
+            if (hitTop.collider.CompareTag("Player") || hitTop.collider.CompareTag("Bullet") || hitTop.collider.CompareTag("ReedPlatform"))
             {
                 hitPlayer = true;
             }
@@ -75,7 +76,7 @@ public class Enemy : MonoBehaviour
 
         if (Physics.Raycast(new Vector3(_rigidBody.position.x, _rigidBody.position.y - transform.localScale.y / 4, _rigidBody.position.z), TowardsLeft ? Vector3.left : Vector3.right, out hitBottom, detectionDistance))
         {
-            if (hitBottom.collider.CompareTag("Player"))
+            if (hitBottom.collider.CompareTag("Player") || hitBottom.collider.CompareTag("Bullet") || hitBottom.collider.CompareTag("ReedPlatform"))
             {
                 hitPlayer = true;
             }
@@ -84,15 +85,22 @@ public class Enemy : MonoBehaviour
         return hitPlayer;
     }
 
+    // What happens after enemy is hit
     public void TakeDamage(int damage)
     {
-        _state = EnemyAnimState.attacked;
+        if (Health % 3 == 0)
+        {
+            _state = EnemyAnimState.attacked;
+        }
         Health -= damage;
+
+        // turn to player
         if (!PlayerCheck())
         {
             TowardsLeft = !TowardsLeft;
             transform.Rotate(0f, 180f, 0f);
         }
+
         if (Health <= 0)
         {
             Die();
@@ -102,9 +110,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         _state = EnemyAnimState.die;
-        _onMove = false;
-        _readyToStay = false;
-        _startShoot = false;
+        _alive = false;
         PlayerController.PlayerInstance.Recover(reward);
         Invoke("Destroy", 1f);
     }
@@ -118,56 +124,71 @@ public class Enemy : MonoBehaviour
 
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        if (!OnPatrol)
+        {
+            _state = EnemyAnimState.stay;
+        }
     }
 
     void FixedUpdate()
     {
-        if (OnPatrol && !_startShoot)
+        if (_alive)
         {
-
-            if (_onMove)
+            if (OnPatrol && !_startToAttack)
             {
-                _readyToStay = true;
-                _state = EnemyAnimState.walk;
-                transform.Translate(Vector3.left * Time.deltaTime * WalkSpeed);
-            }
-
-            if (_readyToStay)
-            {
-                if ((transform.position.x <= Left.position.x && TowardsLeft) || (transform.position.x >= Right.position.x && !TowardsLeft))
+                // Patrol
+                if (_onMove)
                 {
-                    _onMove = false;
-                    Invoke("Move", StayTime);
-                    _readyToStay = false;
-                    _state = EnemyAnimState.stay;
+                    _readyToStay = true;
+                    _state = EnemyAnimState.walk;
+                    transform.Translate(Vector3.left * Time.deltaTime * WalkSpeed);
+                }
+
+                // Stay
+                if (_readyToStay)
+                {
+                    if ((transform.position.x <= Left.position.x && TowardsLeft) || (transform.position.x >= Right.position.x && !TowardsLeft))
+                    {
+                        _onMove = false;
+                        Invoke("Move", StayTime);
+                        _readyToStay = false;
+                        _state = EnemyAnimState.stay;
+                    }
                 }
             }
-        }
 
-        if (PlayerCheck())
-        {
-            _onMove = false;
-            _startShoot = true;
-            CancelInvoke("Cancel");
-            _state = EnemyAnimState.attack;
-            InvokeRepeating("Fire", FireInterval, FireInterval);
-        }
-        else
-        {
-            if (_startShoot)
+            // Detect Player
+            if (PlayerCheck())
             {
-                _startShoot = false;
-                Invoke("Cancel", FireInterval * 3);
+                if (IsInvoking("Move"))
+                {
+                    CancelInvoke("Move");
+                }
+
+                _onMove = false;
+                _startToAttack = true;
+                _state = EnemyAnimState.attack;
+
+                if (IsInvoking("StopAttacking"))
+                {
+                    CancelInvoke("StopAttacking");
+                }
+            }
+            else
+            {
+                if (_state == EnemyAnimState.attack)
+                {
+                    Invoke("StopAttacking", StayTime * 2);
+                }
             }
         }
     }
 
     void Update()
     {
+        // Enemy state switch
         switch (_state)
         {
             case EnemyAnimState.stay:
@@ -201,6 +222,7 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        // Damage player
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
@@ -209,35 +231,35 @@ public class Enemy : MonoBehaviour
                 player.TakeDamage(CollisionDamage);
             }
         }
-        else
+
+        // Destroyed by reed platform
+        if (other.gameObject.CompareTag("ReedPlatform"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
+
+    void Attack()
+    {
+        Instantiate(Stone, ThrowPoint.position, ThrowPoint.rotation);
+    }
+
+    // Move after staying
+
+    void Move()
+    {
+        if (!_readyToStay)
         {
             TowardsLeft = !TowardsLeft;
             transform.Rotate(0f, 180f, 0f);
         }
-    }
-
-    void Fire()
-    {
-        _state = EnemyAnimState.attack;
-        Instantiate(EnemyBullet, EnemyFire.position, EnemyFire.rotation);
-    }
-
-    void Move()
-    {
-        TowardsLeft = !TowardsLeft;
-        transform.Rotate(0f, 180f, 0f);
         _onMove = true;
     }
 
-    void KeepMoving()
+    void StopAttacking()
     {
-        _onMove = true;
-    }
-
-    void Cancel()
-    {
-        CancelInvoke("Fire");
+        _startToAttack = false;
         _state = EnemyAnimState.stay;
-        Invoke("KeepMoving", StayTime);
+        Invoke("Move", StayTime);
     }
 }

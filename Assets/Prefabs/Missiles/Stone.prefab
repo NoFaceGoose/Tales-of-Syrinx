@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4926965326897264858}
-  - component: {fileID: 4686219688835231658}
   - component: {fileID: -5810511550036844427}
   - component: {fileID: -2774593471382201484}
   - component: {fileID: 1378210928278440919}
+  - component: {fileID: 3222207184804181985}
   m_Layer: 0
-  m_Name: EnemyBullet
-  m_TagString: Untagged
+  m_Name: Stone
+  m_TagString: EnemyMissile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,19 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4686219688835231658
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878002049136458367}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.35
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-5810511550036844427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,9 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ab1f17047724261a9e63b3f922b37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: -2
-  EnemyBulletDamage: 1
+  Speed: -20
+  Damage: 1
+  Health: 3
   _rigidbody: {fileID: -2774593471382201484}
+  StoneSprite: {fileID: 21300000, guid: 4b915f070228196408778c46c7afe891, type: 3}
 --- !u!54 &-2774593471382201484
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -73,7 +62,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -121,7 +110,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7593792cfdf3a42488e05118e4530de1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.73, y: 0.37}
@@ -130,3 +119,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!136 &3222207184804181985
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878002049136458367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.18
+  m_Height: 0.8
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}

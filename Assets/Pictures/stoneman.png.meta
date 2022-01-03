@@ -208,7 +208,7 @@ TextureImporter:
       name: attacked_0
       rect:
         serializedVersion: 2
-        x: 24
+        x: 22
         y: 223
         width: 111
         height: 87
@@ -355,7 +355,7 @@ TextureImporter:
       name: attacked_1
       rect:
         serializedVersion: 2
-        x: 243
+        x: 242
         y: 223
         width: 111
         height: 87

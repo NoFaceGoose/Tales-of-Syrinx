@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Bullet
   - Switch
-  - Stone
   - EnemyFire
   - Platform
   - Ground
@@ -15,9 +14,9 @@ TagManager:
   - Boss
   - Key
   - Key
-  - Undefined
   - Rock
   - ReedPlatform
+  - EnemyMissile
   layers:
   - Default
   - TransparentFX
