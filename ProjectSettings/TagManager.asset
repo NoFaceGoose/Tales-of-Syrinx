@@ -17,6 +17,7 @@ TagManager:
   - Rock
   - ReedPlatform
   - EnemyMissile
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Animator Anim;
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -18,8 +18,19 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerController.PlayerInstance.CurrentHealth = PlayerController.PlayerInstance.MaxHealth;
+            PlayerController.PlayerInstance.Recover(PlayerController.PlayerInstance.MaxHealth);
             PlayerController.PlayerInstance.SavedPosition = transform.position;
+            Anim.SetBool("IsTriggered", true);
+            if (IsInvoking("SlowDown"))
+            {
+                CancelInvoke("SlowDown");
+            }
+            Invoke("SlowDown", 2f);
         }
+    }
+
+    void SlowDown()
+    {
+        Anim.SetBool("IsTriggered", false);
     }
 }
