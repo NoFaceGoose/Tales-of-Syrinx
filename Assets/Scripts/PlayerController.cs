@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
     // Animation
     public Animator animator;
 
+    public DieMenu dm;
+
     void Awake()
     {
         PlayerInstance = this;
@@ -107,6 +109,7 @@ public class PlayerController : MonoBehaviour
         // SceneManager.LoadScene("Lose");
         // TODO:
         // The death function should pop up a menu for player to choose
+        dm.EnterDieMenu();
         Reborn(); // in reborn, the state of the animation should be reset\\
     }
 
