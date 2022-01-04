@@ -123,7 +123,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281144473055406846}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7457d4700254eee44b8997cc86a6a4b0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -148,6 +148,7 @@ MonoBehaviour:
   Health: 3
   MatTwo: {fileID: 2100000, guid: 0fc4181f9a9222c44aa057e116fb4474, type: 2}
   MatThree: {fileID: 2100000, guid: cf13a7483dd640a428a7711112268430, type: 2}
+  CollisionDamage: 1
 --- !u!54 &787518703787933231
 Rigidbody:
   m_ObjectHideFlags: 0

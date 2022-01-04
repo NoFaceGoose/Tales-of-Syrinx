@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 3222207184804181985, guid: 3c7646f2edcdd4c0a8590a567d75c5ce, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 7457d4700254eee44b8997cc86a6a4b0, type: 2}
     - target: {fileID: 3592287921269081693, guid: 3c7646f2edcdd4c0a8590a567d75c5ce, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
