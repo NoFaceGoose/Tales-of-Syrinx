@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: -20
-  Damage: 1
+  Damage: 2
   Health: 3
   _rigidbody: {fileID: -2774593471382201484}
   StoneSprite: {fileID: 21300000, guid: 4b915f070228196408778c46c7afe891, type: 3}

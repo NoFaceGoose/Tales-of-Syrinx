@@ -26,7 +26,9 @@ public class StoneMan : MonoBehaviour
 
     public int CollisionDamage = 1; // Enemy collision damage
 
-    public float detectionDistance = 5.0f; // Enemy player detection distance
+    public float DetectionDistance = 5.0f; // Enemy player detection distance
+
+    public float HitRecover = 0.5f; // The possiblity that the enenmy does not perform attacked animation and keeps attacking
 
     // Enemy state
     private enum EnemyAnimState
@@ -54,11 +56,11 @@ public class StoneMan : MonoBehaviour
         RaycastHit hitTop;
         RaycastHit hitBottom;
 
-        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x + (TowardsLeft ? -detectionDistance : detectionDistance), _rigidBody.position.y, _rigidBody.position.z), Color.red);
-        Debug.DrawLine(new Vector3(_rigidBody.position.x, _rigidBody.position.y + transform.localScale.y / 4, _rigidBody.position.z), new Vector3(_rigidBody.position.x + (TowardsLeft ? -detectionDistance : detectionDistance), _rigidBody.position.y + transform.localScale.y / 4, _rigidBody.position.z), Color.red);
-        Debug.DrawLine(new Vector3(_rigidBody.position.x, _rigidBody.position.y - transform.localScale.y / 4, _rigidBody.position.z), new Vector3(_rigidBody.position.x + (TowardsLeft ? -detectionDistance : detectionDistance), _rigidBody.position.y - transform.localScale.y / 4, _rigidBody.position.z), Color.red);
+        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x + (TowardsLeft ? -DetectionDistance : DetectionDistance), _rigidBody.position.y, _rigidBody.position.z), Color.red);
+        Debug.DrawLine(new Vector3(_rigidBody.position.x, _rigidBody.position.y + transform.localScale.y / 4, _rigidBody.position.z), new Vector3(_rigidBody.position.x + (TowardsLeft ? -DetectionDistance : DetectionDistance), _rigidBody.position.y + transform.localScale.y / 4, _rigidBody.position.z), Color.red);
+        Debug.DrawLine(new Vector3(_rigidBody.position.x, _rigidBody.position.y - transform.localScale.y / 4, _rigidBody.position.z), new Vector3(_rigidBody.position.x + (TowardsLeft ? -DetectionDistance : DetectionDistance), _rigidBody.position.y - transform.localScale.y / 4, _rigidBody.position.z), Color.red);
 
-        if (Physics.Raycast(_rigidBody.position, TowardsLeft ? Vector3.left : Vector3.right, out hitCenter, detectionDistance))
+        if (Physics.Raycast(_rigidBody.position, TowardsLeft ? Vector3.left : Vector3.right, out hitCenter, DetectionDistance))
         {
             if (hitCenter.collider.CompareTag("Player") || hitCenter.collider.CompareTag("Bullet") || hitCenter.collider.CompareTag("ReedPlatform"))
             {
@@ -66,7 +68,7 @@ public class StoneMan : MonoBehaviour
             }
         }
 
-        if (Physics.Raycast(new Vector3(_rigidBody.position.x, _rigidBody.position.y + transform.localScale.y / 4, _rigidBody.position.z), TowardsLeft ? Vector3.left : Vector3.right, out hitTop, detectionDistance))
+        if (Physics.Raycast(new Vector3(_rigidBody.position.x, _rigidBody.position.y + transform.localScale.y / 4, _rigidBody.position.z), TowardsLeft ? Vector3.left : Vector3.right, out hitTop, DetectionDistance))
         {
             if (hitTop.collider.CompareTag("Player") || hitTop.collider.CompareTag("Bullet") || hitTop.collider.CompareTag("ReedPlatform"))
             {
@@ -74,7 +76,7 @@ public class StoneMan : MonoBehaviour
             }
         }
 
-        if (Physics.Raycast(new Vector3(_rigidBody.position.x, _rigidBody.position.y - transform.localScale.y / 4, _rigidBody.position.z), TowardsLeft ? Vector3.left : Vector3.right, out hitBottom, detectionDistance))
+        if (Physics.Raycast(new Vector3(_rigidBody.position.x, _rigidBody.position.y - transform.localScale.y / 4, _rigidBody.position.z), TowardsLeft ? Vector3.left : Vector3.right, out hitBottom, DetectionDistance))
         {
             if (hitBottom.collider.CompareTag("Player") || hitBottom.collider.CompareTag("Bullet") || hitBottom.collider.CompareTag("ReedPlatform"))
             {
@@ -88,7 +90,8 @@ public class StoneMan : MonoBehaviour
     // What happens after enemy is hit
     public void TakeDamage(int damage)
     {
-        if (Health % 3 == 0)
+        float value = Random.value;
+        if (value > HitRecover)
         {
             _state = EnemyAnimState.attacked;
         }

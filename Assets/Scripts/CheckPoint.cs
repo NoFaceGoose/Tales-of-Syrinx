@@ -25,7 +25,7 @@ public class CheckPoint : MonoBehaviour
             {
                 CancelInvoke("SlowDown");
             }
-            Invoke("SlowDown", 2f);
+            Invoke("SlowDown", 1f);
         }
     }
 

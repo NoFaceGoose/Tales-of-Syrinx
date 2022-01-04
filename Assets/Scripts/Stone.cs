@@ -3,7 +3,7 @@ using UnityEngine;
 public class Stone : MonoBehaviour
 {
     public float Speed = -20f;
-    public int Damage = 1;
+    public int Damage = 2;
     public int Health = 3;
     public Rigidbody _rigidbody;
     public Sprite StoneSprite;
@@ -20,6 +20,7 @@ public class Stone : MonoBehaviour
         if (Health < 3)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = StoneSprite;
+            Damage--;
         }
     }
 
@@ -47,7 +48,7 @@ public class Stone : MonoBehaviour
             return;
         }
 
-        if (!hitInfo.CompareTag("Enemy"))
+        if (!hitInfo.CompareTag("Enemy") && !hitInfo.CompareTag("EnemyMissile") && !hitInfo.CompareTag("CheckPoint"))
         {
             Destroy(gameObject);
         }
