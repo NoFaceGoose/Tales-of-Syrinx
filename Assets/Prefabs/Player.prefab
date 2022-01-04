@@ -123,7 +123,7 @@ MonoBehaviour:
   FirePoint: {fileID: 3554852890480949651}
   BulletPrefab: {fileID: 62511968879554192, guid: 3d07d5e2f954c2f47870590d7c79a785, type: 3}
   ReedPrefab: {fileID: 3029590369249995689, guid: c7b8a4ec6cda77447b7d650d3b16f1d3, type: 3}
-  MaxHealth: 4
+  MaxHealth: 10
   CurrentHealth: 0
   healthBar: {fileID: 0}
   InvincibleTime: 2
