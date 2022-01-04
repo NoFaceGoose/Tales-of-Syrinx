@@ -23,11 +23,6 @@ public class Rock : MonoBehaviour
                 PlayerController.PlayerInstance.Die();
                 return;
             }
-            if (other.gameObject.CompareTag("Enemy"))
-            {
-                Destroy(other.gameObject);
-                return;
-            }
             if (other.gameObject.CompareTag("ReedPlatform"))
             {
                 Destroy(other.gameObject);

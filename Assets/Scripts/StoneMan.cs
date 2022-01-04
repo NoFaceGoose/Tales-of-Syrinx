@@ -47,6 +47,10 @@ public class StoneMan : MonoBehaviour
     // Three lines to detect player
     private bool PlayerCheck()
     {
+        if (!_alive)
+        {
+            return false;
+        }
         // Attack after being attacked without deceting player
         if (!OnPatrol || _isAttacked)
         {
@@ -253,6 +257,11 @@ public class StoneMan : MonoBehaviour
         if (other.gameObject.CompareTag("ReedPlatform"))
         {
             Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Rock"))
+        {
+            Die();
         }
     }
 
