@@ -21,10 +21,12 @@ public class CheckPoint : MonoBehaviour
             PlayerController.PlayerInstance.Recover(PlayerController.PlayerInstance.MaxHealth);
             PlayerController.PlayerInstance.SavedPosition = new Vector3(transform.position.x, transform.position.y, 0f);
             Anim.SetBool("IsTriggered", true);
+
             if (IsInvoking("SlowDown"))
             {
                 CancelInvoke("SlowDown");
             }
+
             Invoke("SlowDown", 1f);
         }
     }

@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PassTutorial : MonoBehaviour
+public class Gate : MonoBehaviour
 {
     public GameObject KeyReminder;
+    public String NextScene;
+    public int RequiredKeys;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +25,11 @@ public class PassTutorial : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
-            if (PlayerController.PlayerInstance.GetKeys() >= 1)
+            if (PlayerController.PlayerInstance.GetKeys() >= RequiredKeys)
             {
-                SceneManager.LoadScene("Level1");
+                SceneManager.LoadScene(NextScene);
             }
+
             else
             {
                 KeyReminder = GameObject.Find("Key Reminder");
@@ -34,6 +39,7 @@ public class PassTutorial : MonoBehaviour
             }
         }
     }
+
     void RemindDisappear()
     {
         KeyReminder.GetComponent<Renderer>().enabled = false;
