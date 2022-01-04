@@ -3,6 +3,7 @@ using UnityEngine;
 public class StoneMan : MonoBehaviour
 {
     public GameObject Stone;
+    public GameObject Player;
     public Transform ThrowPoint;
     public Animator Anim;
     public Rigidbody _rigidBody;
@@ -16,6 +17,7 @@ public class StoneMan : MonoBehaviour
     public bool TowardsLeft;
     public Transform Left;
     public Transform Right;
+    private bool _isAttacked = false;
     private bool _startToAttack = false;
     private bool _onMove = true;
     private bool _readyToStay = true;
@@ -45,7 +47,8 @@ public class StoneMan : MonoBehaviour
     // Three lines to detect player
     private bool PlayerCheck()
     {
-        if (!OnPatrol)
+        // Attack after being attacked without deceting player
+        if (!OnPatrol || _isAttacked)
         {
             return true;
         }
@@ -90,19 +93,20 @@ public class StoneMan : MonoBehaviour
     // What happens after enemy is hit
     public void TakeDamage(int damage)
     {
-        float value = Random.value;
-        if (value > HitRecover)
+        if (_state != EnemyAnimState.attack || Random.value > HitRecover)
         {
             _state = EnemyAnimState.attacked;
         }
         Health -= damage;
 
         // turn to player
-        if (!PlayerCheck())
+        if ((TowardsLeft && Player.transform.position.x > gameObject.transform.position.x) || (!TowardsLeft && Player.transform.position.x < gameObject.transform.position.x))
         {
             TowardsLeft = !TowardsLeft;
             transform.Rotate(0f, 180f, 0f);
         }
+
+        _isAttacked = true;
 
         if (Health <= 0)
         {
@@ -172,6 +176,7 @@ public class StoneMan : MonoBehaviour
 
                 _onMove = false;
                 _startToAttack = true;
+                _isAttacked = false;
                 _state = EnemyAnimState.attack;
 
                 if (IsInvoking("StopAttacking"))
@@ -232,6 +237,15 @@ public class StoneMan : MonoBehaviour
             if (player != null && !player.GetPlayerStatus())
             {
                 player.TakeDamage(CollisionDamage);
+
+                //Turn to player
+                if ((TowardsLeft && Player.transform.position.x > gameObject.transform.position.x) || (!TowardsLeft && Player.transform.position.x < gameObject.transform.position.x))
+                {
+                    TowardsLeft = !TowardsLeft;
+                    transform.Rotate(0f, 180f, 0f);
+                }
+
+                _isAttacked = true;
             }
         }
 
@@ -248,7 +262,6 @@ public class StoneMan : MonoBehaviour
     }
 
     // Move after staying
-
     void Move()
     {
         if (!_readyToStay)

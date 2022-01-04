@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         PlayerInstance = this;
-        DontDestroyOnLoad(this);
         CurrentHealth = MaxHealth;
         healthBar.SetMaxHealth(MaxHealth);
         SavedPosition = transform.position;
@@ -92,7 +91,9 @@ public class PlayerController : MonoBehaviour
         {
             jumpCount = 1;
             animator.SetBool("inAir", false);
-        } else {
+        }
+        else
+        {
             animator.SetBool("inAir", true);
         }
         // _isGrounded = Physics.Raycast(transform.position, Vector3.down, _disToGround);

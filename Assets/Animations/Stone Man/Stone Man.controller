@@ -263,7 +263,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: attack
-  m_Speed: 0.32
+  m_Speed: 0.3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 260784288059832710}

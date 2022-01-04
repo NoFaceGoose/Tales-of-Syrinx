@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Stone: {fileID: 1878002049136458367, guid: 3c7646f2edcdd4c0a8590a567d75c5ce, type: 3}
+  Player: {fileID: 3554852890956006901, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
   ThrowPoint: {fileID: 4788064613307742239}
   Anim: {fileID: -4005767555293114884}
   _rigidBody: {fileID: 8052946757489618648}
@@ -107,7 +108,8 @@ MonoBehaviour:
   Right: {fileID: 0}
   Health: 10
   CollisionDamage: 1
-  detectionDistance: 15
+  DetectionDistance: 5
+  HitRecover: 0.5
 --- !u!54 &8052946757489618648
 Rigidbody:
   m_ObjectHideFlags: 0

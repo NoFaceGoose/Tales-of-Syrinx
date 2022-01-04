@@ -128,6 +128,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   InvincibleTime: 2
   animator: {fileID: 7437443899281364732}
+  dm: {fileID: 0}
 --- !u!114 &3554852890956006858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +287,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.18387604
-  m_Height: 0.51504874
+  m_Height: 0.57
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &4561107160328511240
