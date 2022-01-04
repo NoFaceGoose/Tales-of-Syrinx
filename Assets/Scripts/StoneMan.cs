@@ -97,24 +97,27 @@ public class StoneMan : MonoBehaviour
     // What happens after enemy is hit
     public void TakeDamage(int damage)
     {
-        if (_state != EnemyAnimState.attack || Random.value > HitRecover)
+        if (_alive)
         {
-            _state = EnemyAnimState.attacked;
-        }
-        Health -= damage;
+            if (_state != EnemyAnimState.attack || Random.value > HitRecover)
+            {
+                _state = EnemyAnimState.attacked;
+            }
+            Health -= damage;
 
-        // turn to player
-        if ((TowardsLeft && Player.transform.position.x > gameObject.transform.position.x) || (!TowardsLeft && Player.transform.position.x < gameObject.transform.position.x))
-        {
-            TowardsLeft = !TowardsLeft;
-            transform.Rotate(0f, 180f, 0f);
-        }
+            // turn to player
+            if ((TowardsLeft && Player.transform.position.x > gameObject.transform.position.x) || (!TowardsLeft && Player.transform.position.x < gameObject.transform.position.x))
+            {
+                TowardsLeft = !TowardsLeft;
+                transform.Rotate(0f, 180f, 0f);
+            }
 
-        _isAttacked = true;
+            _isAttacked = true;
 
-        if (Health <= 0)
-        {
-            Die();
+            if (Health <= 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -130,6 +133,7 @@ public class StoneMan : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
     void Awake()
     {
 
