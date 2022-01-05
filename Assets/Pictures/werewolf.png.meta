@@ -16,7 +16,7 @@ TextureImporter:
     second: walk_3
   - first:
       213: 4299287511660973690
-    second: stay
+    second: stay_1
   - first:
       213: -1833525740663284025
     second: attacked
@@ -80,6 +80,111 @@ TextureImporter:
   - first:
       213: 8692853123435719183
     second: Werewolf_34
+  - first:
+      213: 8859273575814025313
+    second: walk_0
+  - first:
+      213: 719870552924330216
+    second: walk_1
+  - first:
+      213: 8176743636547007120
+    second: walk_2
+  - first:
+      213: 8990816864448866942
+    second: walk_3
+  - first:
+      213: -299462811461722729
+    second: stay_3
+  - first:
+      213: -2420058792467051242
+    second: stay_2
+  - first:
+      213: -2805852652885822763
+    second: stay_0
+  - first:
+      213: -4841598212526392668
+    second: stay_1
+  - first:
+      213: -5771710166538046664
+    second: attacked_0
+  - first:
+      213: 3415109840086576333
+    second: attacked_1
+  - first:
+      213: -826887643620332728
+    second: attack_0
+  - first:
+      213: -4531919313577203926
+    second: attack_1
+  - first:
+      213: -4396991744431069041
+    second: attack_2
+  - first:
+      213: 4413298194001940473
+    second: attack_3
+  - first:
+      213: 3601703046336413092
+    second: dead_0
+  - first:
+      213: -6128822726170529725
+    second: dead_1
+  - first:
+      213: -4500058508631838101
+    second: charge_0
+  - first:
+      213: 2963910154307386758
+    second: werewolf_21
+  - first:
+      213: -6260970226000884402
+    second: werewolf_22
+  - first:
+      213: 7232805804195402484
+    second: charge_1
+  - first:
+      213: 4310052631030995210
+    second: charge_2
+  - first:
+      213: -8909198058399063726
+    second: werewolf_25
+  - first:
+      213: -8943148706923096864
+    second: werewolf_26
+  - first:
+      213: -2059810074209810002
+    second: charge_3
+  - first:
+      213: -2932898452151796508
+    second: werewolf_28
+  - first:
+      213: 7312957278465446767
+    second: werewolf_29
+  - first:
+      213: -3625646014672535759
+    second: werewolf_30
+  - first:
+      213: 4509188657294863326
+    second: werewolf_31
+  - first:
+      213: -3903647208008602219
+    second: werewolf_32
+  - first:
+      213: -8367613273483307328
+    second: werewolf_33
+  - first:
+      213: 2079147135496486940
+    second: werewolf_34
+  - first:
+      213: 479850663427767162
+    second: attacked_2
+  - first:
+      213: -7349940209244951824
+    second: attacked_3
+  - first:
+      213: 3327737798617337286
+    second: dead_2
+  - first:
+      213: 648856671785355045
+    second: dead_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -196,19 +301,19 @@ TextureImporter:
       name: walk_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 422
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 8
+        y: 553
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f2a5e613fd81f7c0800000000000000
-      internalID: -4039291315573906701
+      spriteID: 1605666f06672fa70800000000000000
+      internalID: 8859273575814025313
       vertices: []
       indices: 
       edges: []
@@ -217,19 +322,19 @@ TextureImporter:
       name: walk_1
       rect:
         serializedVersion: 2
-        x: 115
-        y: 422
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 132
+        y: 553
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68f5f5a7b5bda0a00800000000000000
-      internalID: 723631876087963526
+      spriteID: 8e8915f247e7df900800000000000000
+      internalID: 719870552924330216
       vertices: []
       indices: 
       edges: []
@@ -238,19 +343,19 @@ TextureImporter:
       name: walk_2
       rect:
         serializedVersion: 2
-        x: 216
-        y: 422
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 257
+        y: 551
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7c4e55dde99432d0800000000000000
-      internalID: -3299843380189705091
+      spriteID: 092f1d3e301a97170800000000000000
+      internalID: 8176743636547007120
       vertices: []
       indices: 
       edges: []
@@ -259,61 +364,103 @@ TextureImporter:
       name: walk_3
       rect:
         serializedVersion: 2
-        x: 316
-        y: 422
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 381
+        y: 548
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb71fe8258bb04de0800000000000000
-      internalID: -1350873707619346500
+      spriteID: e7ae0168d4cc5cc70800000000000000
+      internalID: 8990816864448866942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stay
+      name: stay_3
       rect:
         serializedVersion: 2
-        x: 13
-        y: 340
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 383
+        y: 440
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7e43d796332aab30800000000000000
-      internalID: 4299287511660973690
+      spriteID: 79d526bd82818dbf0800000000000000
+      internalID: -299462811461722729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attacked
+      name: stay_2
       rect:
         serializedVersion: 2
-        x: 14
-        y: 264
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 260
+        y: 443
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ceda35ad020e86e0800000000000000
-      internalID: -1833525740663284025
+      spriteID: 61dc07ba9593a6ed0800000000000000
+      internalID: -2420058792467051242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attacked_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 350
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8333df0fe24c6efa0800000000000000
+      internalID: -5771710166538046664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attacked_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 350
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc2d473e48e46f20800000000000000
+      internalID: 3415109840086576333
       vertices: []
       indices: 
       edges: []
@@ -322,19 +469,19 @@ TextureImporter:
       name: attack_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 184
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 5
+        y: 255
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce7bd194c3fe1bd20800000000000000
-      internalID: 3292675844788303852
+      spriteID: 84ba9d4b11e4684f0800000000000000
+      internalID: -826887643620332728
       vertices: []
       indices: 
       edges: []
@@ -343,19 +490,19 @@ TextureImporter:
       name: attack_1
       rect:
         serializedVersion: 2
-        x: 124
-        y: 182
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 135
+        y: 255
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79c2b40e263edd890800000000000000
-      internalID: -7431533796282127209
+      spriteID: a27af7b35636b11c0800000000000000
+      internalID: -4531919313577203926
       vertices: []
       indices: 
       edges: []
@@ -364,19 +511,19 @@ TextureImporter:
       name: attack_2
       rect:
         serializedVersion: 2
-        x: 225
-        y: 181
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 260
+        y: 253
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5882411fc48f15400800000000000000
-      internalID: 311302858611107973
+      spriteID: f886cd00e4fbaf2c0800000000000000
+      internalID: -4396991744431069041
       vertices: []
       indices: 
       edges: []
@@ -385,40 +532,61 @@ TextureImporter:
       name: attack_3
       rect:
         serializedVersion: 2
-        x: 325
-        y: 183
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 383
+        y: 250
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25093f65c9f623430800000000000000
-      internalID: 3761191356072169554
+      spriteID: 9ffcb55235f2f3d30800000000000000
+      internalID: 4413298194001940473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dead
+      name: dead_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 108
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 10
+        y: 155
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfd68b88249fe02b0800000000000000
-      internalID: -5616277621127483909
+      spriteID: 4adf25786d1dbf130800000000000000
+      internalID: 3601703046336413092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 155
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 340b343d33c02faa0800000000000000
+      internalID: -6128822726170529725
       vertices: []
       indices: 
       edges: []
@@ -427,82 +595,61 @@ TextureImporter:
       name: charge_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 19
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 10
+        y: 64
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba4a80dc1a59ddc40800000000000000
-      internalID: 5538747638897747115
+      spriteID: b627684f0a49c81c0800000000000000
+      internalID: -4500058508631838101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Werewolf_21
+      name: werewolf_21
       rect:
         serializedVersion: 2
-        x: 79
-        y: 55
+        x: 83
+        y: 100
         width: 4
         height: 8
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64113ef4695e76c00800000000000000
-      internalID: 893935484804469062
+      spriteID: 68d3aa5f49ce12920800000000000000
+      internalID: 2963910154307386758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Werewolf_22
+      name: werewolf_22
       rect:
         serializedVersion: 2
-        x: 82
-        y: 53
+        x: 86
+        y: 98
         width: 5
         height: 12
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63cfd12435477a0a0800000000000000
-      internalID: -6870394805590033354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Werewolf_23
-      rect:
-        serializedVersion: 2
-        x: 109
-        y: 50
-        width: 5
-        height: 9
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf8ba762aaa06b430800000000000000
-      internalID: 3798235061639887099
+      spriteID: e4d8be160c09c19a0800000000000000
+      internalID: -6260970226000884402
       vertices: []
       indices: 
       edges: []
@@ -511,40 +658,19 @@ TextureImporter:
       name: charge_1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 20
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 127
+        y: 63
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b9b1b6746f1c0fa0800000000000000
-      internalID: -5833252901003085387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Werewolf_25
-      rect:
-        serializedVersion: 2
-        x: 185
-        y: 45
-        width: 8
-        height: 15
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93deb941e7a1c7d30800000000000000
-      internalID: 4430445262239690041
+      spriteID: 4f25370de86106460800000000000000
+      internalID: 7232805804195402484
       vertices: []
       indices: 
       edges: []
@@ -553,61 +679,61 @@ TextureImporter:
       name: charge_2
       rect:
         serializedVersion: 2
-        x: 208
-        y: 20
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 260
+        y: 68
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 760506194e89a4520800000000000000
-      internalID: 2687128235138895975
+      spriteID: a0917d3480260db30800000000000000
+      internalID: 4310052631030995210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Werewolf_27
+      name: werewolf_25
       rect:
         serializedVersion: 2
-        x: 278
-        y: 49
+        x: 334
+        y: 97
         width: 5
         height: 9
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5599a420b810019e0800000000000000
-      internalID: -1652819366694446763
+      spriteID: 251268f919b2c5480800000000000000
+      internalID: -8909198058399063726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Werewolf_28
+      name: werewolf_26
       rect:
         serializedVersion: 2
-        x: 282
-        y: 48
+        x: 338
+        y: 96
         width: 7
         height: 12
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 458042eafe474dc90800000000000000
-      internalID: -7145958135962531756
+      spriteID: 0e4da5642ad83e380800000000000000
+      internalID: -8943148706923096864
       vertices: []
       indices: 
       edges: []
@@ -616,124 +742,292 @@ TextureImporter:
       name: charge_3
       rect:
         serializedVersion: 2
-        x: 309
-        y: 21
-        width: 75
-        height: 75
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 378
+        y: 68
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa1c927eebfc6afb0800000000000000
-      internalID: -4636790347502337617
+      spriteID: ea904fd96a51a63e0800000000000000
+      internalID: -2059810074209810002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Werewolf_30
+      name: werewolf_28
       rect:
         serializedVersion: 2
-        x: 378
-        y: 57
+        x: 451
+        y: 105
         width: 9
         height: 12
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfb909d6c63ed0f80800000000000000
-      internalID: -8138598896754451461
+      spriteID: 4ecf23d95604c47d0800000000000000
+      internalID: -2932898452151796508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Werewolf_31
+      name: werewolf_29
       rect:
         serializedVersion: 2
-        x: 4
-        y: 17
+        x: 129
+        y: 94
         width: 5
-        height: 6
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 846584d09ee16d8f0800000000000000
-      internalID: -516191120988285368
+      spriteID: f635a8826e7dc7560800000000000000
+      internalID: 7312957278465446767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Werewolf_32
+      name: werewolf_30
       rect:
         serializedVersion: 2
-        x: 9
-        y: 19
+        x: 205
+        y: 89
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ff12eb82e1fadc0800000000000000
+      internalID: -3625646014672535759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: werewolf_31
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 64
         width: 8
         height: 8
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b43cd4c34d934010800000000000000
-      internalID: 1171953242437596345
+      spriteID: edbe74f613bd39e30800000000000000
+      internalID: 4509188657294863326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Werewolf_33
+      name: werewolf_32
       rect:
         serializedVersion: 2
-        x: 203
-        y: 21
+        x: 259
+        y: 69
         width: 5
         height: 7
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdd51e5492e428530800000000000000
-      internalID: 3855730170155589084
+      spriteID: 59da336fb8573d9c0800000000000000
+      internalID: -3903647208008602219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Werewolf_34
+      name: werewolf_33
       rect:
         serializedVersion: 2
-        x: 207
-        y: 21
+        x: 263
+        y: 69
         width: 4
         height: 9
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0ae70bebd733a870800000000000000
-      internalID: 8692853123435719183
+      spriteID: 0c61f20bf0440eb80800000000000000
+      internalID: -8367613273483307328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: werewolf_34
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 62
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c100a0fcd4d9adc10800000000000000
+      internalID: 2079147135496486940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stay_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 445
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d237a4d0eb9f09d0800000000000000
+      internalID: -2805852652885822763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stay_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 445
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aab23dd3103fccb0800000000000000
+      internalID: -4841598212526392668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attacked_2
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 348
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7bf8d2d2a5c8a600800000000000000
+      internalID: 479850663427767162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attacked_3
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 345
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa28934254cff990800000000000000
+      internalID: -7349940209244951824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_2
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 153
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd0a3095ef7e2e20800000000000000
+      internalID: 3327737798617337286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dead_3
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 150
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52788e784b3310900800000000000000
+      internalID: 648856671785355045
       vertices: []
       indices: 
       edges: []

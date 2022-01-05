@@ -28,7 +28,7 @@ public class Werewolf : MonoBehaviour
 
     public int CollisionDamage = 1; // Enemy collision damage
     public int AttackDamage = 2; // Enemy attack damage
-    public float AttackDistance = 1f; // Enemy attack distance
+    public float AttackDistance = 0.3f; // Enemy attack distance
     public LayerMask PlayerMask;
 
     public float DetectionDistance = 5.0f; // Enemy player detection distance
