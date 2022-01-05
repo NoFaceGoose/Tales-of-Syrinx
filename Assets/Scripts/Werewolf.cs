@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class StoneMan : MonoBehaviour
+public class Werewolf : MonoBehaviour
 {
-    public GameObject Stone;
     private GameObject Player;
-    public Transform ThrowPoint;
     public Animator Anim;
     private Rigidbody _rigidBody;
+    public Transform HitBox;
 
     public int reward = 1; // Reward of killing the enemy
 
     // Enemy patrol
     public float WalkSpeed;
+    public float ChargeSpeed;
     public float StayTime;
     public bool OnPatrol;
     public bool TowardsLeft;
@@ -23,20 +23,24 @@ public class StoneMan : MonoBehaviour
     private bool _readyToStay = true;
 
     // Enemy health
-    public int Health = 10;
+    public int Health = 8;
     private bool _alive = true;
 
     public int CollisionDamage = 1; // Enemy collision damage
+    public int AttackDamage = 2; // Enemy attack damage
+    public float AttackDistance = 1f; // Enemy attack distance
+    public LayerMask PlayerMask;
 
     public float DetectionDistance = 5.0f; // Enemy player detection distance
 
-    public float HitRecover = 0.75f; // The possiblity that the enenmy does not perform attacked animation and keeps attacking
+    public float HitRecover = 0.5f; // The possiblity that the enenmy does not perform attacked animation and keeps attacking
 
     // Enemy state
     private enum EnemyAnimState
     {
         stay,
         walk,
+        charge,
         attack,
         attacked,
         die
@@ -99,7 +103,7 @@ public class StoneMan : MonoBehaviour
     {
         if (_alive)
         {
-            if (_state != EnemyAnimState.attack || Random.value > HitRecover)
+            if ((_state != EnemyAnimState.attack && _state != EnemyAnimState.charge) || Random.value > HitRecover)
             {
                 _state = EnemyAnimState.attacked;
             }
@@ -143,6 +147,8 @@ public class StoneMan : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindWithTag("Player");
+
+        PlayerMask = LayerMask.NameToLayer("Player");
 
         _rigidBody = gameObject.GetComponent<Rigidbody>();
 
@@ -216,15 +222,24 @@ public class StoneMan : MonoBehaviour
                 Anim.SetBool("IsWalking", false);
                 Anim.SetBool("IsAttacking", false);
                 Anim.SetBool("IsAttacked", false);
+                Anim.SetBool("IsCharging", false);
                 break;
 
             case EnemyAnimState.walk:
                 Anim.SetBool("IsWalking", true);
                 break;
 
+            case EnemyAnimState.charge:
+                Anim.SetBool("IsWalking", false);
+                Anim.SetBool("IsAttacked", false);
+                Anim.SetBool("IsAttacking", false);
+                Anim.SetBool("IsCharging", true);
+                break;
+
             case EnemyAnimState.attack:
                 Anim.SetBool("IsWalking", false);
                 Anim.SetBool("IsAttacked", false);
+                Anim.SetBool("IsCharging", false);
                 Anim.SetBool("IsAttacking", true);
                 break;
 
@@ -276,7 +291,23 @@ public class StoneMan : MonoBehaviour
 
     void Attack()
     {
-        Instantiate(Stone, ThrowPoint.position, ThrowPoint.rotation);
+        Collider[] cs = Physics.OverlapSphere(HitBox.position, AttackDistance, PlayerMask);
+        if (cs.Length != 0)
+        {
+            foreach (Collider csCell in cs)
+            {
+                PlayerController player = csCell.gameObject.GetComponent<PlayerController>();
+                if (player != null && !player.GetPlayerStatus())
+                {
+                    player.TakeDamage(AttackDamage);
+                }
+            }
+        }
+    }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(HitBox.position, AttackDistance);
     }
 
     // Move after staying
