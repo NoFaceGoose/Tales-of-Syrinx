@@ -2,25 +2,57 @@ using UnityEngine;
 
 public class Stone : MonoBehaviour
 {
-    public float Speed = -20f;
-    public int Damage = 2;
-    public int Health = 3;
+    public float Speed = -20f; // flying speed
+    public int StoneDamage = 2; // damage as stone
+    public int SoilDamage = 1; // damage as soil
+    private int _damage; // damage
+    public int Health = 3; // stone total health
+    public int TurnPointHealth = 1; // turn to soil when health is less than this value
     public Rigidbody _rigidbody;
-    public Sprite StoneSprite;
+    public Animator Anim;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        _rigidbody.velocity = transform.right * Speed;
+        _damage = StoneDamage;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Start()
     {
-        if (Health < 3)
+        if (_rigidbody != null)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = StoneSprite;
-            Damage--;
+            _rigidbody.velocity = transform.right * Speed;
+        }
+    }
+
+    void Update()
+    {
+        if (_damage == StoneDamage)
+        {
+            if (Health == TurnPointHealth)
+            {
+                _damage = SoilDamage;
+                Anim.SetBool("IsHit", true);
+            }
+
+            if (Health == 0)
+            {
+                Anim.SetBool("IsBroken", true);
+                if (_rigidbody != null)
+                {
+                    _rigidbody.velocity = new Vector3(0f, 0f, 0f);
+                }
+            }
+        }
+        else
+        {
+            if (Health == 0)
+            {
+                Anim.SetBool("IsSoilBroken", true);
+                if (_rigidbody != null)
+                {
+                    _rigidbody.velocity = new Vector3(0f, 0f, 0f);
+                }
+            }
         }
     }
 
@@ -29,28 +61,34 @@ public class Stone : MonoBehaviour
         if (hitInfo.CompareTag("Player"))
         {
             PlayerController player = hitInfo.GetComponent<PlayerController>();
+
             if (player != null && !player.GetPlayerStatus())
             {
-                player.TakeDamage(Damage);
-                Destroy(gameObject);
+                player.TakeDamage(_damage);
+                Health = 0;
+                return;
             }
         }
 
         if (hitInfo.CompareTag("Bullet"))
         {
-            Debug.Log("1");
             Health--;
             Destroy(hitInfo.gameObject);
-            if (Health <= 0)
-            {
-                Destroy(gameObject);
-            }
             return;
         }
 
         if (!hitInfo.CompareTag("Enemy") && !hitInfo.CompareTag("EnemyMissile") && !hitInfo.CompareTag("CheckPoint"))
         {
-            Destroy(gameObject);
+            Health = 0;
         }
+    }
+    private void DestroyLater()
+    {
+        Invoke("Destroy", 0.25f);
+        Destroy(gameObject.GetComponent<Rigidbody>());
+    }
+    private void Destroy()
+    {
+        Destroy(gameObject);
     }
 }

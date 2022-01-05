@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -2774593471382201484}
   - component: {fileID: 1378210928278440919}
   - component: {fileID: 3222207184804181985}
+  - component: {fileID: 1452720732851752863}
   m_Layer: 0
   m_Name: Stone
   m_TagString: EnemyMissile
@@ -47,10 +48,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: -20
-  Damage: 2
-  Health: 3
+  StoneDamage: 2
+  SoilDamage: 1
+  Health: 2
+  TurnPointHealth: 1
   _rigidbody: {fileID: -2774593471382201484}
-  StoneSprite: {fileID: 21300000, guid: 4b915f070228196408778c46c7afe891, type: 3}
+  SoilBroken: {fileID: -495228378445499602, guid: ca26dce263d5e8d408e3ffb6dccd05c3, type: 3}
+  Anim: {fileID: 1452720732851752863}
 --- !u!54 &-2774593471382201484
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -108,7 +112,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7593792cfdf3a42488e05118e4530de1, type: 3}
+  m_Sprite: {fileID: -5011066041441791434, guid: ca26dce263d5e8d408e3ffb6dccd05c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -130,6 +134,25 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.18
-  m_Height: 0.8
+  m_Height: 0.75
   m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.05, y: -0.02, z: 0}
+--- !u!95 &1452720732851752863
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878002049136458367}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0457574a8b2e85d408fb676f63a97fa0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
