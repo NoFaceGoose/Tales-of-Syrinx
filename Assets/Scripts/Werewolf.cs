@@ -304,6 +304,7 @@ public class Werewolf : MonoBehaviour
             }
         }
     }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
