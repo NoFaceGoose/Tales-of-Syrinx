@@ -18,6 +18,8 @@ TagManager:
   - ReedPlatform
   - EnemyMissile
   - CheckPoint
+  - Tree
+  - Thorn
   layers:
   - Default
   - TransparentFX
