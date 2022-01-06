@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 112087394196133067}
   - component: {fileID: 6898456045932723122}
   m_Layer: 6
-  m_Name: reed
+  m_Name: Reed
   m_TagString: ReedPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,6 +128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 2
-  allowedDifference: 3
+  allowedDifference: 2
   speed: 50
   rb: {fileID: 3664233111553373569}
