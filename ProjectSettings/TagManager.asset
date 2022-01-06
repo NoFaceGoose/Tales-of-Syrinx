@@ -20,6 +20,7 @@ TagManager:
   - CheckPoint
   - Tree
   - Thorn
+  - Prince
   layers:
   - Default
   - TransparentFX
