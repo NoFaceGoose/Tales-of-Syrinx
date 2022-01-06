@@ -7,6 +7,10 @@ public class PrinceController : MonoBehaviour
 {
     public float lookRadius = 10f;
 
+    public float StunTime = 1.0f;
+    bool isStun = false;
+    float currentStunTime = 0.0f;
+
     public int MaxHealth = 5;
     int CurrentHealth;
 
@@ -32,6 +36,17 @@ public class PrinceController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
+        if(isStun && currentStunTime < StunTime)
+        {
+            currentStunTime += Time.deltaTime;
+            agent.velocity = new Vector3(0, 0, 0);
+        } 
+        else
+        {
+            animator.SetBool("Attacked", false);
+            isStun = false;
+            currentStunTime = 0;
+        }
         if(distance <= lookRadius)
         {
             Flip(); // Face to the Player
@@ -45,6 +60,7 @@ public class PrinceController : MonoBehaviour
         {
             Die();
         }
+        
     }
 
     void FixedUpdate()
@@ -77,12 +93,15 @@ public class PrinceController : MonoBehaviour
     void Die()
     {
         Debug.Log("DP died");
-        //Death animation
+        animator.SetBool("IsDead", true);
+
         Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)
     {
         CurrentHealth -= damage;
+        animator.SetBool("Attacked", true);
+        isStun = true;
     }
 }
