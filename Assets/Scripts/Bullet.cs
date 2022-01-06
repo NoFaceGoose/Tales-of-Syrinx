@@ -35,5 +35,9 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (hitInfo.CompareTag("Prince"))
+        {
+            hitInfo.GetComponent<PrinceController>().TakeDamage(BulletDamage);
+        }
     }
 }

@@ -7,6 +7,9 @@ public class PrinceController : MonoBehaviour
 {
     public float lookRadius = 10f;
 
+    public int MaxHealth = 5;
+    int CurrentHealth;
+
     Transform target;
     NavMeshAgent agent;
     Rigidbody rg;
@@ -20,6 +23,7 @@ public class PrinceController : MonoBehaviour
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         rg = GetComponent<Rigidbody>();
+        CurrentHealth = MaxHealth;
         Flip();
     }
 
@@ -36,6 +40,10 @@ public class PrinceController : MonoBehaviour
             {
                 //Attack
             }
+        }
+        if(CurrentHealth <= 0)
+        {
+            Die();
         }
     }
 
@@ -57,7 +65,7 @@ public class PrinceController : MonoBehaviour
 
     void Dash()
     {
-        
+        // 
     }
 
     void OnDrawGizmosSelected()
@@ -68,7 +76,13 @@ public class PrinceController : MonoBehaviour
 
     void Die()
     {
+        Debug.Log("DP died");
         //Death animation
         Destroy(gameObject);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        CurrentHealth -= damage;
     }
 }
