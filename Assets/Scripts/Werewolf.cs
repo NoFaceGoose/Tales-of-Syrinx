@@ -196,7 +196,7 @@ public class Werewolf : MonoBehaviour
                 _onMove = false;
                 _startToAttack = true;
                 _isAttacked = false;
-                _state = EnemyAnimState.attack;
+                _state = EnemyAnimState.charge;
 
                 if (IsInvoking("StopAttacking"))
                 {
@@ -205,6 +205,7 @@ public class Werewolf : MonoBehaviour
             }
             else
             {
+                _state = EnemyAnimState.stay;
                 if (_state == EnemyAnimState.attack)
                 {
                     Invoke("StopAttacking", StayTime * 2);
@@ -220,30 +221,29 @@ public class Werewolf : MonoBehaviour
         {
             case EnemyAnimState.stay:
                 Anim.SetBool("IsWalking", false);
-                Anim.SetBool("IsAttacking", false);
-                Anim.SetBool("IsAttacked", false);
                 Anim.SetBool("IsCharging", false);
+                Anim.SetBool("IsStaying", true);
                 break;
 
             case EnemyAnimState.walk:
+                Anim.SetBool("IsCharging", false);
+                Anim.SetBool("IsStaying", false);
                 Anim.SetBool("IsWalking", true);
                 break;
 
             case EnemyAnimState.charge:
-                Anim.SetBool("IsWalking", false);
-                Anim.SetBool("IsAttacked", false);
+                Anim.SetBool("IsStaying", false);
                 Anim.SetBool("IsAttacking", false);
                 Anim.SetBool("IsCharging", true);
                 break;
 
             case EnemyAnimState.attack:
-                Anim.SetBool("IsWalking", false);
-                Anim.SetBool("IsAttacked", false);
-                Anim.SetBool("IsCharging", false);
+                Anim.SetBool("IsStaying", false);
                 Anim.SetBool("IsAttacking", true);
                 break;
 
             case EnemyAnimState.attacked:
+                Anim.SetBool("IsCharging", false);
                 Anim.SetBool("IsAttacked", true);
                 break;
 
@@ -319,7 +319,6 @@ public class Werewolf : MonoBehaviour
     void StopAttacking()
     {
         _startToAttack = false;
-        _state = EnemyAnimState.stay;
         Invoke("Move", StayTime);
     }
 }

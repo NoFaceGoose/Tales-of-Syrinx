@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -6427896628964228454}
   - component: {fileID: 562262623931891051}
   - component: {fileID: 8285840264764123294}
+  - component: {fileID: 1588084573702234669}
   m_Layer: 0
   m_Name: Werewolf
   m_TagString: Untagged
@@ -45,10 +46,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 7457d4700254eee44b8997cc86a6a4b0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.34
+  m_Height: 0.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.04, y: 0, z: 0}
 --- !u!54 &-6427896628964228454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77,10 +78,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0419a04c4d38054798246aea409104d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Anim: {fileID: 0}
+  Anim: {fileID: 1588084573702234669}
   HitBox: {fileID: 1800484094163310688}
   reward: 1
-  WalkSpeed: 1
+  WalkSpeed: 2
   ChargeSpeed: 5
   StayTime: 2
   OnPatrol: 1
@@ -148,6 +149,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1588084573702234669
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549458074397702593}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 68bff92c314a60649bee0658889c9799, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8415953666114128539
 GameObject:
   m_ObjectHideFlags: 0

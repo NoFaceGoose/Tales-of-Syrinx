@@ -78,10 +78,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 7457d4700254eee44b8997cc86a6a4b0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.45
-  m_Height: 0
+  m_Radius: 0.36
+  m_Height: 0.76
   m_Direction: 1
-  m_Center: {x: 0.12, y: -0.07, z: 0}
+  m_Center: {x: 0.1, y: -0.07, z: 0}
 --- !u!114 &4788064612178725923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,10 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Stone: {fileID: 1878002049136458367, guid: 3c7646f2edcdd4c0a8590a567d75c5ce, type: 3}
-  Player: {fileID: 3554852890956006901, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
   ThrowPoint: {fileID: 4788064613307742239}
   Anim: {fileID: -4005767555293114884}
-  _rigidBody: {fileID: 8052946757489618648}
   reward: 1
   WalkSpeed: 1
   StayTime: 2
