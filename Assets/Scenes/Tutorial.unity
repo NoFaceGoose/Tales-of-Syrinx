@@ -702,17 +702,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 344821009}
     - target: {fileID: 3554852890956006903, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
-      propertyPath: ReedRate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554852890956006903, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 604953163}
-    - target: {fileID: 3554852890956006903, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
-      propertyPath: ReedMaxCount
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3554852890956006903, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
       propertyPath: extraHeightText
       value: 0.88

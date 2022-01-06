@@ -4,64 +4,64 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -4117377400470120790
-    second: DarkPrince_0
+    second: walk_0
   - first:
       213: -787237831385063432
-    second: DarkPrince_1
+    second: walk_1
   - first:
       213: -4765755257428258246
-    second: DarkPrince_2
+    second: walk_2
   - first:
       213: -3574512235384443370
-    second: DarkPrince_3
+    second: walk_3
   - first:
       213: -271300462877982738
-    second: DarkPrince_4
+    second: idle_0
   - first:
       213: -7002304854834726967
-    second: DarkPrince_5
+    second: idle_1
   - first:
       213: -7072555728683879383
-    second: DarkPrince_6
+    second: idle_2
   - first:
       213: -5819397907728968813
-    second: DarkPrince_7
+    second: idle_3
   - first:
       213: 6570432394531231836
-    second: DarkPrince_8
+    second: jump_0
   - first:
       213: 3887838959533420476
-    second: DarkPrince_9
+    second: jump_1
   - first:
       213: 8933773114211081724
-    second: DarkPrince_10
+    second: jump_2
   - first:
       213: -2576727581156962147
-    second: DarkPrince_11
+    second: jump_3
   - first:
       213: 6045118309439109286
-    second: DarkPrince_12
+    second: attacked_0
   - first:
       213: -1625871324151689375
-    second: DarkPrince_13
+    second: attacked_1
   - first:
       213: -3879919048595780335
-    second: DarkPrince_14
+    second: attacked_2
   - first:
       213: 8909998889179485228
-    second: DarkPrince_15
+    second: attacked_3
   - first:
       213: -5103949143644476115
-    second: DarkPrince_16
+    second: attack_0
   - first:
       213: 5663248156639761278
-    second: DarkPrince_17
+    second: attack_1
   - first:
       213: 4967758443307075827
-    second: DarkPrince_18
+    second: attack_2
   - first:
       213: 3574712968028055850
-    second: DarkPrince_19
+    second: attack_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -175,15 +175,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DarkPrince_0
+      name: walk_0
       rect:
         serializedVersion: 2
         x: 27
-        y: 418
-        width: 99
+        y: 518
+        width: 81
         height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,15 +196,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_1
+      name: walk_1
       rect:
         serializedVersion: 2
-        x: 138
-        y: 418
-        width: 99
+        x: 149
+        y: 520
+        width: 81
         height: 67
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,15 +217,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_2
+      name: walk_2
       rect:
         serializedVersion: 2
-        x: 247
-        y: 418
-        width: 99
+        x: 287
+        y: 523
+        width: 76
         height: 65
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,15 +238,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_3
+      name: walk_3
       rect:
         serializedVersion: 2
-        x: 357
-        y: 418
-        width: 83
+        x: 427
+        y: 525
+        width: 76
         height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -259,15 +259,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_4
+      name: idle_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 339
+        x: 38
+        y: 415
         width: 51
         height: 79
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -280,15 +280,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_5
+      name: idle_1
       rect:
         serializedVersion: 2
-        x: 141
-        y: 337
+        x: 160
+        y: 414
         width: 51
-        height: 81
+        height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -301,15 +301,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_6
+      name: idle_2
       rect:
         serializedVersion: 2
-        x: 250
-        y: 337
+        x: 298
+        y: 418
         width: 51
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -322,15 +322,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_7
+      name: idle_3
       rect:
         serializedVersion: 2
-        x: 360
-        y: 337
+        x: 438
+        y: 420
         width: 51
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -343,15 +343,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_8
+      name: jump_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 257
+        x: 30
+        y: 302
         width: 75
-        height: 80
+        height: 79
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -364,15 +364,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_9
+      name: jump_1
       rect:
         serializedVersion: 2
-        x: 132
-        y: 258
+        x: 146
+        y: 304
         width: 81
-        height: 80
+        height: 79
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -385,15 +385,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_10
+      name: jump_2
       rect:
         serializedVersion: 2
-        x: 241
-        y: 257
-        width: 99
+        x: 284
+        y: 307
+        width: 98
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -406,15 +406,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_11
+      name: jump_3
       rect:
         serializedVersion: 2
-        x: 361
-        y: 258
+        x: 433
+        y: 311
         width: 49
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -427,15 +427,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_12
+      name: attacked_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 175
+        x: 31
+        y: 191
         width: 73
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -448,15 +448,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_13
+      name: attacked_1
       rect:
         serializedVersion: 2
-        x: 138
-        y: 175
+        x: 153
+        y: 193
         width: 73
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -469,15 +469,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_14
+      name: attacked_2
       rect:
         serializedVersion: 2
-        x: 247
-        y: 175
+        x: 291
+        y: 196
         width: 73
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -490,15 +490,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_15
+      name: attacked_3
       rect:
         serializedVersion: 2
-        x: 357
-        y: 175
+        x: 431
+        y: 198
         width: 73
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -511,15 +511,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_16
+      name: attack_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 98
+        x: 27
+        y: 75
         width: 60
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -532,15 +532,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_17
+      name: attack_1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 99
-        width: 71
+        x: 151
+        y: 78
+        width: 70
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -553,15 +553,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_18
+      name: attack_2
       rect:
         serializedVersion: 2
-        x: 249
-        y: 99
+        x: 294
+        y: 80
         width: 73
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -574,15 +574,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkPrince_19
+      name: attack_3
       rect:
         serializedVersion: 2
-        x: 359
-        y: 98
+        x: 434
+        y: 82
         width: 71
         height: 70
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
