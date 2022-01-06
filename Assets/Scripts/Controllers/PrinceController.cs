@@ -24,6 +24,11 @@ public class PrinceController : MonoBehaviour
 
     public float AttackRate = 2f;
     float nextAttackTime = 0;
+    public Transform AttackPoint;
+    public LayerMask playerLayers;
+    public float attackRange = 1.0f;
+
+    public int attackDamage = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,11 +68,11 @@ public class PrinceController : MonoBehaviour
                 nextAttackTime = Time.time + 1f / AttackRate;
             }
         }
+
         if(CurrentHealth <= 0)
         {
             Die();
         }
-        
     }
 
     void FixedUpdate()
@@ -88,8 +93,14 @@ public class PrinceController : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("DP attack");
+        // Debug.Log("DP attack");
         animator.SetTrigger("Attack");
+
+        Collider[] hitPlayers = Physics.OverlapSphere(AttackPoint.position, attackRange, playerLayers);
+        foreach (Collider player in hitPlayers)
+        {
+            player.GetComponent<PlayerController>().TakeDamage(attackDamage);
+        }
     }
 
     void Dash()
@@ -101,6 +112,8 @@ public class PrinceController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(AttackPoint.position, attackRange);
     }
 
     void Die()
