@@ -21,6 +21,9 @@ public class PrinceController : MonoBehaviour
     public Animator animator;
 
     bool _isFacingRight = true;
+
+    public float AttackRate = 2f;
+    float nextAttackTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,7 @@ public class PrinceController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
+        // Stun check
         if(isStun && currentStunTime < StunTime)
         {
             currentStunTime += Time.deltaTime;
@@ -47,13 +51,16 @@ public class PrinceController : MonoBehaviour
             isStun = false;
             currentStunTime = 0;
         }
+
+        // look for players
         if(distance <= lookRadius)
         {
             Flip(); // Face to the Player
             agent.SetDestination(target.position);
-            if(distance < agent.stoppingDistance)
+            if(distance < agent.stoppingDistance && Time.time >= nextAttackTime)
             {
-                //Attack
+                Attack();
+                nextAttackTime = Time.time + 1f / AttackRate;
             }
         }
         if(CurrentHealth <= 0)
@@ -77,6 +84,12 @@ public class PrinceController : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             _isFacingRight = !_isFacingRight;
         }
+    }
+
+    void Attack()
+    {
+        Debug.Log("DP attack");
+        animator.SetTrigger("Attack");
     }
 
     void Dash()
