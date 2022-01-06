@@ -203,6 +203,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void UpdateReedCount(int newCount)
+    {
+        ReedMaxCount = newCount;
+    }
+
     private void Flip()
     {
         _isFacingRight = !_isFacingRight;
