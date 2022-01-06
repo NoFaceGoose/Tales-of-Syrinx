@@ -3,7 +3,6 @@ using UnityEngine;
 public class FragilePlatform : MonoBehaviour
 {
     public Rigidbody FragileClone;
-    private Transform _cloneTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +18,7 @@ public class FragilePlatform : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player") && other.gameObject.transform.position.y > gameObject.transform.position.y)
+        if (other.gameObject.CompareTag("Player") && other.gameObject.transform.position.y > gameObject.transform.position.y + other.gameObject.transform.localScale.y / 5)
         {
             Invoke("Destroy", 0.5f);
         }
