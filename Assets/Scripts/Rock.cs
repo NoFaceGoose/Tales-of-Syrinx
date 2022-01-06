@@ -20,14 +20,17 @@ public class Rock : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                PlayerController.PlayerInstance.Die();
-                return;
+                if (gameObject.GetComponent<Rigidbody>().useGravity && !gameObject.GetComponent<Rigidbody>().isKinematic)
+                {
+                    PlayerController.PlayerInstance.Die();
+                    return;
+                }
             }
-            if (other.gameObject.CompareTag("ReedPlatform"))
-            {
-                Destroy(other.gameObject);
-                return;
-            }
+            //if (other.gameObject.CompareTag("ReedPlatform"))
+            //{
+            //    Destroy(other.gameObject);
+            //    return;
+            //}
             if (other.gameObject.CompareTag("Platform") || other.gameObject.CompareTag("Ground"))
             {
                 Destroy(GetComponent<Rigidbody>());

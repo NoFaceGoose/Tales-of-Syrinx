@@ -262,12 +262,6 @@ public class StoneMan : MonoBehaviour
             }
         }
 
-        // Destroyed by reed platform
-        if (other.gameObject.CompareTag("ReedPlatform"))
-        {
-            Destroy(other.gameObject);
-        }
-
         if (other.gameObject.CompareTag("Rock"))
         {
             Die();
