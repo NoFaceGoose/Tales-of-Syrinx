@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7342292846965853157}
   m_Layer: 6
   m_Name: Thorn
-  m_TagString: Untagged
+  m_TagString: Thorn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4152179498759423727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.1321807, y: 1.7254632, z: -0.74781096}
-  m_LocalScale: {x: 2, y: 2, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -41,11 +41,11 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4152179498759423727}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7457d4700254eee44b8997cc86a6a4b0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.55, y: 0.55, z: 0}
+  m_Size: {x: 1.55, y: 0.55, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-4362297913834392145
 Rigidbody:
@@ -62,7 +62,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &901548407604048754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006b2f64ec449184d87970d0099e6ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpineDamage: 1
+  ThornDamage: 1
 --- !u!212 &7342292846965853157
 SpriteRenderer:
   m_ObjectHideFlags: 0

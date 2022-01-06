@@ -243,6 +243,7 @@ public class StoneMan : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        Debug.Log(other.gameObject);
         // Damage player
         if (other.gameObject.CompareTag("Player"))
         {
@@ -259,12 +260,32 @@ public class StoneMan : MonoBehaviour
                 }
 
                 _isAttacked = true;
+                return;
             }
         }
 
         if (other.gameObject.CompareTag("Rock"))
         {
-            Die();
+            if (other.gameObject.GetComponent<Rigidbody>() != null)
+            {
+                Die();
+
+            }
+            else
+            {
+                TowardsLeft = !TowardsLeft;
+                transform.Rotate(0f, 180f, 0f);
+            }
+            return;
+        }
+
+        if (other.gameObject.CompareTag("Tree") || other.gameObject.CompareTag("Thorn") || other.gameObject.CompareTag("Platform"))
+        {
+            if (_state == EnemyAnimState.walk)
+            {
+                TowardsLeft = !TowardsLeft;
+                transform.Rotate(0f, 180f, 0f);
+            }
         }
     }
 

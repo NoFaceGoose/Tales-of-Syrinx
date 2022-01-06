@@ -3343,8 +3343,8 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021290690}
-  m_Text: "Move [A] [D] \nJump [W]\nDouble Jump [w] * 2\nShoot [Space]\nGenerate
-    reed platform[J]"
+  m_Text: "Move [A] [D] \nJump [W]\nDouble Jump [w] * 2\nShoot [Space]\nLaunch Reed
+    [J]"
   m_OffsetZ: 0
   m_CharacterSize: 0.7
   m_LineSpacing: 1.5
@@ -5192,11 +5192,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2536696400607424477, guid: 4d94a210ad85b1847bf62f127dfcde97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.44
+      value: 21.56
       objectReference: {fileID: 0}
     - target: {fileID: 2536696400607424477, guid: 4d94a210ad85b1847bf62f127dfcde97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.09
+      value: 3.71
       objectReference: {fileID: 0}
     - target: {fileID: 2536696400607424477, guid: 4d94a210ad85b1847bf62f127dfcde97, type: 3}
       propertyPath: m_LocalPosition.z
