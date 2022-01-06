@@ -22,6 +22,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider hitInfo)
     {
+        Debug.Log(hitInfo);
         if (hitInfo.CompareTag("Enemy"))
         {
             StoneMan stoneMan = hitInfo.GetComponent<StoneMan>();
@@ -34,6 +35,10 @@ public class Bullet : MonoBehaviour
         if (!hitInfo.CompareTag("Player") && !hitInfo.CompareTag("EnemyMissile") && !hitInfo.CompareTag("CheckPoint"))
         {
             Destroy(gameObject);
+        }
+        if (hitInfo.CompareTag("Prince"))
+        {
+            hitInfo.GetComponent<PrinceController>().TakeDamage(BulletDamage);
         }
     }
 }

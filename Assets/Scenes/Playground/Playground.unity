@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 310365606}
   m_Layer: 0
   m_Name: Prince
-  m_TagString: Untagged
+  m_TagString: Prince
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,7 +367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310365601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18975717, y: 0.85, z: -0.68}
+  m_LocalPosition: {x: 0.18975717, y: 0.92, z: -1.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1611231885}
@@ -384,7 +384,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
+  m_Speed: 3.5
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -451,7 +451,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 15
+  StunTime: 1
+  MaxHealth: 5
   animator: {fileID: 1611231887}
+  AttackRate: 2
 --- !u!1 &442741001
 GameObject:
   m_ObjectHideFlags: 0
