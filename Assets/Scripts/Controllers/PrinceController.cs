@@ -9,6 +9,9 @@ public class PrinceController : MonoBehaviour
 
     Transform target;
     NavMeshAgent agent;
+    Rigidbody rg;
+
+    public Animator animator;
 
     bool _isFacingRight = true;
     // Start is called before the first frame update
@@ -16,6 +19,7 @@ public class PrinceController : MonoBehaviour
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        rg = GetComponent<Rigidbody>();
         Flip();
     }
 
@@ -33,8 +37,13 @@ public class PrinceController : MonoBehaviour
                 //Attack
             }
         }
-
     }
+
+    void FixedUpdate()
+    {
+        animator.SetFloat("Speed", Mathf.Abs(agent.velocity.x));
+    }
+
 
     void Flip()
     {
@@ -44,7 +53,11 @@ public class PrinceController : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             _isFacingRight = !_isFacingRight;
         }
-        Debug.Log("("+direction.x+","+direction.y+")");
+    }
+
+    void Dash()
+    {
+        
     }
 
     void OnDrawGizmosSelected()
