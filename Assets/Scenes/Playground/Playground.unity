@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 310365606}
   m_Layer: 0
   m_Name: Prince
-  m_TagString: Untagged
+  m_TagString: Prince
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -451,6 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 15
+  MaxHealth: 5
   animator: {fileID: 1611231887}
 --- !u!1 &442741001
 GameObject:

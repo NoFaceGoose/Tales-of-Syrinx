@@ -22,6 +22,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider hitInfo)
     {
+        Debug.Log(hitInfo);
         if (hitInfo.CompareTag("Enemy"))
         {
             StoneMan stoneMan = hitInfo.GetComponent<StoneMan>();
