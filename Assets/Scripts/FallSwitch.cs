@@ -3,6 +3,8 @@ using UnityEngine;
 public class FallSwitch : MonoBehaviour
 {
     public GameObject Rock;
+    public Sprite SpriteTriggered;
+    private bool _isTriggered = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +19,12 @@ public class FallSwitch : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!_isTriggered && other.CompareTag("Player"))
         {
             Rock.GetComponent<Rigidbody>().useGravity = true;
             Rock.GetComponent<Rigidbody>().isKinematic = false;
-            Destroy(gameObject);
+            _isTriggered = true;
+            gameObject.GetComponent<SpriteRenderer>().sprite = SpriteTriggered;
         }
     }
 }
