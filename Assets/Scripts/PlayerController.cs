@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
 
     // Launch the reed
     public GameObject ReedPrefab;
+    public int ReedMaxCount = 1;
+    public int ReedCount;
+    public float ReedRate = 1.0f;
+    private float nextReed = 1.0f;
 
     // Health
     public int MaxHealth = 4;
@@ -54,29 +58,31 @@ public class PlayerController : MonoBehaviour
         CurrentHealth = MaxHealth;
         healthBar.SetMaxHealth(MaxHealth);
         SavedPosition = transform.position;
+        ReedCount = ReedMaxCount;
     }
 
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();
         _jump = new Vector3(0.0f, 2.0f, 0.0f);
+
     }
 
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     TakeDamage(1);
-        // }
         if (InvincibleTime > 0 && playerInvincible)
         {
             InvincibleTime -= Time.deltaTime;
-            // Debug.Log(InvincibleTime);
         }
         else
         {
             playerInvincible = false;
             InvincibleTime = 2.0f;
+        }
+        if (Time.time > nextReed)
+        {
+            nextReed = Time.time + ReedRate;
+            ReedCount = ReedMaxCount;
         }
     }
 
@@ -106,10 +112,6 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        // Destroy(gameObject);
-        // SceneManager.LoadScene("Lose");
-        // TODO:
-        // The death function should pop up a menu for player to choose
         dm.EnterDieMenu();
         Reborn(); // in reborn, the state of the animation should be reset\\
     }
@@ -193,10 +195,11 @@ public class PlayerController : MonoBehaviour
     // Launch the reed platform
     public void LaunchReed(InputAction.CallbackContext value)
     {
-        if (value.performed)
+        if (value.performed && ReedCount > 0)
         {
             animator.SetTrigger("Reed");
             Instantiate(ReedPrefab, FirePoint.position, FirePoint.rotation);
+            ReedCount -= 1;
         }
     }
 
