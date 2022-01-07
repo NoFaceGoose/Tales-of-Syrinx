@@ -311,15 +311,10 @@ public class Werewolf : MonoBehaviour
 
         if (other.gameObject.CompareTag("Tree") || other.gameObject.CompareTag("Thorn") || other.gameObject.CompareTag("Platform"))
         {
-            if (_state == EnemyAnimState.walk)
+            if (_state == EnemyAnimState.walk || _state == EnemyAnimState.stay)
             {
                 TowardsLeft = !TowardsLeft;
                 transform.Rotate(0f, 180f, 0f);
-            }
-
-            if (_state == EnemyAnimState.charge)
-            {
-                _state = EnemyAnimState.attack;
             }
         }
     }

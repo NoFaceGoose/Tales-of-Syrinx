@@ -23,10 +23,15 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter(Collider hitInfo)
     {
         Debug.Log(hitInfo);
-        if (hitInfo.CompareTag("Enemy"))
+        if (hitInfo.CompareTag("StoneMan"))
         {
             StoneMan stoneMan = hitInfo.GetComponent<StoneMan>();
             stoneMan.TakeDamage(BulletDamage);
+        }
+        if (hitInfo.CompareTag("Werewolf"))
+        {
+            Werewolf werewolf = hitInfo.GetComponent<Werewolf>();
+            werewolf.TakeDamage(BulletDamage);
         }
         if (hitInfo.CompareTag("Boss"))
         {

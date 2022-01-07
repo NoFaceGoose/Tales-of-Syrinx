@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1588084573702234669}
   m_Layer: 0
   m_Name: Werewolf
-  m_TagString: Enemy
+  m_TagString: Werewolf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 7457d4700254eee44b8997cc86a6a4b0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.34
+  m_Radius: 0.2
   m_Height: 0.8
   m_Direction: 1
   m_Center: {x: 0.04, y: 0, z: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
   HitBox: {fileID: 1800484094163310688}
   reward: 1
   WalkSpeed: 2
-  ChargeSpeed: 5
+  ChargeSpeed: 7
   StayTime: 2
   OnPatrol: 1
   TowardsLeft: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
   Health: 8
   CollisionDamage: 1
   AttackDamage: 2
-  AttackDistance: 1
+  AttackDistance: 0.5
   AttackRadius: 0.3
   PlayerMask:
     serializedVersion: 2

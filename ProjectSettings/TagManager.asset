@@ -21,6 +21,8 @@ TagManager:
   - Tree
   - Thorn
   - Prince
+  - StoneMan
+  - Werewolf
   layers:
   - Default
   - TransparentFX

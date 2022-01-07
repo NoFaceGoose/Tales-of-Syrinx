@@ -77,7 +77,7 @@ public class Stone : MonoBehaviour
             return;
         }
 
-        if (!hitInfo.CompareTag("Enemy") && !hitInfo.CompareTag("EnemyMissile") && !hitInfo.CompareTag("CheckPoint"))
+        if (!hitInfo.CompareTag("Werewolf") && !hitInfo.CompareTag("StoneMan") && !hitInfo.CompareTag("EnemyMissile") && !hitInfo.CompareTag("CheckPoint"))
         {
             Health = 0;
         }
