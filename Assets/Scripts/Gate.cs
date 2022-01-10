@@ -32,7 +32,6 @@ public class Gate : MonoBehaviour
 
             else
             {
-                KeyReminder = GameObject.Find("Key Reminder");
                 KeyReminder.GetComponent<Renderer>().enabled = true;
                 CancelInvoke();
                 Invoke("RemindDisappear", 2f);

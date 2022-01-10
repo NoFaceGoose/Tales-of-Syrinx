@@ -89,7 +89,7 @@ MonoBehaviour:
   Left: {fileID: 0}
   Right: {fileID: 0}
   Health: 8
-  CollisionDamage: 1
+  CollisionDamage: 0
   AttackDamage: 2
   AttackDistance: 0.5
   AttackRadius: 0.3

@@ -104,7 +104,7 @@ public class Werewolf : MonoBehaviour
     {
         if (_alive)
         {
-            if ((_state != EnemyAnimState.attack && _state != EnemyAnimState.charge) || Random.value > HitRecover)
+            if (_state != EnemyAnimState.charge && (_state != EnemyAnimState.attack || Random.value > HitRecover))
             {
                 _state = EnemyAnimState.attacked;
             }
@@ -202,10 +202,6 @@ public class Werewolf : MonoBehaviour
                     transform.Translate(Vector3.left * Time.deltaTime * ChargeSpeed);
                     CheckAttack();
                 }
-                else
-                {
-                    Attack();
-                }
 
                 if (IsInvoking("StopAttacking"))
                 {
@@ -217,7 +213,7 @@ public class Werewolf : MonoBehaviour
                 if (_state == EnemyAnimState.attack)
                 {
                     _state = EnemyAnimState.stay;
-                    Invoke("StopAttacking", StayTime * 2);
+                    StopAttacking();
                 }
             }
         }
