@@ -243,7 +243,6 @@ public class StoneMan : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.gameObject);
         // Damage player
         if (other.gameObject.CompareTag("Player"))
         {

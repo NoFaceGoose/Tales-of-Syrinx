@@ -28,8 +28,8 @@ public class Werewolf : MonoBehaviour
 
     public int CollisionDamage = 1; // Enemy collision damage
     public int AttackDamage = 2; // Enemy attack damage
-    public float AttackDistance = 1.5f; // Enemy attack point Radius
-    public float AttackRadius = 0.3f; // Enemy attack point Radius
+    public float AttackDistance = 0.5f; // Enemy attack distance
+    public float AttackHeight = 2f; // Enemy attack height
     public LayerMask PlayerMask;
 
     public float DetectionDistance = 5.0f; // Enemy player detection distance
@@ -109,16 +109,9 @@ public class Werewolf : MonoBehaviour
                 _state = EnemyAnimState.attacked;
             }
 
-            Health -= damage;
-
-            // turn to player
-            if ((TowardsLeft && Player.transform.position.x > gameObject.transform.position.x) || (!TowardsLeft && Player.transform.position.x < gameObject.transform.position.x))
-            {
-                TowardsLeft = !TowardsLeft;
-                transform.Rotate(0f, 180f, 0f);
-            }
-
             _isAttacked = true;
+            Health -= damage;
+            _alarm = true;
 
             if (Health <= 0)
             {
@@ -159,6 +152,7 @@ public class Werewolf : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log(_state);
         if (_alive)
         {
             if (OnPatrol && !_alarm)
@@ -196,12 +190,7 @@ public class Werewolf : MonoBehaviour
                 _alarm = true;
                 _isAttacked = false;
 
-                if (_state != EnemyAnimState.attack)
-                {
-                    _state = EnemyAnimState.charge;
-                    transform.Translate(Vector3.left * Time.deltaTime * ChargeSpeed);
-                    CheckAttack();
-                }
+                CheckAttack();
 
                 if (IsInvoking("StopAttacking"))
                 {
@@ -210,7 +199,7 @@ public class Werewolf : MonoBehaviour
             }
             else
             {
-                if (_state == EnemyAnimState.attack)
+                if (_state == EnemyAnimState.attack || _state == EnemyAnimState.charge)
                 {
                     _state = EnemyAnimState.stay;
                     StopAttacking();
@@ -239,11 +228,13 @@ public class Werewolf : MonoBehaviour
             case EnemyAnimState.charge:
                 Anim.SetBool("IsStaying", false);
                 Anim.SetBool("IsAttacking", false);
+                Anim.SetBool("IsAttacked", false);
                 Anim.SetBool("IsCharging", true);
                 break;
 
             case EnemyAnimState.attack:
                 Anim.SetBool("IsStaying", false);
+                Anim.SetBool("IsCharging", false);
                 Anim.SetBool("IsAttacking", true);
                 break;
 
@@ -279,6 +270,7 @@ public class Werewolf : MonoBehaviour
                 }
 
                 _isAttacked = true;
+                return;
             }
         }
 
@@ -287,7 +279,6 @@ public class Werewolf : MonoBehaviour
             if (other.gameObject.GetComponent<Rigidbody>() != null)
             {
                 Die();
-
             }
             else
             {
@@ -295,11 +286,6 @@ public class Werewolf : MonoBehaviour
                 {
                     TowardsLeft = !TowardsLeft;
                     transform.Rotate(0f, 180f, 0f);
-                }
-
-                if (_state == EnemyAnimState.charge)
-                {
-                    _state = EnemyAnimState.attack;
                 }
             }
             return;
@@ -317,25 +303,36 @@ public class Werewolf : MonoBehaviour
 
     void CheckAttack()
     {
-        Collider[] cs = Physics.OverlapSphere(transform.position, AttackDistance, PlayerMask);
-        Debug.Log(PlayerMask);
+        Collider[] cs = Physics.OverlapBox(HitBox.position, new Vector3(AttackDistance, AttackHeight), transform.rotation, PlayerMask);
         if (cs.Length != 0)
         {
             foreach (Collider csCell in cs)
             {
                 PlayerController player = csCell.gameObject.GetComponent<PlayerController>();
-                if (player != null && !player.GetPlayerStatus())
+                if (player != null)
                 {
-                    _state = EnemyAnimState.attack;
+                    Debug.Log(1);
+                    if (_state != EnemyAnimState.attack)
+                    {
+                        _state = EnemyAnimState.attack;
+                    }
                 }
             }
+        }
+        else
+        {
+            if (_state != EnemyAnimState.charge)
+            {
+                _state = EnemyAnimState.charge;
+            }
+            transform.Translate(Vector3.left * Time.deltaTime * ChargeSpeed);
         }
     }
 
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, AttackDistance);
+        Gizmos.DrawCube(HitBox.position, new Vector3(AttackDistance, AttackHeight));
     }
 
     // Move after staying
@@ -357,7 +354,7 @@ public class Werewolf : MonoBehaviour
 
     void Attack()
     {
-        Collider[] cs = Physics.OverlapSphere(HitBox.position, AttackRadius, PlayerMask);
+        Collider[] cs = Physics.OverlapBox(HitBox.position, new Vector3(AttackDistance, AttackHeight), transform.rotation, PlayerMask);
         if (cs.Length != 0)
         {
             foreach (Collider csCell in cs)
@@ -368,6 +365,17 @@ public class Werewolf : MonoBehaviour
                     player.TakeDamage(AttackDamage);
                 }
             }
+        }
+    }
+
+    // Turn to player when she is behind
+    void TurnToPlayer()
+    {
+
+        if ((TowardsLeft && Player.transform.position.x > gameObject.transform.position.x) || (!TowardsLeft && Player.transform.position.x < gameObject.transform.position.x))
+        {
+            TowardsLeft = !TowardsLeft;
+            transform.Rotate(0f, 180f, 0f);
         }
     }
 }

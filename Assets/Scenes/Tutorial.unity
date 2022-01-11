@@ -4546,6 +4546,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 257140854}
     m_Modifications:
+    - target: {fileID: -6427896628964228454, guid: e6939685bc4cdce4aabf617b89f6e77c, type: 3}
+      propertyPath: m_Drag
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -6427896628964228454, guid: e6939685bc4cdce4aabf617b89f6e77c, type: 3}
+      propertyPath: m_Mass
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 562262623931891051, guid: e6939685bc4cdce4aabf617b89f6e77c, type: 3}
       propertyPath: Anim
       value: 

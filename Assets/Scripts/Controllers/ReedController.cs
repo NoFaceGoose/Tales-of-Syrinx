@@ -21,7 +21,6 @@ public class ReedController : MonoBehaviour
     // Stop the reed platform
     void reedStop()
     {
-        Debug.Log("Stop!");
         rb.constraints = RigidbodyConstraints.FreezeAll;
         rb.isKinematic = true;
         moveFlag = false;
@@ -32,7 +31,6 @@ public class ReedController : MonoBehaviour
         // check if the reed has traveled the distance
         if (moveFlag && Mathf.Abs(rb.position.x - rawPos.x) >= allowedDifference)
         {
-            Debug.Log("Stop!");
             reedStop();
         }
 
