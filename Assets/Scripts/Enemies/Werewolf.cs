@@ -106,10 +106,6 @@ public class Werewolf : MonoBehaviour
             }
         }
 
-        if (hitPlayer == false && _isAttacked)
-        {
-            hitPlayer = true;
-        }
         return hitPlayer;
     }
 
@@ -193,6 +189,21 @@ public class Werewolf : MonoBehaviour
                         _state = EnemyAnimState.stay;
                     }
                 }
+            }
+
+            if (_isAttacked)
+            {
+                if (IsInvoking("Move"))
+                {
+                    CancelInvoke("Move");
+                }
+
+                if (IsInvoking("StopAttacking"))
+                {
+                    CancelInvoke("StopAttacking");
+                }
+
+                CheckAttack();
             }
 
             // Detect Player

@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // Killed by rock
+    // Killed by falling rock
     public void GetCrashed()
     {
         playerInvincible = false;
