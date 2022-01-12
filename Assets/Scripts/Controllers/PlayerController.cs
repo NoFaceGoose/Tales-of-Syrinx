@@ -114,14 +114,14 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("inAir", true);
         }
         // _isGrounded = Physics.Raycast(transform.position, Vector3.down, _disToGround);
-        if (CurrentHealth < 1)
+        if (CurrentHealth <= 0)
         {
             animator.SetTrigger("Death");
-            Die();
+            // Die();
         }
     }
 
-    public void Die()
+    public void OnDeathAnimationFinished()
     {
         dm.EnterDieMenu();
         Reborn(); // in reborn, the state of the animation should be reset\\
@@ -251,8 +251,10 @@ public class PlayerController : MonoBehaviour
 
     public void Reborn()
     {
+        animator.SetTrigger("Respawn");
         transform.position = SavedPosition;
         CurrentHealth = MaxHealth;
         healthBar.SetHealth(CurrentHealth);
+        // Application.LoadLevel(Application.loadedLevel);
     }
 }
