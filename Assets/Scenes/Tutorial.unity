@@ -1477,6 +1477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DieMenuUI: {fileID: 241136274}
+  Player: {fileID: 1163057327}
 --- !u!1 &391795633
 GameObject:
   m_ObjectHideFlags: 0

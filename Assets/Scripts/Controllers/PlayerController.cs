@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
     public void OnDeathAnimationFinished()
     {
         dm.EnterDieMenu();
-        Reborn(); // in reborn, the state of the animation should be reset\\
+        // Reborn(); // in reborn, the state of the animation should be reset\\
     }
 
     // return the value that if the player is invincible

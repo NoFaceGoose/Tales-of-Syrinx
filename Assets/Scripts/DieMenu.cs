@@ -7,12 +7,18 @@ public class DieMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject DieMenuUI;
+    public GameObject Player;
+    void Start()
+    {
+        
+    }
 
     public void Replay()
     {
         DieMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        Player.GetComponent<PlayerController>().Reborn();
     }
 
     public void EnterDieMenu()
