@@ -104,10 +104,10 @@ MonoBehaviour:
   TowardsLeft: 1
   Left: {fileID: 0}
   Right: {fileID: 0}
-  Health: 10
+  Health: 12
   CollisionDamage: 1
   DetectionDistance: 5
-  HitRecover: 0.5
+  HitRecover: 0.9
 --- !u!54 &8052946757489618648
 Rigidbody:
   m_ObjectHideFlags: 0

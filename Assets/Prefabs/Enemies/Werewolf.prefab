@@ -88,7 +88,7 @@ MonoBehaviour:
   TowardsLeft: 1
   Left: {fileID: 0}
   Right: {fileID: 0}
-  Health: 8
+  Health: 15
   CollisionDamage: 0
   AttackDamage: 2
   AttackDistance: 0.5
