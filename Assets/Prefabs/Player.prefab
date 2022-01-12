@@ -115,6 +115,8 @@ MonoBehaviour:
   CurrentHealth: 0
   healthBar: {fileID: 0}
   InvincibleTime: 2
+  spriteBlinkingDuration: 0.1
+  spriteBlinkingTimer: 0
   animator: {fileID: 7437443899281364732}
   dm: {fileID: 0}
 --- !u!114 &3554852890956006858
@@ -342,7 +344,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3554852890956006901}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7457d4700254eee44b8997cc86a6a4b0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

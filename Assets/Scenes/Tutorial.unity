@@ -709,6 +709,10 @@ PrefabInstance:
       propertyPath: extraHeightText
       value: 0.88
       objectReference: {fileID: 0}
+    - target: {fileID: 4215805400013353213, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 7457d4700254eee44b8997cc86a6a4b0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4400c5aa16393942a134ee58ee77d2b, type: 3}
 --- !u!4 &160510171 stripped
@@ -3332,7 +3336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.055, y: -0.323}
+  m_AnchoredPosition: {x: -0.184, y: -0.323}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!102 &1021290692
@@ -3343,8 +3347,8 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021290690}
-  m_Text: "Move [A] [D] \nJump [W]\nDouble Jump [w] * 2\nShoot [Space]\nLaunch Reed
-    [J]"
+  m_Text: "Move [A] [D] / [Left] [Right] \nJump [W] / [Up]\nDouble Jump [W] / [Up]
+    * 2\nShoot [J] / [Z]\nLaunch Reed [K] / [X]"
   m_OffsetZ: 0
   m_CharacterSize: 0.7
   m_LineSpacing: 1.5
@@ -5439,7 +5443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3561820959079121369, guid: 4da52f1fc3143cf439b22a3f3337269d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.08
+      value: 4.32
       objectReference: {fileID: 0}
     - target: {fileID: 3561820959079121369, guid: 4da52f1fc3143cf439b22a3f3337269d, type: 3}
       propertyPath: m_LocalPosition.z
