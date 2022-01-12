@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9038887114977966887}
   - component: {fileID: 9038887114977966880}
   m_Layer: 6
-  m_Name: GreengrassPlatform
-  m_TagString: Ground
+  m_Name: GreenGrassPlatform
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9038887114977966882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.42, y: 4.87, z: -0.38}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,9 +91,9 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9038887114977966882}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7457d4700254eee44b8997cc86a6a4b0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7099999, y: 0.34148982, z: 1.3142316}
-  m_Center: {x: 0, y: -0.039255418, z: 0.87822807}
+  m_Size: {x: 1.65, y: 0.37, z: 1.3142316}
+  m_Center: {x: -0.01, y: -0.01, z: 0}

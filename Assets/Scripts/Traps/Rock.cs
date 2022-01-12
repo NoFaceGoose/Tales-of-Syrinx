@@ -20,7 +20,9 @@ public class Rock : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                if (gameObject.GetComponent<Rigidbody>().useGravity && !gameObject.GetComponent<Rigidbody>().isKinematic)
+                if (GetComponent<Rigidbody>().velocity.y > 0f && GetComponent<Rigidbody>().useGravity
+                    && !GetComponent<Rigidbody>().isKinematic
+                    && PlayerController.PlayerInstance.transform.position.y < transform.position.y)
                 {
                     PlayerController.PlayerInstance.GetCrashed();
                     return;
