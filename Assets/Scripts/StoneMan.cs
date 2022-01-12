@@ -105,14 +105,7 @@ public class StoneMan : MonoBehaviour
             }
 
             Health -= damage;
-
-            // turn to player
-            if ((TowardsLeft && Player.transform.position.x > gameObject.transform.position.x) || (!TowardsLeft && Player.transform.position.x < gameObject.transform.position.x))
-            {
-                TowardsLeft = !TowardsLeft;
-                transform.Rotate(0f, 180f, 0f);
-            }
-
+            TurnToPlayer();
             _isAttacked = true;
 
             if (Health <= 0)
@@ -226,6 +219,7 @@ public class StoneMan : MonoBehaviour
                 Anim.SetBool("IsWalking", false);
                 Anim.SetBool("IsAttacked", false);
                 Anim.SetBool("IsAttacking", true);
+                TurnToPlayer();
                 break;
 
             case EnemyAnimState.attacked:
@@ -309,5 +303,15 @@ public class StoneMan : MonoBehaviour
         _startToAttack = false;
         _state = EnemyAnimState.stay;
         Invoke("Move", StayTime);
+    }
+
+    // Turn to player when she is behind
+    void TurnToPlayer()
+    {
+        if ((TowardsLeft && Player.transform.position.x > gameObject.transform.position.x) || (!TowardsLeft && Player.transform.position.x < gameObject.transform.position.x))
+        {
+            TowardsLeft = !TowardsLeft;
+            transform.Rotate(0f, 180f, 0f);
+        }
     }
 }

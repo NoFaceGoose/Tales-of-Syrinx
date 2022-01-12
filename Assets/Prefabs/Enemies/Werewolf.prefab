@@ -92,7 +92,7 @@ MonoBehaviour:
   CollisionDamage: 0
   AttackDamage: 2
   AttackDistance: 0.5
-  AttackHeight: 2
+  AttackHeight: 3
   PlayerMask:
     serializedVersion: 2
     m_Bits: 8

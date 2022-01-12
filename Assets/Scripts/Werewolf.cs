@@ -56,6 +56,7 @@ public class Werewolf : MonoBehaviour
         {
             return false;
         }
+
         // Attack after being attacked without deceting player
         if (!OnPatrol || _isAttacked)
         {
@@ -112,6 +113,10 @@ public class Werewolf : MonoBehaviour
             _isAttacked = true;
             Health -= damage;
             _alarm = true;
+            if (_state != EnemyAnimState.attacked)
+            {
+                TurnToPlayer();
+            }
 
             if (Health <= 0)
             {
@@ -152,7 +157,6 @@ public class Werewolf : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(_state);
         if (_alive)
         {
             if (OnPatrol && !_alarm)
@@ -202,7 +206,7 @@ public class Werewolf : MonoBehaviour
                 if (_state == EnemyAnimState.attack || _state == EnemyAnimState.charge)
                 {
                     _state = EnemyAnimState.stay;
-                    StopAttacking();
+                    Invoke("StopAttacking", 2f);
                 }
             }
         }
@@ -230,12 +234,14 @@ public class Werewolf : MonoBehaviour
                 Anim.SetBool("IsAttacking", false);
                 Anim.SetBool("IsAttacked", false);
                 Anim.SetBool("IsCharging", true);
+                TurnToPlayer();
                 break;
 
             case EnemyAnimState.attack:
                 Anim.SetBool("IsStaying", false);
                 Anim.SetBool("IsCharging", false);
                 Anim.SetBool("IsAttacking", true);
+                TurnToPlayer();
                 break;
 
             case EnemyAnimState.attacked:
@@ -258,22 +264,24 @@ public class Werewolf : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
-            if (player != null && !player.GetPlayerStatus())
+            if (player != null)
             {
                 player.TakeDamage(CollisionDamage);
 
-                //Turn to player
-                if ((TowardsLeft && Player.transform.position.x > gameObject.transform.position.x) || (!TowardsLeft && Player.transform.position.x < gameObject.transform.position.x))
+                TurnToPlayer();
+
+                if (_state != EnemyAnimState.attack)
                 {
-                    TowardsLeft = !TowardsLeft;
-                    transform.Rotate(0f, 180f, 0f);
+                    _state = EnemyAnimState.attack;
                 }
 
+                _alarm = true;
                 _isAttacked = true;
                 return;
             }
         }
 
+        // Killed by falling rock
         if (other.gameObject.CompareTag("Rock"))
         {
             if (other.gameObject.GetComponent<Rigidbody>() != null)
@@ -282,6 +290,7 @@ public class Werewolf : MonoBehaviour
             }
             else
             {
+                // turn back when collide with rock on the ground or platform
                 if (_state == EnemyAnimState.walk)
                 {
                     TowardsLeft = !TowardsLeft;
@@ -291,6 +300,7 @@ public class Werewolf : MonoBehaviour
             return;
         }
 
+        // turn back when collide with tree, thorn and floating platform
         if (other.gameObject.CompareTag("Tree") || other.gameObject.CompareTag("Thorn") || other.gameObject.CompareTag("Platform"))
         {
             if (_state == EnemyAnimState.walk || _state == EnemyAnimState.stay)
@@ -301,6 +311,7 @@ public class Werewolf : MonoBehaviour
         }
     }
 
+    // Check whether werewolf can attack player
     void CheckAttack()
     {
         Collider[] cs = Physics.OverlapBox(HitBox.position, new Vector3(AttackDistance, AttackHeight), transform.rotation, PlayerMask);
@@ -311,7 +322,6 @@ public class Werewolf : MonoBehaviour
                 PlayerController player = csCell.gameObject.GetComponent<PlayerController>();
                 if (player != null)
                 {
-                    Debug.Log(1);
                     if (_state != EnemyAnimState.attack)
                     {
                         _state = EnemyAnimState.attack;
@@ -352,6 +362,7 @@ public class Werewolf : MonoBehaviour
         Invoke("Move", StayTime);
     }
 
+    // Attack player
     void Attack()
     {
         Collider[] cs = Physics.OverlapBox(HitBox.position, new Vector3(AttackDistance, AttackHeight), transform.rotation, PlayerMask);
@@ -371,7 +382,6 @@ public class Werewolf : MonoBehaviour
     // Turn to player when she is behind
     void TurnToPlayer()
     {
-
         if ((TowardsLeft && Player.transform.position.x > gameObject.transform.position.x) || (!TowardsLeft && Player.transform.position.x < gameObject.transform.position.x))
         {
             TowardsLeft = !TowardsLeft;
