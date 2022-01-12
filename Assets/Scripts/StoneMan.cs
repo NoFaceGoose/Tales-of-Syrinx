@@ -259,7 +259,9 @@ public class StoneMan : MonoBehaviour
 
         if (other.gameObject.CompareTag("Rock"))
         {
-            if (other.gameObject.GetComponent<Rigidbody>() != null)
+            if (other.gameObject.GetComponent<Rigidbody>() != null && other.gameObject.GetComponent<Rigidbody>().velocity.y > 0f
+                && other.gameObject.GetComponent<Rigidbody>().useGravity && !other.gameObject.GetComponent<Rigidbody>().isKinematic
+                && other.transform.position.y > transform.position.y)
             {
                 Die();
 
