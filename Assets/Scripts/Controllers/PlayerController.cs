@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
     // set the player Invincible
     private bool playerInvincible = false;
     public float InvincibleTime = 2.0f;
+    public float spriteBlinkingDuration = 0.1f;
+    public float spriteBlinkingTimer = 0.0f;
 
     // Animation
     public Animator animator;
@@ -70,12 +72,21 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        bool isRender = this.gameObject.GetComponent<SpriteRenderer>().enabled;
         if (InvincibleTime > 0 && playerInvincible)
         {
             InvincibleTime -= Time.deltaTime;
+            spriteBlinkingTimer += Time.deltaTime;
+            if(spriteBlinkingTimer >= spriteBlinkingDuration)
+            {
+                spriteBlinkingTimer = 0;
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = !isRender;
+
+            }
         }
         else
         {
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             playerInvincible = false;
             InvincibleTime = 2.0f;
         }
@@ -124,10 +135,14 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        animator.SetTrigger("Attacked");
-        CurrentHealth -= damage;
-        healthBar.SetHealth(CurrentHealth);
-        playerInvincible = true;
+        if(!playerInvincible)
+        {
+            animator.SetTrigger("Attacked");
+            CurrentHealth -= damage;
+            healthBar.SetHealth(CurrentHealth);
+            playerInvincible = true;
+        }    
+        
     }
 
     public void Recover(int reward)
