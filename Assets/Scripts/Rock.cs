@@ -22,7 +22,7 @@ public class Rock : MonoBehaviour
             {
                 if (gameObject.GetComponent<Rigidbody>().useGravity && !gameObject.GetComponent<Rigidbody>().isKinematic)
                 {
-                    PlayerController.PlayerInstance.Die();
+                    PlayerController.PlayerInstance.GetCrashed();
                     return;
                 }
             }

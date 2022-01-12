@@ -58,7 +58,7 @@ public class Werewolf : MonoBehaviour
         }
 
         // Attack after being attacked without deceting player
-        if (!OnPatrol || _isAttacked)
+        if (!OnPatrol)
         {
             return true;
         }
@@ -69,9 +69,18 @@ public class Werewolf : MonoBehaviour
         RaycastHit hitTop;
         RaycastHit hitBottom;
 
+        Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x, _rigidBody.position.y + AttackHeight, _rigidBody.position.z), Color.red);
         Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x + (TowardsLeft ? -DetectionDistance : DetectionDistance), _rigidBody.position.y, _rigidBody.position.z), Color.red);
         Debug.DrawLine(new Vector3(_rigidBody.position.x, _rigidBody.position.y + transform.localScale.y / 4, _rigidBody.position.z), new Vector3(_rigidBody.position.x + (TowardsLeft ? -DetectionDistance : DetectionDistance), _rigidBody.position.y + transform.localScale.y / 4, _rigidBody.position.z), Color.red);
         Debug.DrawLine(new Vector3(_rigidBody.position.x, _rigidBody.position.y - transform.localScale.y / 4, _rigidBody.position.z), new Vector3(_rigidBody.position.x + (TowardsLeft ? -DetectionDistance : DetectionDistance), _rigidBody.position.y - transform.localScale.y / 4, _rigidBody.position.z), Color.red);
+
+        if (Physics.Raycast(_rigidBody.position, new Vector3(_rigidBody.position.x, _rigidBody.position.y + AttackHeight, _rigidBody.position.z), out hitCenter, AttackHeight))
+        {
+            if (hitCenter.collider.CompareTag("Player") || hitCenter.collider.CompareTag("Bullet") || hitCenter.collider.CompareTag("ReedPlatform"))
+            {
+                hitPlayer = true;
+            }
+        }
 
         if (Physics.Raycast(_rigidBody.position, TowardsLeft ? Vector3.left : Vector3.right, out hitCenter, DetectionDistance))
         {
@@ -97,6 +106,10 @@ public class Werewolf : MonoBehaviour
             }
         }
 
+        if (hitPlayer == false && _isAttacked)
+        {
+            hitPlayer = true;
+        }
         return hitPlayer;
     }
 
@@ -190,22 +203,22 @@ public class Werewolf : MonoBehaviour
                     CancelInvoke("Move");
                 }
 
+                if (IsInvoking("StopAttacking"))
+                {
+                    CancelInvoke("StopAttacking");
+                }
+
                 _onMove = false;
                 _alarm = true;
                 _isAttacked = false;
 
                 CheckAttack();
-
-                if (IsInvoking("StopAttacking"))
-                {
-                    CancelInvoke("StopAttacking");
-                }
             }
             else
             {
                 if (_state == EnemyAnimState.attack || _state == EnemyAnimState.charge)
                 {
-                    _state = EnemyAnimState.stay;
+
                     Invoke("StopAttacking", 2f);
                 }
             }
@@ -266,7 +279,10 @@ public class Werewolf : MonoBehaviour
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
             if (player != null)
             {
-                player.TakeDamage(CollisionDamage);
+                if (CollisionDamage > 0)
+                {
+                    player.TakeDamage(CollisionDamage);
+                }
 
                 TurnToPlayer();
 
@@ -359,6 +375,7 @@ public class Werewolf : MonoBehaviour
     void StopAttacking()
     {
         _alarm = false;
+        _state = EnemyAnimState.stay;
         Invoke("Move", StayTime);
     }
 
