@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RequiredKeys: 0
-  GateOpen: {fileID: 436563815456543028, guid: 10204c4fa51979443b946e108fa88d6c, type: 3}
+  GateOpen: {fileID: -4173264519807546601, guid: 23fd829608b136d4c958fa2595468661, type: 3}
   Gate: {fileID: 6352953211437597408}
 --- !u!1 &6352953211437597408
 GameObject:

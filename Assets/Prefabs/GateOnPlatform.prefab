@@ -8,12 +8,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2003644813572665329, guid: f9177aab63b4bec4bad189eb6fcb2272, type: 3}
+      propertyPath: GateOpen
+      value: 
+      objectReference: {fileID: -4173264519807546601, guid: 23fd829608b136d4c958fa2595468661, type: 3}
+    - target: {fileID: 2003644813572665329, guid: f9177aab63b4bec4bad189eb6fcb2272, type: 3}
       propertyPath: RequiredKeys
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4284761939679281130, guid: f9177aab63b4bec4bad189eb6fcb2272, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352953211437597405, guid: f9177aab63b4bec4bad189eb6fcb2272, type: 3}
+      propertyPath: m_Size.x
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6352953211437597407, guid: f9177aab63b4bec4bad189eb6fcb2272, type: 3}
       propertyPath: m_RootOrder
