@@ -312,15 +312,13 @@ public class Werewolf : MonoBehaviour
         // Killed by falling rock
         if (other.gameObject.CompareTag("Rock"))
         {
-            if (other.gameObject.CompareTag("Rock"))
+            if (other.gameObject.GetComponent<Rigidbody>() == null)
             {
-                if (other.gameObject.GetComponent<Rigidbody>() == null)
-                {
-                    TowardsLeft = !TowardsLeft;
-                    transform.Rotate(0f, 180f, 0f);
-                    return;
-                }
+                TowardsLeft = !TowardsLeft;
+                transform.Rotate(0f, 180f, 0f);
+                return;
             }
+
         }
 
         // turn back when collide with tree, thorn and floating platform

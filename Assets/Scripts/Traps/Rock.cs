@@ -26,6 +26,7 @@ public class Rock : MonoBehaviour
 
         if (other.CompareTag("Werewolf"))
         {
+            other.GetComponent<CapsuleCollider>().enabled = false;
             other.GetComponent<Werewolf>().Die();
             return;
         }
@@ -33,6 +34,7 @@ public class Rock : MonoBehaviour
 
         if (other.CompareTag("StoneMan"))
         {
+            other.GetComponent<CapsuleCollider>().enabled = false;
             other.GetComponent<StoneMan>().Die();
             return;
         }
