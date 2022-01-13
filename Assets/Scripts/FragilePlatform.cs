@@ -39,7 +39,7 @@ public class FragilePlatform : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player") && other.gameObject.transform.position.y > gameObject.transform.position.y + other.gameObject.transform.localScale.y / 5)
+        if (other.gameObject.CompareTag("Player") && other.gameObject.transform.position.y > gameObject.transform.position.y)
         {
             Shake();
             Invoke("Destroy", shakeTime);
