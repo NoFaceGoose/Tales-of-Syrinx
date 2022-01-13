@@ -1413,8 +1413,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1887667947996049227, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
+      propertyPath: StunTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887667947996049227, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
       propertyPath: MaxHealth
-      value: 30
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1887667947996049227, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
       propertyPath: AttackRate
