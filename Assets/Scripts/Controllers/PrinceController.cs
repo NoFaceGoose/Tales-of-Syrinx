@@ -45,11 +45,11 @@ public class PrinceController : MonoBehaviour
         float distance = Vector3.Distance(target.position, transform.position);
 
         // Stun check
-        if(isStun && currentStunTime < StunTime)
+        if (isStun && currentStunTime < StunTime)
         {
             currentStunTime += Time.deltaTime;
             agent.velocity = new Vector3(0, 0, 0);
-        } 
+        }
         else
         {
             animator.SetBool("Attacked", false);
@@ -58,18 +58,18 @@ public class PrinceController : MonoBehaviour
         }
 
         // look for players
-        if(distance <= lookRadius)
+        if (distance <= lookRadius)
         {
             Flip(); // Face to the Player
             agent.SetDestination(target.position);
-            if(distance < agent.stoppingDistance && Time.time >= nextAttackTime)
+            if (distance < agent.stoppingDistance && Time.time >= nextAttackTime)
             {
                 Attack();
                 nextAttackTime = Time.time + 1f / AttackRate;
             }
         }
 
-        if(CurrentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             Die();
         }
@@ -84,7 +84,7 @@ public class PrinceController : MonoBehaviour
     void Flip()
     {
         Vector3 direction = (target.position - transform.position).normalized;
-        if(_isFacingRight != (direction.x > 0))
+        if (_isFacingRight != (direction.x > 0))
         {
             transform.Rotate(0f, 180f, 0f);
             _isFacingRight = !_isFacingRight;
@@ -120,8 +120,8 @@ public class PrinceController : MonoBehaviour
     {
         Debug.Log("DP died");
         animator.SetBool("IsDead", true);
-
         Destroy(gameObject);
+        PlayerController.PlayerInstance.SetKeys();
     }
 
     public void TakeDamage(int damage)
