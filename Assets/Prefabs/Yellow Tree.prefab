@@ -11,10 +11,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1987345666279370683, guid: 25d4f0652d3874a8094a011957d0eedb, type: 3}
-    - target: {fileID: 2181987469383875336, guid: c56d30918bf198948affed5f5a3005d6, type: 3}
-      propertyPath: m_Size.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4584520903200474200, guid: c56d30918bf198948affed5f5a3005d6, type: 3}
       propertyPath: m_Name
       value: Yellow Tree
