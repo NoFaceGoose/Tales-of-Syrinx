@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4821507430531622364}
   - component: {fileID: 4821507430531622363}
   m_Layer: 6
-  m_Name: YellowGrassPlatform
+  m_Name: YellowgrassPlatform
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,5 +95,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.66, y: 0.375, z: 1.3142316}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.65, y: 0.3, z: 0.54}
+  m_Center: {x: 0, y: -0.02, z: 0.4}
