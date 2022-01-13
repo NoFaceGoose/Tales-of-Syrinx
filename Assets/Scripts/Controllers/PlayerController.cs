@@ -138,8 +138,10 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
         if (!playerInvincible)
         {
+            FindObjectOfType<AudioManager>().Play("PlayerHurt");
             animator.SetTrigger("Attacked");
             CurrentHealth -= damage;
             healthBar.SetHealth(CurrentHealth);
@@ -178,11 +180,13 @@ public class PlayerController : MonoBehaviour
 
     public void OnMovement(InputAction.CallbackContext value)
     {
+        //FindObjectOfType<AudioManager>().Play("PlayerWalk");
         _inputX = value.ReadValue<Vector2>().x;
 
         // Flip the character
         if (_inputX > 0 && !_isFacingRight)
         {
+            
             Flip();
         }
         else if (_inputX < 0 && _isFacingRight)
@@ -203,12 +207,14 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         _rigidBody.velocity = new Vector3(_rigidBody.velocity.x, jumpForce, 0);
+        FindObjectOfType<AudioManager>().Play("PlayerJump");
     }
 
     public void OnFire(InputAction.CallbackContext value)
     {
         if (value.performed)
         {
+            FindObjectOfType<AudioManager>().Play("PlayerFire");
             animator.SetTrigger("Attack");
             Shoot();
         }
