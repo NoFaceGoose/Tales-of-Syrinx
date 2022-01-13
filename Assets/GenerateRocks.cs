@@ -7,13 +7,13 @@ public class GenerateRocks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        InvokeRepeating("Generate", 0f, 0.6f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        InvokeRepeating("Generate", 5f, 0.1f);
+
     }
 
     void Generate()

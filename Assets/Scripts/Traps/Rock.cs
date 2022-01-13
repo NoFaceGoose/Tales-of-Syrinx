@@ -100,6 +100,11 @@ public class Rock : MonoBehaviour
             {
                 Destroy(RockPrefab.gameObject);
             }
+
+            if (other.CompareTag("Rock"))
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 }
