@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: -8678669458257411542}
   - component: {fileID: 8237158885667418688}
   m_Layer: 6
-  m_Name: Gate
+  m_Name: GateOnWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

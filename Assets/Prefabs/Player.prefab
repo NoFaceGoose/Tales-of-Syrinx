@@ -111,7 +111,7 @@ MonoBehaviour:
   ReedMaxCount: 1
   ReedCount: 0
   ReedRate: 5
-  MaxHealth: 10
+  MaxHealth: 5
   CurrentHealth: 0
   healthBar: {fileID: 0}
   InvincibleTime: 2
