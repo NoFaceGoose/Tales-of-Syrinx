@@ -135,7 +135,7 @@ public class Werewolf : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         _state = EnemyAnimState.die;
         _alive = false;
@@ -312,20 +312,15 @@ public class Werewolf : MonoBehaviour
         // Killed by falling rock
         if (other.gameObject.CompareTag("Rock"))
         {
-            if (other.gameObject.GetComponent<Rigidbody>() != null)
+            if (other.gameObject.CompareTag("Rock"))
             {
-                Die();
-            }
-            else
-            {
-                // turn back when collide with rock on the ground or platform
-                if (_state == EnemyAnimState.walk)
+                if (other.gameObject.GetComponent<Rigidbody>() == null)
                 {
                     TowardsLeft = !TowardsLeft;
                     transform.Rotate(0f, 180f, 0f);
+                    return;
                 }
             }
-            return;
         }
 
         // turn back when collide with tree, thorn and floating platform

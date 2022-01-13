@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Rock : MonoBehaviour
 {
+    public GameObject RockPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -9,36 +10,56 @@ public class Rock : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
-        if (GetComponent<Rigidbody>() != null)
+        if (other.CompareTag("Player"))
         {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                if (GetComponent<Rigidbody>().velocity.y > 0f && GetComponent<Rigidbody>().useGravity
-                    && !GetComponent<Rigidbody>().isKinematic
-                    && PlayerController.PlayerInstance.transform.position.y < transform.position.y)
-                {
-                    PlayerController.PlayerInstance.GetCrashed();
-                    return;
-                }
-            }
+            PlayerController.PlayerInstance.GetCrashed();
+            return;
+        }
 
-            if (other.gameObject.CompareTag("Thorn"))
-            {
-                Destroy(other.gameObject);
-                return;
-            }
 
-            if (other.gameObject.CompareTag("Platform") || other.gameObject.CompareTag("Ground"))
-            {
-                Destroy(GetComponent<Rigidbody>());
-            }
+        if (other.CompareTag("Werewolf"))
+        {
+            other.GetComponent<Werewolf>().Die();
+            return;
+        }
+
+
+        if (other.CompareTag("StoneMan"))
+        {
+            other.GetComponent<StoneMan>().Die();
+            return;
+        }
+
+
+        if (other.CompareTag("Player"))
+        {
+            PlayerController.PlayerInstance.GetCrashed();
+            return;
+        }
+
+        if (other.CompareTag("Thorn"))
+        {
+            Destroy(other.gameObject);
+            return;
+        }
+
+        if (other.CompareTag("ReedPlatform"))
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        if (other.CompareTag("Platform") || other.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+            Destroy(RockPrefab.GetComponent<Rigidbody>());
         }
     }
 }
