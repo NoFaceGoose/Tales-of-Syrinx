@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
     // Animation
     public Animator animator;
+    private SpriteRenderer SR;
 
     public DieMenu dm;
 
@@ -61,6 +62,7 @@ public class PlayerController : MonoBehaviour
         healthBar.SetMaxHealth(MaxHealth);
         SavedPosition = transform.position;
         ReedCount = ReedMaxCount;
+        SR = GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -236,7 +238,13 @@ public class PlayerController : MonoBehaviour
     private void Flip()
     {
         _isFacingRight = !_isFacingRight;
-        transform.Rotate(0f, 180f, 0f);
+        // transform.Rotate(0f, 180f, 0f);
+        SR.flipX = !SR.flipX;
+        FirePoint.Rotate(0f, 180f, 0f, Space.Self);
+        if(_isFacingRight)
+            FirePoint.position += new Vector3( 1.5f, 0, 0);
+        else
+            FirePoint.position -= new Vector3( 1.5f, 0, 0);
     }
 
     public int SetKeys()
