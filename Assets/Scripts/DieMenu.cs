@@ -10,7 +10,7 @@ public class DieMenu : MonoBehaviour
     public GameObject Player;
     void Start()
     {
-        
+
     }
 
     public void Replay()

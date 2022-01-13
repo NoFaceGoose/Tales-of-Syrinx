@@ -119,6 +119,7 @@ public class PlayerController : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             animator.SetTrigger("Death");
+            GetComponent<PlayerInput>().enabled = false;
             // Die();
         }
     }
@@ -241,10 +242,10 @@ public class PlayerController : MonoBehaviour
         // transform.Rotate(0f, 180f, 0f);
         SR.flipX = !SR.flipX;
         FirePoint.Rotate(0f, 180f, 0f, Space.Self);
-        if(_isFacingRight)
-            FirePoint.position += new Vector3( 1.5f, 0, 0);
+        if (_isFacingRight)
+            FirePoint.position += new Vector3(1.5f, 0, 0);
         else
-            FirePoint.position -= new Vector3( 1.5f, 0, 0);
+            FirePoint.position -= new Vector3(1.5f, 0, 0);
     }
 
     public int SetKeys()
@@ -263,6 +264,7 @@ public class PlayerController : MonoBehaviour
         transform.position = SavedPosition;
         CurrentHealth = MaxHealth;
         healthBar.SetHealth(CurrentHealth);
+        GetComponent<PlayerInput>().enabled = true;
         // Application.LoadLevel(Application.loadedLevel);
     }
 }
