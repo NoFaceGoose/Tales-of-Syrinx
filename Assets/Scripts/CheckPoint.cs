@@ -18,7 +18,7 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // PlayerController.PlayerInstance.Recover(PlayerController.PlayerInstance.MaxHealth);
+            PlayerController.PlayerInstance.Recover(1);
             PlayerController.PlayerInstance.SavedPosition = new Vector3(transform.position.x, transform.position.y, 0f);
             Anim.SetBool("IsTriggered", true);
 
