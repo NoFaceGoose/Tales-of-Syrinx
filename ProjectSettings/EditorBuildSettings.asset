@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: a69d81eab8eb4d2449fc96ed9e1a8488
   - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 0cbf0b95878094a4282eb96c5d625f34
+  - enabled: 1
     path: Assets/Scenes/DiscardScenes/Victory.unity
     guid: 67204792b733f4b2097423c4605ce3f5
   m_configObjects: {}
