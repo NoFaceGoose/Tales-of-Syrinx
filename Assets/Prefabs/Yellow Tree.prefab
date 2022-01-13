@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yellow Tree
       objectReference: {fileID: 0}
+    - target: {fileID: 6069623769584362613, guid: c56d30918bf198948affed5f5a3005d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 7457d4700254eee44b8997cc86a6a4b0, type: 2}
     - target: {fileID: 6140611422056776810, guid: c56d30918bf198948affed5f5a3005d6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -71,5 +75,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7964461148894955169, guid: c56d30918bf198948affed5f5a3005d6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 7457d4700254eee44b8997cc86a6a4b0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c56d30918bf198948affed5f5a3005d6, type: 3}
