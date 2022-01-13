@@ -165,6 +165,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpCount: 2
+  extraHeightText: 0.1
   FirePoint: {fileID: 3817774161570516983}
   BulletPrefab: {fileID: 62511968879554192, guid: 3d07d5e2f954c2f47870590d7c79a785, type: 3}
   ReedPrefab: {fileID: 3029590369249995689, guid: c7b8a4ec6cda77447b7d650d3b16f1d3, type: 3}
@@ -408,5 +409,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.27965292, y: 0.51891726, z: 0.20000002}
-  m_Center: {x: -0.002190908, y: -0.0052745445, z: 0}
+  m_Size: {x: 0.27965292, y: 0.5309297, z: 0.20000002}
+  m_Center: {x: -0.002190908, y: 0.28901023, z: 0}

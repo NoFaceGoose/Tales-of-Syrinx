@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidBody;
     private float _inputX;
     // test the height
-    // public float extraHeightText = 1;
+    public float extraHeightText = 1;
 
     // Flip
     private bool _isFacingRight = true;
@@ -170,8 +170,8 @@ public class PlayerController : MonoBehaviour
 
     private bool GroundCheck()
     {
-        float extraHeightText = 0.88f;
-        bool raycastHit = Physics.Raycast(_rigidBody.position, Vector3.down, extraHeightText, GroundLayerMask);
+        // float extraHeightText = 0.01f;
+        bool raycastHit = Physics.Raycast(_rigidBody.position+new Vector3(0, 0.1f, 0), Vector3.down, extraHeightText, GroundLayerMask);
         Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x, _rigidBody.position.y - extraHeightText, _rigidBody.position.z), Color.red);
         return raycastHit;
     }
