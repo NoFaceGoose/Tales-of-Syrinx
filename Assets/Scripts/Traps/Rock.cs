@@ -29,6 +29,12 @@ public class Rock : MonoBehaviour
                 }
             }
 
+            if (other.gameObject.CompareTag("Thorn"))
+            {
+                Destroy(other.gameObject);
+                return;
+            }
+
             if (other.gameObject.CompareTag("Platform") || other.gameObject.CompareTag("Ground"))
             {
                 Destroy(GetComponent<Rigidbody>());

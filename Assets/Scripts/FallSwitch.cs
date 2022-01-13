@@ -19,7 +19,7 @@ public class FallSwitch : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (!_isTriggered && other.CompareTag("Player"))
+        if (!_isTriggered && (other.CompareTag("Player") || other.CompareTag("Bullet") || other.CompareTag("ReedPlatform")))
         {
             Rock.GetComponent<Rigidbody>().useGravity = true;
             Rock.GetComponent<Rigidbody>().isKinematic = false;
