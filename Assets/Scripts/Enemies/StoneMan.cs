@@ -115,7 +115,7 @@ public class StoneMan : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         _state = EnemyAnimState.die;
         _alive = false;
@@ -259,17 +259,12 @@ public class StoneMan : MonoBehaviour
 
         if (other.gameObject.CompareTag("Rock"))
         {
-            if (other.gameObject.GetComponent<Rigidbody>() != null)
-            {
-                Die();
-
-            }
-            else
+            if (other.gameObject.GetComponent<Rigidbody>() == null)
             {
                 TowardsLeft = !TowardsLeft;
                 transform.Rotate(0f, 180f, 0f);
+                return;
             }
-            return;
         }
 
         if (other.gameObject.CompareTag("Tree") || other.gameObject.CompareTag("Thorn") || other.gameObject.CompareTag("Platform"))
