@@ -88,7 +88,7 @@ MonoBehaviour:
   TowardsLeft: 1
   Left: {fileID: 0}
   Right: {fileID: 0}
-  Health: 15
+  Health: 10
   CollisionDamage: 0
   AttackDamage: 2
   AttackDistance: 0.5
@@ -97,7 +97,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   DetectionDistance: 10
-  HitRecover: 0.5
+  HitRecover: 0.75
 --- !u!212 &8285840264764123294
 SpriteRenderer:
   m_ObjectHideFlags: 0

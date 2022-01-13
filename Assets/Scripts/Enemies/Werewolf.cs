@@ -114,7 +114,8 @@ public class Werewolf : MonoBehaviour
     {
         if (_alive)
         {
-            if (_state != EnemyAnimState.charge && (_state != EnemyAnimState.attack || Random.value > HitRecover))
+            if (_state == EnemyAnimState.walk || _state == EnemyAnimState.stay
+                || ((_state == EnemyAnimState.charge || _state != EnemyAnimState.attack) && Random.value > HitRecover))
             {
                 _state = EnemyAnimState.attacked;
             }
@@ -362,7 +363,11 @@ public class Werewolf : MonoBehaviour
             {
                 _state = EnemyAnimState.charge;
             }
-            transform.Translate(Vector3.left * Time.deltaTime * ChargeSpeed);
+            if ((transform.position.x > Left.position.x && TowardsLeft) || (transform.position.x < Right.position.x && !TowardsLeft))
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * ChargeSpeed);
+            }
+
         }
     }
 

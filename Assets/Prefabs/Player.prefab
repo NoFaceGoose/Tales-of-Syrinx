@@ -114,7 +114,7 @@ MonoBehaviour:
   MaxHealth: 5
   CurrentHealth: 0
   healthBar: {fileID: 0}
-  InvincibleTime: 2
+  InvincibleTime: 1
   spriteBlinkingDuration: 0.1
   spriteBlinkingTimer: 0
   animator: {fileID: 7437443899281364732}
