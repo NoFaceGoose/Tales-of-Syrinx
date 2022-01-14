@@ -45,116 +45,116 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Theme
-    clip: {fileID: 8300000, guid: 74a51c27b00c6af4b870c3afc6be3ce2, type: 3}
+    clip: {fileID: 8300000, guid: 38cbc38fcc2f0104d9c9c1e3848b6af8, type: 3}
     volume: 0.28
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: StoneFall
     clip: {fileID: 8300000, guid: 27135dff44e2c1e41ad166c9e2e2e5ff, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: TreeShake
     clip: {fileID: 8300000, guid: 5dd39027e52cb2243a7f2e0e0550c71a, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: CheckPoint
     clip: {fileID: 8300000, guid: d0e87d6dbdc64ff4aacff3470f303a5d, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: MagicDoor
     clip: {fileID: 8300000, guid: 171b06cc780bd7c40b030d6552928eac, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: StoneDoor
     clip: {fileID: 8300000, guid: 17fabd5c5917459409321a686348225e, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: PlayerJump
     clip: {fileID: 8300000, guid: 7fe5fec91ed05944d8575ea73d7578c5, type: 3}
-    volume: 0.5
+    volume: 0.8
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: PlayerWalk
     clip: {fileID: 8300000, guid: aa86edb65e2d49b4b9febb966ad8e2e5, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: PlayerFire
     clip: {fileID: 8300000, guid: 6557738cc9db2dc4898510f56e4c8156, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PlayerHurt
     clip: {fileID: 8300000, guid: 4442794e92468184ca21625f9bf96262, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: WolfHurt
     clip: {fileID: 8300000, guid: 089d2306430d7c947a6927ad14e8c6c6, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: WolfHit
     clip: {fileID: 8300000, guid: 4c8858127c767f8498707b59b0756717, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: StonemanAttack
     clip: {fileID: 8300000, guid: d0291ff232e94c84ea763e20400bd4a4, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: DPWalk
     clip: {fileID: 8300000, guid: 149674e0155001246b826a4457c5f8d7, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: DPRun
     clip: {fileID: 8300000, guid: b39048ff6363a6c4792f3f79223ff49d, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: DPHurt
     clip: {fileID: 8300000, guid: 4aed44c37c37886468f12d24202290e7, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: DPAttack
     clip: {fileID: 8300000, guid: ba9b5e34b0c6fe74e8c278feafcbcddf, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: DPPurefication
     clip: {fileID: 8300000, guid: 3d4feb08f833ac943abd3405ef058ca2, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: DPJump
     clip: {fileID: 8300000, guid: d72fd6e0c11171642957b21772ad21a4, type: 3}
-    volume: 0.5
+    volume: 0.28
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}

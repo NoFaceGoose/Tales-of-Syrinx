@@ -180,7 +180,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMovement(InputAction.CallbackContext value)
     {
-        // FindObjectOfType<AudioManager>().Play("PlayerWalk");
+        //FindObjectOfType<AudioManager>().Play("PlayerWalk");
         _inputX = value.ReadValue<Vector2>().x;
 
         // Flip the character
