@@ -2,7 +2,6 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController PlayerInstance;
@@ -11,7 +10,6 @@ public class PlayerController : MonoBehaviour
 
     public float MoveSpeed;
     public float jumpForce = 5.0f;
-    // public float Gravity;
 
     private int _keys = 0;
 
@@ -103,7 +101,6 @@ public class PlayerController : MonoBehaviour
     {
         _rigidBody.velocity = new Vector3(_inputX * MoveSpeed, _rigidBody.velocity.y, 0);
         animator.SetFloat("Speed", _rigidBody.velocity.x);
-        // Physics.gravity = new Vector3(0, Gravity, 0);
 
         // if is on ground, can double jump
         if (GroundCheck())
@@ -115,19 +112,17 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("inAir", true);
         }
-        // _isGrounded = Physics.Raycast(transform.position, Vector3.down, _disToGround);
+
         if (CurrentHealth <= 0)
         {
             animator.SetTrigger("Death");
             GetComponent<PlayerInput>().enabled = false;
-            // Die();
         }
     }
 
     public void OnDeathAnimationFinished()
     {
         dm.EnterDieMenu();
-        // Reborn(); // in reborn, the state of the animation should be reset\\
     }
 
     // return the value that if the player is invincible
@@ -172,21 +167,19 @@ public class PlayerController : MonoBehaviour
 
     private bool GroundCheck()
     {
-        // float extraHeightText = 0.01f;
-        bool raycastHit = Physics.Raycast(_rigidBody.position+new Vector3(0, 0.1f, 0), Vector3.down, extraHeightText, GroundLayerMask);
+        bool raycastHit = Physics.Raycast(_rigidBody.position + new Vector3(0, 0.1f, 0), Vector3.down, extraHeightText, GroundLayerMask);
         Debug.DrawLine(_rigidBody.position, new Vector3(_rigidBody.position.x, _rigidBody.position.y - extraHeightText, _rigidBody.position.z), Color.red);
         return raycastHit;
     }
 
     public void OnMovement(InputAction.CallbackContext value)
     {
-        //FindObjectOfType<AudioManager>().Play("PlayerWalk");
         _inputX = value.ReadValue<Vector2>().x;
 
         // Flip the character
         if (_inputX > 0 && !_isFacingRight)
         {
-            
+
             Flip();
         }
         else if (_inputX < 0 && _isFacingRight)
@@ -245,7 +238,6 @@ public class PlayerController : MonoBehaviour
     private void Flip()
     {
         _isFacingRight = !_isFacingRight;
-        // transform.Rotate(0f, 180f, 0f);
         SR.flipX = !SR.flipX;
         FirePoint.Rotate(0f, 180f, 0f, Space.Self);
         if (_isFacingRight)
@@ -271,6 +263,5 @@ public class PlayerController : MonoBehaviour
         CurrentHealth = MaxHealth;
         healthBar.SetHealth(CurrentHealth);
         GetComponent<PlayerInput>().enabled = true;
-        // Application.LoadLevel(Application.loadedLevel);
     }
 }

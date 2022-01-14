@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -93,7 +91,6 @@ public class PrinceController : MonoBehaviour
 
     void Attack()
     {
-        // Debug.Log("DP attack");
         animator.SetTrigger("Attack");
 
         Collider[] hitPlayers = Physics.OverlapSphere(AttackPoint.position, attackRange, playerLayers);
@@ -101,11 +98,6 @@ public class PrinceController : MonoBehaviour
         {
             player.GetComponent<PlayerController>().TakeDamage(attackDamage);
         }
-    }
-
-    void Dash()
-    {
-        // 
     }
 
     void OnDrawGizmosSelected()
@@ -118,7 +110,6 @@ public class PrinceController : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("DP died");
         animator.SetBool("IsDead", true);
         Destroy(gameObject);
         PlayerController.PlayerInstance.SetKeys();
