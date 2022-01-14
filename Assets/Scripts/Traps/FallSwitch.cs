@@ -14,6 +14,7 @@ public class FallSwitch : MonoBehaviour
             Rock.GetComponent<Rigidbody>().isKinematic = false;
             _isTriggered = true;
             gameObject.GetComponent<SpriteRenderer>().sprite = SpriteTriggered;
+            FindObjectOfType<AudioManager>().Play("StoneFall");
         }
     }
 }
