@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -5103949143644476115, guid: 387ed4fdcf67cc140bbb493b3de29642, type: 3}
+      value: {fileID: 301257638705225519, guid: 6c4e09975ffb2ea47a352d3d9c9b8a82, type: 3}
     - time: 0.083333336
-      value: {fileID: 5663248156639761278, guid: 387ed4fdcf67cc140bbb493b3de29642, type: 3}
+      value: {fileID: 2362815045578857948, guid: 6c4e09975ffb2ea47a352d3d9c9b8a82, type: 3}
     - time: 0.16666667
-      value: {fileID: 4967758443307075827, guid: 387ed4fdcf67cc140bbb493b3de29642, type: 3}
+      value: {fileID: 7542804936328639069, guid: 6c4e09975ffb2ea47a352d3d9c9b8a82, type: 3}
     - time: 0.25
-      value: {fileID: 3574712968028055850, guid: 387ed4fdcf67cc140bbb493b3de29642, type: 3}
+      value: {fileID: 1889759098841722619, guid: 6c4e09975ffb2ea47a352d3d9c9b8a82, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -5103949143644476115, guid: 387ed4fdcf67cc140bbb493b3de29642, type: 3}
-    - {fileID: 5663248156639761278, guid: 387ed4fdcf67cc140bbb493b3de29642, type: 3}
-    - {fileID: 4967758443307075827, guid: 387ed4fdcf67cc140bbb493b3de29642, type: 3}
-    - {fileID: 3574712968028055850, guid: 387ed4fdcf67cc140bbb493b3de29642, type: 3}
+    - {fileID: 301257638705225519, guid: 6c4e09975ffb2ea47a352d3d9c9b8a82, type: 3}
+    - {fileID: 2362815045578857948, guid: 6c4e09975ffb2ea47a352d3d9c9b8a82, type: 3}
+    - {fileID: 7542804936328639069, guid: 6c4e09975ffb2ea47a352d3d9c9b8a82, type: 3}
+    - {fileID: 1889759098841722619, guid: 6c4e09975ffb2ea47a352d3d9c9b8a82, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -60,7 +60,7 @@ AnimationClip:
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0

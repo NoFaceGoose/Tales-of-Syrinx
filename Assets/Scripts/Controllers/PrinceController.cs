@@ -54,17 +54,26 @@ public class PrinceController : MonoBehaviour
             isStun = false;
             currentStunTime = 0;
         }
-
+        
         // look for players
         if (distance <= lookRadius)
         {
             Flip(); // Face to the Player
             agent.SetDestination(target.position);
+            
             if (distance < agent.stoppingDistance && Time.time >= nextAttackTime)
             {
                 Attack();
                 nextAttackTime = Time.time + 1f / AttackRate;
             }
+            else
+            {
+                FindObjectOfType<AudioManager>().Play("DPRun");
+            }
+        }
+        else
+        {
+            FindObjectOfType<AudioManager>().Play("DPWalk");
         }
 
         if (CurrentHealth <= 0)
@@ -92,7 +101,7 @@ public class PrinceController : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack");
-
+        FindObjectOfType<AudioManager>().Play("DPAttack");
         Collider[] hitPlayers = Physics.OverlapSphere(AttackPoint.position, attackRange, playerLayers);
         foreach (Collider player in hitPlayers)
         {
