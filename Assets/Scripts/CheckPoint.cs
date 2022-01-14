@@ -11,7 +11,7 @@ public class CheckPoint : MonoBehaviour
             PlayerController.PlayerInstance.Recover(1);
             PlayerController.PlayerInstance.SavedPosition = new Vector3(transform.position.x, transform.position.y, 0f);
             Anim.SetBool("IsTriggered", true);
-            FindObjectOfType<AudioManager>().Play("CheckPoint");
+            FindObjectOfType<AudioManager>().Play("MagicDoor");
 
             if (IsInvoking("SlowDown"))
             {

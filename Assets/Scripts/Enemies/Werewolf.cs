@@ -118,6 +118,7 @@ public class Werewolf : MonoBehaviour
                 || ((_state == EnemyAnimState.charge || _state != EnemyAnimState.attack) && Random.value > HitRecover))
             {
                 _state = EnemyAnimState.attacked;
+                FindObjectOfType<AudioManager>().Play("WolfHurt");
             }
 
             _isAttacked = true;
@@ -392,6 +393,7 @@ public class Werewolf : MonoBehaviour
             foreach (Collider csCell in cs)
             {
                 PlayerController player = csCell.gameObject.GetComponent<PlayerController>();
+                FindObjectOfType<AudioManager>().Play("WolfHit");
                 if (player != null && !player.GetPlayerStatus())
                 {
                     player.TakeDamage(AttackDamage);

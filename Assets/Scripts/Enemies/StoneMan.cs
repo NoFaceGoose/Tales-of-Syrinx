@@ -52,9 +52,14 @@ public class StoneMan : MonoBehaviour
             return false;
         }
         // Attack after being attacked without deceting player
-        if (!OnPatrol || _isAttacked)
+        if (_isAttacked)
         {
             return true;
+        }
+
+        if (!OnPatrol)
+        {
+            DetectionDistance = 20f;
         }
 
         bool hitPlayer = false;
@@ -102,6 +107,7 @@ public class StoneMan : MonoBehaviour
             if (_state != EnemyAnimState.attack || Random.value > HitRecover)
             {
                 _state = EnemyAnimState.attacked;
+                FindObjectOfType<AudioManager>().Play("WolfHurt");
             }
 
             Health -= damage;

@@ -77,7 +77,7 @@ public class Stone : MonoBehaviour
             return;
         }
 
-        if (!hitInfo.CompareTag("Werewolf") && !hitInfo.CompareTag("StoneMan") && !hitInfo.CompareTag("EnemyMissile") && !hitInfo.CompareTag("CheckPoint"))
+        if (!hitInfo.CompareTag("FallingBox") && !hitInfo.CompareTag("Werewolf") && !hitInfo.CompareTag("StoneMan") && !hitInfo.CompareTag("EnemyMissile") && !hitInfo.CompareTag("CheckPoint"))
         {
             Health = 0;
         }
@@ -85,6 +85,7 @@ public class Stone : MonoBehaviour
     private void DestroyLater()
     {
         Invoke("Destroy", 0.25f);
+        FindObjectOfType<AudioManager>().Play("StonemanAttack");
         Destroy(gameObject.GetComponent<Rigidbody>());
     }
     private void Destroy()

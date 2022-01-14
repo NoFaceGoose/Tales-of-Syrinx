@@ -13,7 +13,11 @@ public class GateTrigger : MonoBehaviour
 
             if (PlayerController.PlayerInstance.GetKeys() >= RequiredKeys)
             {
-                Gate.GetComponent<SpriteRenderer>().sprite = GateOpen;
+                if (Gate.GetComponent<SpriteRenderer>().sprite != GateOpen)
+                {
+                    FindObjectOfType<AudioManager>().Play("StoneDoor");
+                    Gate.GetComponent<SpriteRenderer>().sprite = GateOpen;
+                }
             }
         }
     }
