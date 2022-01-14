@@ -4494,6 +4494,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3503191046922769987, guid: 55e94622720dfbd4f964d9f388007476, type: 3}
+      propertyPath: sounds.Array.data[2].loop
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55e94622720dfbd4f964d9f388007476, type: 3}
 --- !u!1001 &410180663
@@ -10203,7 +10207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e3939418b5325448a8c8117107d9a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RockPrefab: {fileID: 9052722400216426390, guid: 907285ddea0704563819903e30683665, type: 3}
 --- !u!1001 &898722649
 PrefabInstance:
   m_ObjectHideFlags: 0

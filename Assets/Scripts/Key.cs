@@ -24,6 +24,7 @@ public class Key : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().Play("CheckPoint");
             PlayerController.PlayerInstance.SetKeys();
             Destroy(gameObject);
         }

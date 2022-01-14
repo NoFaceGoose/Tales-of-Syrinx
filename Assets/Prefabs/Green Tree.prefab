@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8326743544216035054}
   - component: {fileID: 7902927600544745170}
   - component: {fileID: 471585770617327858}
+  - component: {fileID: -9196630979677009820}
   m_Layer: 6
   m_Name: Green Tree
   m_TagString: Tree
@@ -125,3 +126,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.08
   m_Center: {x: 0.02, y: 0.22, z: 0}
+--- !u!114 &-9196630979677009820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4584520903200474200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e34c97492ab5f4982ab5ee2a68d4fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
