@@ -1505,37 +1505,8 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6854262338267213559, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
---- !u!1 &494998967 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1887667947996049229, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
-  m_PrefabInstance: {fileID: 494998966}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &494998968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494998967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5ae43c7a02dc4241b4eeaffed13c3e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lookRadius: 10
-  StunTime: 1
-  MaxHealth: 5
-  animator: {fileID: 0}
-  AttackRate: 2
-  AttackPoint: {fileID: 0}
-  playerLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  attackRange: 1
-  attackDamage: 1
 --- !u!1 &604790585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,7 +2706,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

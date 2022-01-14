@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -271300462877982738, guid: 387ed4fdcf67cc140bbb493b3de29642, type: 3}
+  m_Sprite: {fileID: 5724168595349758334, guid: 9d42d7dd31bc4a44b94467727f2ebd00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 6854262338267213559}
   m_Layer: 0
   m_Name: Prince 1
-  m_TagString: Princewhite
+  m_TagString: Prince
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
