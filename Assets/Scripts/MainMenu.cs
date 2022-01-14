@@ -12,4 +12,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
