@@ -102,6 +102,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         _rigidBody.velocity = new Vector3(_inputX * MoveSpeed, _rigidBody.velocity.y, 0);
+        if(_rigidBody.velocity.x > 0.01f)
+            FindObjectOfType<AudioManager>().Play("PlayerWalk");
+        else
+            FindObjectOfType<AudioManager>().Stop("PlayerWalk");
         animator.SetFloat("Speed", _rigidBody.velocity.x);
         // Physics.gravity = new Vector3(0, Gravity, 0);
 
@@ -180,7 +184,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMovement(InputAction.CallbackContext value)
     {
-        //FindObjectOfType<AudioManager>().Play("PlayerWalk");
+        // FindObjectOfType<AudioManager>().Play("PlayerWalk");
         _inputX = value.ReadValue<Vector2>().x;
 
         // Flip the character
