@@ -11,7 +11,6 @@ public class Rock : MonoBehaviour
         RockTrigger = this;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         if (Falling && RockPrefab.GetComponent<Rigidbody>() != null)
@@ -19,12 +18,6 @@ public class Rock : MonoBehaviour
             RockPrefab.GetComponent<Rigidbody>().useGravity = true;
             RockPrefab.GetComponent<Rigidbody>().isKinematic = false;
         }
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-
     }
 
     void OnTriggerEnter(Collider other)

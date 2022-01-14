@@ -15,7 +15,7 @@ public class CustomGravity : MonoBehaviour
         m_rb = GetComponent<Rigidbody>();
         m_rb.useGravity = false;
     }
-    
+
     void FixedUpdate()
     {
         Vector3 gravity = globalGravity * gravityScale * Vector3.up;

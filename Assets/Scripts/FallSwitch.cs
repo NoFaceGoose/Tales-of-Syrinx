@@ -6,17 +6,6 @@ public class FallSwitch : MonoBehaviour
     public Sprite SpriteTriggered;
     private bool _isTriggered = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     void OnTriggerEnter(Collider other)
     {
         if (!_isTriggered && (other.CompareTag("Player") || other.CompareTag("Bullet") || other.CompareTag("ReedPlatform")))

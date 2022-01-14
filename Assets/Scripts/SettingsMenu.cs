@@ -1,14 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
-// using UnityEngine.TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    
+
     public TMPro.TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
 
@@ -16,7 +13,7 @@ public class SettingsMenu : MonoBehaviour
     {
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
-        
+
         // transfer a list of resolutions into a list of strings
         List<string> options = new List<string>();
 
@@ -49,12 +46,12 @@ public class SettingsMenu : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-    public void SetFullscreen (bool isFullscreen)
+    public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
     }
 
-    public void SetResolution (int resolutionIndex)
+    public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);

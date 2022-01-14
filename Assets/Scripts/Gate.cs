@@ -8,16 +8,9 @@ public class Gate : MonoBehaviour
     public String NextScene;
     public int RequiredKeys;
 
-    // Start is called before the first frame update
     void Start()
     {
         KeyReminder.GetComponent<Renderer>().enabled = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     void OnTriggerEnter(Collider other)

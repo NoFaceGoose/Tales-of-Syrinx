@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,10 +6,6 @@ public class DieMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject DieMenuUI;
     public GameObject Player;
-    void Start()
-    {
-
-    }
 
     public void Replay()
     {

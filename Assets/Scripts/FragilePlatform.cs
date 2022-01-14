@@ -27,16 +27,6 @@ public class FragilePlatform : MonoBehaviour
         gameObject.transform.position = oriPosition;
     }
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player") && other.gameObject.transform.position.y > gameObject.transform.position.y)

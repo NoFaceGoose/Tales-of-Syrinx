@@ -6,16 +6,6 @@ public class GateTrigger : MonoBehaviour
     public Sprite GateOpen;
     public GameObject Gate;
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
