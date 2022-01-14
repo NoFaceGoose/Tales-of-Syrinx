@@ -27,6 +27,7 @@ public class PrinceController : MonoBehaviour
     public float attackRange = 1.0f;
 
     public int attackDamage = 1;
+    public float HitRecover = 0.9f;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +44,7 @@ public class PrinceController : MonoBehaviour
         float distance = Vector3.Distance(target.position, transform.position);
 
         // Stun check
-        if (isStun && currentStunTime < StunTime)
+        if (isStun && currentStunTime < StunTime && Random.value > HitRecover)
         {
             currentStunTime += Time.deltaTime;
             agent.velocity = new Vector3(0, 0, 0);
@@ -54,13 +55,13 @@ public class PrinceController : MonoBehaviour
             isStun = false;
             currentStunTime = 0;
         }
-        
+
         // look for players
         if (distance <= lookRadius)
         {
             Flip(); // Face to the Player
             agent.SetDestination(target.position);
-            
+
             if (distance < agent.stoppingDistance && Time.time >= nextAttackTime)
             {
                 Attack();

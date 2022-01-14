@@ -1530,21 +1530,29 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1887667947996049231, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2740460942487649263, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6854262338267213559, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
       propertyPath: StunTime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6854262338267213559, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
       propertyPath: MaxHealth
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6854262338267213559, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
       propertyPath: AttackRate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854262338267213559, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
+      propertyPath: HitRecover
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6854262338267213559, guid: c81198e482de3474aa2f75902ceb143f, type: 3}
       propertyPath: lookRadius
