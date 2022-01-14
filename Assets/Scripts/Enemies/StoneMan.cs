@@ -128,11 +128,6 @@ public class StoneMan : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void Awake()
-    {
-
-    }
-
     void Start()
     {
         Player = GameObject.FindWithTag("Player");

@@ -148,11 +148,6 @@ public class Werewolf : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void Awake()
-    {
-
-    }
-
     void Start()
     {
         Player = GameObject.FindWithTag("Player");
